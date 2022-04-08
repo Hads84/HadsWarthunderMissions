@@ -3965,7 +3965,7 @@ mission_objectives{
   isCategory:b=yes
   is_enabled:b=yes
 
-  "Spawn Vehicles by moving next to vehicle (100 tickets)"{
+  "Spawn Vehicles by moving next to vehicle (100 points)"{
     is_enabled:b=yes
     comments:t=""
     type:t="abstractMissionObjective"
@@ -3980,7 +3980,7 @@ mission_objectives{
     onFailed{}
   }
 
-  "Upgrade Vehicles by shooting vehicle (1000 tickets)"{
+  "Upgrade Vehicles by shooting vehicle (1000 points)"{
     is_enabled:b=yes
     comments:t=""
     type:t="abstractMissionObjective"

@@ -6768,6 +6768,7 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
     }
@@ -6807,6 +6808,7 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
     }
@@ -6846,6 +6848,7 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
     }
@@ -6885,6 +6888,7 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
     }
@@ -8505,6 +8509,7 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
     }
@@ -9168,6 +9173,7 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
     }
@@ -9285,6 +9291,7 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
     }
@@ -9402,6 +9409,7 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
     }

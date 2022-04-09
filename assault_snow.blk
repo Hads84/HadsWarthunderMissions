@@ -27,7 +27,7 @@ mission_settings{
     locName:t="[Assault] Volokolansk"
     locDesc:t="Try and take the Town"
     gt_mp_tickets:b=yes
-    scoreLimit:i=1000
+    scoreLimit:i=1500
     deathPenaltyMul:r=0
     useKillStreaks:b=yes
     allowedKillStreaks:b=yes

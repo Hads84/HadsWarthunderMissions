@@ -2004,10 +2004,25 @@ triggers{
           setObjectMarking:i=1
         }
 
-        unitLoadBehTree{
-          name:t="tankBot"
-          objects:t="@teamb_current_line04"
-          loadType:t="tree"
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teamb_current_line04"
+          move_type:t="move"
         }
 
         wait{
@@ -3179,10 +3194,25 @@ triggers{
           setObjectMarking:i=1
         }
 
-        unitLoadBehTree{
-          name:t="tankBot"
-          objects:t="@teama_current_line04"
-          loadType:t="tree"
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teama_current_line04"
+          move_type:t="move"
         }
 
         wait{

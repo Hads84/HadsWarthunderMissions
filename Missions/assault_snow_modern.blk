@@ -198,6 +198,34 @@ triggers{
       }
 
       missionMarkAsRespawnPoint{
+        loc_name:t="Helipad"
+        spawnEffect:b=no
+        isStrictSpawn:b=no
+        resetStrictSpawnIndex:b=no
+        isAirfield:b=yes
+        isUnit:b=no
+        forceCreate:b=no
+        useExisting:b=no
+        ignoreTeamsOnReuse:b=no
+        isIndividual:b=no
+        onlyOnePlayerPerSpawnPoint:b=no
+        removeAreas:b=no
+        replaceAreas:b=no
+        canSpawnOnNeutral:b=no
+        showOnMap:b=yes
+        radius:r=-1
+        target:t="teamb_heli"
+        team:t="B"
+
+        tags{
+          airfield_take_off:b=yes
+          helicopter:b=yes
+          type_attack_helicopter:b=yes
+          type_utility_helicopter:b=yes
+        }
+      }
+
+      missionMarkAsRespawnPoint{
         loc_name:t="Airfield"
         spawnEffect:b=no
         isStrictSpawn:b=no
@@ -219,6 +247,34 @@ triggers{
 
         tags{
           air:b=yes
+        }
+      }
+
+      missionMarkAsRespawnPoint{
+        loc_name:t="Helipad"
+        spawnEffect:b=no
+        isStrictSpawn:b=no
+        resetStrictSpawnIndex:b=no
+        isAirfield:b=yes
+        isUnit:b=no
+        forceCreate:b=no
+        useExisting:b=no
+        ignoreTeamsOnReuse:b=no
+        isIndividual:b=no
+        onlyOnePlayerPerSpawnPoint:b=no
+        removeAreas:b=no
+        replaceAreas:b=no
+        canSpawnOnNeutral:b=no
+        showOnMap:b=yes
+        radius:r=-1
+        target:t="teama_heli"
+        team:t="A"
+
+        tags{
+          airfield_take_off:b=yes
+          helicopter:b=yes
+          type_attack_helicopter:b=yes
+          type_utility_helicopter:b=yes
         }
       }
 
@@ -8811,6 +8867,30 @@ units{
 
     props{
       army:i=1
+      active:b=yes
+    }
+  }
+
+  objectGroups{
+    name:t="teama_heli"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-1037.36, 79.7908, -3771.53]]
+    unit_class:t="dynhelipad_snow_a"
+    objLayer:i=1
+
+    props{
+      army:i=1
+      active:b=yes
+    }
+  }
+
+  objectGroups{
+    name:t="teamb_heli"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1279.79, 59.3582, 3589.05]]
+    unit_class:t="dynhelipad_concrete_snow_b"
+    objLayer:i=2
+
+    props{
+      army:i=2
       active:b=yes
     }
   }

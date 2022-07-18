@@ -2410,7 +2410,7 @@ triggers{
         }
 
         unitRespawn{
-          delay:r=1
+          delay:r=0.5
           offset:p3=0, 0, 0
           object:t="teamb_bomber"
           target:t="teamb_bomber_spawn_zone"
@@ -2423,11 +2423,68 @@ triggers{
           }
         }
 
+        unitRespawn{
+          delay:r=0.5
+          offset:p3=0, 0, 0
+          object:t="teamb_bomber01"
+          target:t="teamb_bomber_spawn_zone01"
+
+          formation{
+            formation_type:t="rows"
+            formation_div:i=3
+            formation_step:p2=2.5, 2
+            formation_noise:p2=0.1, 0.1
+          }
+        }
+
+        unitRespawn{
+          delay:r=0.5
+          offset:p3=0, 0, 0
+          object:t="teamb_bomber02"
+          target:t="teamb_bomber_spawn_zone02"
+
+          formation{
+            formation_type:t="rows"
+            formation_div:i=3
+            formation_step:p2=2.5, 2
+            formation_noise:p2=0.1, 0.1
+          }
+        }
+
+        unitRespawn{
+          delay:r=0.5
+          offset:p3=0, 0, 0
+          object:t="teamb_bomber03"
+          target:t="teamb_bomber_spawn_zone03"
+
+          formation{
+            formation_type:t="rows"
+            formation_div:i=3
+            formation_step:p2=2.5, 2
+            formation_noise:p2=0.1, 0.1
+          }
+        }
+
+        unitRespawn{
+          delay:r=0.5
+          offset:p3=0, 0, 0
+          object:t="teamb_bomber04"
+          target:t="teamb_bomber_spawn_zone04"
+
+          formation{
+            formation_type:t="rows"
+            formation_div:i=3
+            formation_step:p2=2.5, 2
+            formation_noise:p2=0.1, 0.1
+          }
+        }
+
         unitAttackTarget{
           playerAttracted:b=no
-          object:t="teamb_bomber"
+          object:t="teamb_bombers"
           target:t="bomb_target"
           weaponType:t="bombs"
+          fireMode:t="salvo"
         }
 
         wait{
@@ -2464,7 +2521,7 @@ triggers{
           object_var_value:i=0
           target_type:t="isAlive"
           check_period:r=1
-          object:t="teamb_bomber"
+          object:t="teamb_bombers"
         }
       }
 
@@ -2474,7 +2531,7 @@ triggers{
         }
 
         unitPutToSleep{
-          target:t="teamb_bomber"
+          target:t="teamb_bombers"
         }
       }
 
@@ -3729,10 +3786,66 @@ triggers{
         }
 
         unitRespawn{
-          delay:r=1
+          delay:r=0.5
           offset:p3=0, 0, 0
           object:t="teama_bomber"
-          target:t="teama_bomber_spawn"
+          target:t="teama_bomber_spawn_zone"
+
+          formation{
+            formation_type:t="rows"
+            formation_div:i=3
+            formation_step:p2=2.5, 2
+            formation_noise:p2=0.1, 0.1
+          }
+        }
+
+        unitRespawn{
+          delay:r=0.5
+          offset:p3=0, 0, 0
+          object:t="teama_bomber01"
+          target:t="teama_bomber_spawn_zone01"
+
+          formation{
+            formation_type:t="rows"
+            formation_div:i=3
+            formation_step:p2=2.5, 2
+            formation_noise:p2=0.1, 0.1
+          }
+        }
+
+        unitRespawn{
+          delay:r=0.5
+          offset:p3=0, 0, 0
+          object:t="teama_bomber02"
+          target:t="teama_bomber_spawn_zone02"
+
+          formation{
+            formation_type:t="rows"
+            formation_div:i=3
+            formation_step:p2=2.5, 2
+            formation_noise:p2=0.1, 0.1
+          }
+        }
+
+        unitRespawn{
+          delay:r=0.5
+          offset:p3=0, 0, 0
+          object:t="teama_bomber03"
+          target:t="teama_bomber_spawn_zone03"
+
+          formation{
+            formation_type:t="rows"
+            formation_div:i=3
+            formation_step:p2=2.5, 2
+            formation_noise:p2=0.1, 0.1
+          }
+        }
+
+        unitRespawn{
+          delay:r=0.5
+          offset:p3=0, 0, 0
+          object:t="teama_bomber04"
+          target:t="teama_bomber_spawn_zone04"
 
           formation{
             formation_type:t="rows"
@@ -3744,9 +3857,10 @@ triggers{
 
         unitAttackTarget{
           playerAttracted:b=no
-          object:t="teama_bomber"
+          object:t="teama_bombers"
           target:t="bomb_target"
           weaponType:t="bombs"
+          fireMode:t="salvo"
         }
 
         wait{
@@ -3783,17 +3897,17 @@ triggers{
           object_var_value:i=0
           target_type:t="isAlive"
           check_period:r=1
-          object:t="teama_bomber"
+          object:t="teama_bombers"
         }
       }
 
       actions{
         wait{
-          time:r=45
+          time:r=90
         }
 
         unitPutToSleep{
-          target:t="teama_bomber"
+          target:t="teama_bombers"
         }
       }
 
@@ -4708,6 +4822,15 @@ units{
       squad_members:t="teama_t55"
       squad_members:t="teama_t65"
       squad_members:t="teamb_bomber"
+      squad_members:t="teama_bomber"
+      squad_members:t="teama_bomber01"
+      squad_members:t="teama_bomber02"
+      squad_members:t="teama_bomber03"
+      squad_members:t="teama_bomber04"
+      squad_members:t="teamb_bomber01"
+      squad_members:t="teamb_bomber02"
+      squad_members:t="teamb_bomber03"
+      squad_members:t="teamb_bomber04"
     }
   }
 
@@ -6024,6 +6147,10 @@ units{
       squad_members:t="teamb_t24"
       squad_members:t="teamb_t14"
       squad_members:t="teamb_bomber"
+      squad_members:t="teamb_bomber02"
+      squad_members:t="teamb_bomber01"
+      squad_members:t="teamb_bomber03"
+      squad_members:t="teamb_bomber04"
     }
   }
 
@@ -9138,6 +9265,11 @@ units{
       squad_members:t="teama_t63"
       squad_members:t="teama_t55"
       squad_members:t="teama_t65"
+      squad_members:t="teama_bomber"
+      squad_members:t="teama_bomber02"
+      squad_members:t="teama_bomber01"
+      squad_members:t="teama_bomber03"
+      squad_members:t="teama_bomber04"
     }
   }
 
@@ -9225,14 +9357,14 @@ units{
   }
 
   armada{
-    name:t="teamb_bomber"
+    name:t="teama_bomber"
     tm:m=[[-0.999048, 0, -0.0436192] [0, 1, 0] [0.0436192, 0, -0.999048] [5671.75, 2000, -258.84]]
-    unit_class:t="pe-8_m82"
+    unit_class:t="tu_4"
     objLayer:i=1
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="pe-8_fab5000"
+    weapons:t="tu-4_12xfab500"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -9245,8 +9377,8 @@ units{
     applyAllMods:b=no
 
     props{
-      army:i=2
-      count:i=50
+      army:i=1
+      count:i=10
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -9256,8 +9388,8 @@ units{
       target:t="bomb_target"
       canLeaveRouteForAtack:b=yes
       targetGnd:b=yes
-      accuracy:r=1
-      targetableByAi:b=no
+      accuracy:r=0.8
+      targetableByAi:b=yes
 
       plane{
         wing_formation:t="Diamond"
@@ -9267,7 +9399,7 @@ units{
         super_row_distances:r=1.5
         super_col_distances:r=1.5
         ai_skill:t="NORMAL"
-        task:t="FLY_WAYPOINT"
+        task:t="ATTACK_GROUND"
       }
     }
 
@@ -9287,14 +9419,14 @@ units{
   }
 
   armada{
-    name:t="teama_bomber"
+    name:t="teamb_bomber"
     tm:m=[[0.965926, 0, -0.258819] [0, 1, 0] [0.258819, 0, 0.965926] [-6557.39, 2000, 1334.82]]
-    unit_class:t="pe-8_m82"
+    unit_class:t="b-29"
     objLayer:i=1
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="pe-8_fab5000"
+    weapons:t="B29_12x1000lbs"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -9307,8 +9439,8 @@ units{
     applyAllMods:b=no
 
     props{
-      army:i=1
-      count:i=50
+      army:i=2
+      count:i=10
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -9318,8 +9450,8 @@ units{
       target:t="bomb_target"
       canLeaveRouteForAtack:b=yes
       targetGnd:b=yes
-      accuracy:r=1
-      targetableByAi:b=no
+      accuracy:r=0.8
+      targetableByAi:b=yes
 
       plane{
         wing_formation:t="Diamond"
@@ -9329,7 +9461,7 @@ units{
         super_row_distances:r=1.5
         super_col_distances:r=1.5
         ai_skill:t="NORMAL"
-        task:t="FLY_WAYPOINT"
+        task:t="ATTACK_GROUND"
       }
     }
 
@@ -9345,6 +9477,434 @@ units{
     props{
       army:i=0
       active:b=yes
+    }
+  }
+
+  armada{
+    name:t="teama_bomber01"
+    tm:m=[[-0.999048, 0, -0.0436192] [0, 1, 0] [0.0436192, 0, -0.999048] [5671.75, 2000, -2495.96]]
+    unit_class:t="tu_4"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="tu-4_12xfab500"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=10
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="kill_target"
+      skill:i=4
+      target:t="bomb_target"
+      canLeaveRouteForAtack:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.8
+      targetableByAi:b=yes
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="ATTACK_GROUND"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="teama_bomber02"
+    tm:m=[[-0.999048, 0, -0.0436192] [0, 1, 0] [0.0436192, 0, -0.999048] [5671.75, 2000, -4549.42]]
+    unit_class:t="tu_4"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="tu-4_12xfab500"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=10
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="kill_target"
+      skill:i=4
+      target:t="bomb_target"
+      canLeaveRouteForAtack:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.8
+      targetableByAi:b=yes
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="ATTACK_GROUND"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="teama_bomber03"
+    tm:m=[[-0.999048, 0, -0.0436192] [0, 1, 0] [0.0436192, 0, -0.999048] [5671.75, 2000, 2320.18]]
+    unit_class:t="tu_4"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="tu-4_12xfab500"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=10
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="kill_target"
+      skill:i=4
+      target:t="bomb_target"
+      canLeaveRouteForAtack:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.8
+      targetableByAi:b=yes
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="ATTACK_GROUND"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="teama_bomber04"
+    tm:m=[[-0.999048, 0, -0.0436192] [0, 1, 0] [0.0436192, 0, -0.999048] [5671.75, 2000, 5539.88]]
+    unit_class:t="tu_4"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="tu-4_12xfab500"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=10
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="kill_target"
+      skill:i=4
+      target:t="bomb_target"
+      canLeaveRouteForAtack:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.8
+      targetableByAi:b=yes
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="ATTACK_GROUND"
+      }
+    }
+
+    way{}
+  }
+
+  squad{
+    name:t="teama_bombers"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [5671.75, 2000, 111.168]]
+
+    props{
+      object_marking:i=0
+      squad_members:t="teama_bomber03"
+      squad_members:t="teama_bomber04"
+      squad_members:t="teama_bomber"
+      squad_members:t="teama_bomber01"
+      squad_members:t="teama_bomber02"
+    }
+  }
+
+  armada{
+    name:t="teamb_bomber03"
+    tm:m=[[0.965926, 0, -0.258819] [0, 1, 0] [0.258819, 0, 0.965926] [-6600, 2000, 3700]]
+    unit_class:t="b-29"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="B29_12x1000lbs"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=10
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="kill_target"
+      skill:i=4
+      target:t="bomb_target"
+      canLeaveRouteForAtack:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.8
+      targetableByAi:b=yes
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="ATTACK_GROUND"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="teamb_bomber02"
+    tm:m=[[0.965926, 0, -0.258819] [0, 1, 0] [0.258819, 0, 0.965926] [-6600, 2000, -4100]]
+    unit_class:t="b-29"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="B29_12x1000lbs"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=10
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="kill_target"
+      skill:i=4
+      target:t="bomb_target"
+      canLeaveRouteForAtack:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.8
+      targetableByAi:b=yes
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="ATTACK_GROUND"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="teamb_bomber04"
+    tm:m=[[0.965926, 0, -0.258819] [0, 1, 0] [0.258819, 0, 0.965926] [-6685.22, 2000, 6030.36]]
+    unit_class:t="b-29"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="B29_12x1000lbs"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=10
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="kill_target"
+      skill:i=4
+      target:t="bomb_target"
+      canLeaveRouteForAtack:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.8
+      targetableByAi:b=yes
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="ATTACK_GROUND"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="teamb_bomber01"
+    tm:m=[[0.965926, 0, -0.258819] [0, 1, 0] [0.258819, 0, 0.965926] [-6700, 2000, -1600]]
+    unit_class:t="b-29"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="B29_12x1000lbs"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=10
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="kill_target"
+      skill:i=4
+      target:t="bomb_target"
+      canLeaveRouteForAtack:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.8
+      targetableByAi:b=yes
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="ATTACK_GROUND"
+      }
+    }
+
+    way{}
+  }
+
+  squad{
+    name:t="teamb_bombers"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-6628.52, 2000, 1073.04]]
+
+    props{
+      object_marking:i=0
+      squad_members:t="teamb_bomber01"
+      squad_members:t="teamb_bomber04"
+      squad_members:t="teamb_bomber"
+      squad_members:t="teamb_bomber02"
+      squad_members:t="teamb_bomber03"
     }
   }
 }
@@ -9526,7 +10086,7 @@ areas{
     props{}
   }
 
-  teamb_bomber_spawn_zone{
+  teama_bomber_spawn_zone{
     type:t="Sphere"
     tm:m=[[-873.094, 0, -76.3857] [0, 876.429, 0] [76.3857, 0, -873.094] [5671.8, 2000, -258.8]]
     objLayer:i=0
@@ -9542,7 +10102,7 @@ areas{
     props{}
   }
 
-  teama_bomber_spawn{
+  teamb_bomber_spawn_zone{
     type:t="Sphere"
     tm:m=[[1007.96, 0, -223.46] [0, 1032.43, 0] [223.46, 0, 1007.96] [-6541.79, 2000, 1339.75]]
     objLayer:i=0
@@ -9553,6 +10113,70 @@ areas{
   teama_bomber_spawner{
     type:t="Sphere"
     tm:m=[[70.7129, 0, 0] [0, 70.7129, 0] [0, 0, 70.7129] [950.839, 62.0992, -175.563]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teama_bomber_spawn_zone01{
+    type:t="Sphere"
+    tm:m=[[-873.094, 0, -76.3857] [0, 876.429, 0] [76.3857, 0, -873.094] [5671.8, 2000, 2307.31]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teama_bomber_spawn_zone02{
+    type:t="Sphere"
+    tm:m=[[-873.094, 0, -76.3857] [0, 876.429, 0] [76.3857, 0, -873.094] [5671.8, 2000, -2535.59]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teama_bomber_spawn_zone03{
+    type:t="Sphere"
+    tm:m=[[-873.094, 0, -76.3857] [0, 876.429, 0] [76.3857, 0, -873.094] [5671.8, 2000, 5560.91]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teama_bomber_spawn_zone04{
+    type:t="Sphere"
+    tm:m=[[-873.094, 0, -76.3857] [0, 876.429, 0] [76.3857, 0, -873.094] [5671.8, 2000, -4548.46]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teamb_bomber_spawn_zone01{
+    type:t="Sphere"
+    tm:m=[[1007.96, 0, -223.46] [0, 1032.43, 0] [223.46, 0, 1007.96] [-6584.4, 2000, 3704.93]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teamb_bomber_spawn_zone04{
+    type:t="Sphere"
+    tm:m=[[1007.96, 0, -223.46] [0, 1032.43, 0] [223.46, 0, 1007.96] [-6584.4, 2000, -4095.07]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teamb_bomber_spawn_zone03{
+    type:t="Sphere"
+    tm:m=[[1007.96, 0, -223.46] [0, 1032.43, 0] [223.46, 0, 1007.96] [-6669.62, 2000, 6035.29]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teamb_bomber_spawn_zone02{
+    type:t="Sphere"
+    tm:m=[[1007.96, 0, -223.46] [0, 1032.43, 0] [223.46, 0, 1007.96] [-6684.4, 2000, -1595.07]]
     objLayer:i=0
 
     props{}

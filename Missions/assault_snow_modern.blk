@@ -8894,6 +8894,90 @@ units{
       active:b=yes
     }
   }
+
+  structures{
+    name:t="bomb_target"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-363.208, 39.0272, -224.462]]
+    unit_class:t="beton_simple_br"
+    objLayer:i=2
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="teamb_bomber"
+    tm:m=[[-0.999048, 0, -0.0436192] [0, 1, 0] [0.0436192, 0, -0.999048] [5671.75, 5000.06, -258.84]]
+    unit_class:t="pe-8_m82"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="pe-8_fab5000"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="kill_target"
+      skill:i=4
+      target:t="bomb_target"
+      canLeaveRouteForAtack:b=yes
+      targetGnd:b=yes
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
 }
 
 areas{

@@ -2317,6 +2317,35 @@ triggers{
 
       else_actions{}
     }
+
+    Trigger_01{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{}
+      actions{
+        unitAttackTarget{
+          playerAttracted:b=no
+          object:t="teamb_bomber"
+          target:t="bomb_target"
+          weaponType:t="bombs"
+        }
+      }
+
+      else_actions{}
+    }
   }
 
   teama{

@@ -1129,6 +1129,40 @@ triggers{
     else_actions{}
   }
 
+  RespawnBombTarget{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      unitWhenKilled{
+        target:t="bomb_target"
+      }
+    }
+
+    actions{
+      unitRespawn{
+        delay:r=1
+        offset:p3=0, 0, 0
+        object:t="bomb_target"
+        target:t="bomb_target_spawn"
+      }
+    }
+
+    else_actions{}
+  }
+
   teamb{
     isCategory:b=yes
     is_enabled:b=yes
@@ -2318,14 +2352,14 @@ triggers{
       else_actions{}
     }
 
-    Trigger_01{
+    teamb_spawn_bomber{
       is_enabled:b=yes
       comments:t=""
 
       props{
         actionsType:t="PERFORM_ONE_BY_ONE"
         conditionsType:t="ALL"
-        enableAfterComplete:b=no
+        enableAfterComplete:b=yes
       }
 
       events{
@@ -2334,13 +2368,113 @@ triggers{
         }
       }
 
-      conditions{}
+      conditions{
+        unitWhenInArea{
+          math:t="3D"
+          object_type:t="isAlive"
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          check_objects:t="any"
+          object:t="players"
+          target:t="teamb_bomber_spawn"
+        }
+
+        varCompareInt{
+          var_value:t="teamb_spawn_points"
+          value:i=3000
+          comparasion_func:t="notLess"
+        }
+      }
+
       actions{
+        varModify{
+          operator:t="add"
+          value:r=-3000
+          var:t="teamb_spawn_points"
+        }
+
+        missionSetTargetsIndicator{
+          target_type:t="isAlive"
+          target_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          delta:i=0
+          icon:t="tank"
+          "icon army":i=2
+          set:b=yes
+          target:t="bot_vehicles"
+          var:t="teamb_spawn_points"
+          team:t="Both"
+        }
+
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="teamb_bomber"
+          target:t="teamb_bomber_spawn_zone"
+
+          formation{
+            formation_type:t="rows"
+            formation_div:i=3
+            formation_step:p2=2.5, 2
+            formation_noise:p2=0.1, 0.1
+          }
+        }
+
         unitAttackTarget{
           playerAttracted:b=no
           object:t="teamb_bomber"
           target:t="bomb_target"
           weaponType:t="bombs"
+        }
+
+        wait{
+          time:r=120
+        }
+      }
+
+      else_actions{}
+    }
+
+    teamb_despawn_bomber{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        unitWhenStatus{
+          object_type:t="noBombs"
+          check_objects:t="any"
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target_type:t="isAlive"
+          check_period:r=1
+          object:t="teamb_bomber"
+        }
+      }
+
+      actions{
+        wait{
+          time:r=45
+        }
+
+        unitPutToSleep{
+          target:t="teamb_bomber"
         }
       }
 
@@ -3536,6 +3670,135 @@ triggers{
 
       else_actions{}
     }
+
+    teama_spawn_bomber{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        unitWhenInArea{
+          math:t="3D"
+          object_type:t="isAlive"
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          check_objects:t="any"
+          object:t="players"
+          target:t="teama_bomber_spawner"
+        }
+
+        varCompareInt{
+          var_value:t="teama_spawn_points"
+          value:i=3000
+          comparasion_func:t="notLess"
+        }
+      }
+
+      actions{
+        varModify{
+          operator:t="add"
+          value:r=-3000
+          var:t="teama_spawn_points"
+        }
+
+        missionSetTargetsIndicator{
+          target_type:t="isAlive"
+          target_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          delta:i=0
+          icon:t="tank"
+          "icon army":i=1
+          set:b=yes
+          target:t="bot_vehicles"
+          var:t="teama_spawn_points"
+          team:t="Both"
+        }
+
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="teama_bomber"
+          target:t="teama_bomber_spawn"
+
+          formation{
+            formation_type:t="rows"
+            formation_div:i=3
+            formation_step:p2=2.5, 2
+            formation_noise:p2=0.1, 0.1
+          }
+        }
+
+        unitAttackTarget{
+          playerAttracted:b=no
+          object:t="teama_bomber"
+          target:t="bomb_target"
+          weaponType:t="bombs"
+        }
+
+        wait{
+          time:r=120
+        }
+      }
+
+      else_actions{}
+    }
+
+    teama_despawn_bomber{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        unitWhenStatus{
+          object_type:t="noBombs"
+          check_objects:t="any"
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target_type:t="isAlive"
+          check_period:r=1
+          object:t="teama_bomber"
+        }
+      }
+
+      actions{
+        wait{
+          time:r=45
+        }
+
+        unitPutToSleep{
+          target:t="teama_bomber"
+        }
+      }
+
+      else_actions{}
+    }
   }
 
   Scoring{
@@ -4444,6 +4707,7 @@ units{
       squad_members:t="teama_t63"
       squad_members:t="teama_t55"
       squad_members:t="teama_t65"
+      squad_members:t="teamb_bomber"
     }
   }
 
@@ -5759,6 +6023,7 @@ units{
       squad_members:t="teamb_t34"
       squad_members:t="teamb_t24"
       squad_members:t="teamb_t14"
+      squad_members:t="teamb_bomber"
     }
   }
 
@@ -6337,7 +6602,7 @@ units{
       uniqueName:t=""
       attack_type:t="fire_at_will"
       targetAir:b=yes
-      accuracy:r=0.9
+      accuracy:r=0.8
       effShootingRate:r=1
     }
 
@@ -6377,7 +6642,7 @@ units{
       uniqueName:t=""
       attack_type:t="fire_at_will"
       targetAir:b=yes
-      accuracy:r=0.9
+      accuracy:r=0.8
       effShootingRate:r=1
     }
 
@@ -6417,7 +6682,7 @@ units{
       uniqueName:t=""
       attack_type:t="fire_at_will"
       targetAir:b=yes
-      accuracy:r=0.9
+      accuracy:r=0.8
       effShootingRate:r=1
     }
 
@@ -7893,7 +8158,7 @@ units{
       uniqueName:t=""
       attack_type:t="fire_at_will"
       targetAir:b=yes
-      accuracy:r=0.9
+      accuracy:r=0.8
       effShootingRate:r=1
     }
 
@@ -8401,7 +8666,7 @@ units{
       uniqueName:t=""
       attack_type:t="fire_at_will"
       targetAir:b=yes
-      accuracy:r=0.9
+      accuracy:r=0.8
       effShootingRate:r=1
     }
 
@@ -8520,7 +8785,7 @@ units{
       attack_type:t="fire_at_will"
       use_search_radar:b=yes
       targetAir:b=yes
-      accuracy:r=0.9
+      accuracy:r=0.8
       effShootingRate:r=1
     }
 
@@ -8639,7 +8904,7 @@ units{
       attack_type:t="fire_at_will"
       use_search_radar:b=yes
       targetAir:b=yes
-      accuracy:r=0.9
+      accuracy:r=0.8
       effShootingRate:r=1
       avoidObstacles:b=yes
     }
@@ -8927,7 +9192,7 @@ units{
   structures{
     name:t="bomb_target"
     tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-363.208, 39.0272, -224.462]]
-    unit_class:t="beton_simple_br"
+    unit_class:t="flag_red"
     objLayer:i=2
     closed_waypoints:b=no
     isShipSpline:b=no
@@ -8961,7 +9226,7 @@ units{
 
   armada{
     name:t="teamb_bomber"
-    tm:m=[[-0.999048, 0, -0.0436192] [0, 1, 0] [0.0436192, 0, -0.999048] [5671.75, 5000.06, -258.84]]
+    tm:m=[[-0.999048, 0, -0.0436192] [0, 1, 0] [0.0436192, 0, -0.999048] [5671.75, 2000, -258.84]]
     unit_class:t="pe-8_m82"
     objLayer:i=1
     closed_waypoints:b=no
@@ -8981,7 +9246,7 @@ units{
 
     props{
       army:i=2
-      count:i=1
+      count:i=50
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -8991,6 +9256,7 @@ units{
       target:t="bomb_target"
       canLeaveRouteForAtack:b=yes
       targetGnd:b=yes
+      accuracy:r=1
       targetableByAi:b=no
 
       plane{
@@ -9006,6 +9272,80 @@ units{
     }
 
     way{}
+  }
+
+  objectGroups{
+    name:t="teamb_bomber_spawn_model"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-1834.39, 72.3878, 233.76]]
+    unit_class:t="sbd_3"
+    objLayer:i=2
+
+    props{
+      army:i=0
+      active:b=yes
+    }
+  }
+
+  armada{
+    name:t="teama_bomber"
+    tm:m=[[0.965926, 0, -0.258819] [0, 1, 0] [0.258819, 0, 0.965926] [-6557.39, 2000, 1334.82]]
+    unit_class:t="pe-8_m82"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="pe-8_fab5000"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=50
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="kill_target"
+      skill:i=4
+      target:t="bomb_target"
+      canLeaveRouteForAtack:b=yes
+      targetGnd:b=yes
+      accuracy:r=1
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  objectGroups{
+    name:t="objectGroups_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [934.526, 63.5265, -179.353]]
+    unit_class:t="sbd_3"
+    objLayer:i=2
+
+    props{
+      army:i=0
+      active:b=yes
+    }
   }
 }
 
@@ -9092,7 +9432,7 @@ areas{
 
   cz_01{
     type:t="Sphere"
-    tm:m=[[300, 0, 0] [0, 300, 0] [0, 0, 300] [-362.861, 65.1971, -224.679]]
+    tm:m=[[300, 0, 0] [0, 300, 0] [0, 0, 300] [-362.861, 39, -224.679]]
     objLayer:i=0
 
     props{}
@@ -9173,6 +9513,46 @@ areas{
   teama_spawner_line05{
     type:t="Sphere"
     tm:m=[[-19.5463, 0, -2.28437] [0, 19.6794, 0] [2.28437, 0, -19.5463] [987.971, 65.8462, 15.0167]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teamb_bomber_spawn{
+    type:t="Sphere"
+    tm:m=[[60.4428, 0, 0] [0, 60.4428, 0] [0, 0, 60.4428] [-1816.66, 75.095, 236.174]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teamb_bomber_spawn_zone{
+    type:t="Sphere"
+    tm:m=[[-873.094, 0, -76.3857] [0, 876.429, 0] [76.3857, 0, -873.094] [5671.8, 2000, -258.8]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  bomb_target_spawn{
+    type:t="Sphere"
+    tm:m=[[51.2168, 0, 0] [0, 51.2168, 0] [0, 0, 51.2168] [-366.285, -50, -228.121]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teama_bomber_spawn{
+    type:t="Sphere"
+    tm:m=[[1007.96, 0, -223.46] [0, 1032.43, 0] [223.46, 0, 1007.96] [-6541.79, 2000, 1339.75]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teama_bomber_spawner{
+    type:t="Sphere"
+    tm:m=[[70.7129, 0, 0] [0, 70.7129, 0] [0, 0, 70.7129] [950.839, 62.0992, -175.563]]
     objLayer:i=0
 
     props{}

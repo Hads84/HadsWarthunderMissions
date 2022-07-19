@@ -198,6 +198,81 @@ triggers{
       }
 
       missionMarkAsRespawnPoint{
+        loc_name:t="Air Spawn A"
+        spawnEffect:b=no
+        isStrictSpawn:b=no
+        resetStrictSpawnIndex:b=no
+        isAirfield:b=no
+        isUnit:b=no
+        forceCreate:b=no
+        useExisting:b=no
+        ignoreTeamsOnReuse:b=no
+        isIndividual:b=no
+        onlyOnePlayerPerSpawnPoint:b=no
+        removeAreas:b=no
+        replaceAreas:b=no
+        canSpawnOnNeutral:b=no
+        showOnMap:b=yes
+        radius:r=-1
+        target:t="teamb_airspawn"
+        team:t="B"
+
+        tags{
+          air:b=yes
+        }
+      }
+
+      missionMarkAsRespawnPoint{
+        loc_name:t="Air Spawn B"
+        spawnEffect:b=no
+        isStrictSpawn:b=no
+        resetStrictSpawnIndex:b=no
+        isAirfield:b=no
+        isUnit:b=no
+        forceCreate:b=no
+        useExisting:b=no
+        ignoreTeamsOnReuse:b=no
+        isIndividual:b=no
+        onlyOnePlayerPerSpawnPoint:b=no
+        removeAreas:b=no
+        replaceAreas:b=no
+        canSpawnOnNeutral:b=no
+        showOnMap:b=yes
+        radius:r=-1
+        target:t="teamb_airspawn01"
+        team:t="B"
+
+        tags{
+          air:b=yes
+        }
+      }
+
+      missionMarkAsRespawnPoint{
+        loc_name:t="Air Spawn C"
+        spawnEffect:b=no
+        isStrictSpawn:b=no
+        resetStrictSpawnIndex:b=no
+        isAirfield:b=no
+        isUnit:b=no
+        forceCreate:b=no
+        useExisting:b=no
+        ignoreTeamsOnReuse:b=no
+        isIndividual:b=no
+        onlyOnePlayerPerSpawnPoint:b=no
+        removeAreas:b=no
+        replaceAreas:b=no
+        canSpawnOnNeutral:b=no
+        showOnMap:b=yes
+        radius:r=-1
+        target:t="teamb_airspawn02"
+        team:t="B"
+
+        tags{
+          air:b=yes
+        }
+      }
+
+      missionMarkAsRespawnPoint{
         loc_name:t="Helipad"
         spawnEffect:b=no
         isStrictSpawn:b=no
@@ -243,6 +318,81 @@ triggers{
         showOnMap:b=yes
         radius:r=-1
         target:t="teama_af"
+        team:t="A"
+
+        tags{
+          air:b=yes
+        }
+      }
+
+      missionMarkAsRespawnPoint{
+        loc_name:t="Air Spawn A"
+        spawnEffect:b=no
+        isStrictSpawn:b=no
+        resetStrictSpawnIndex:b=no
+        isAirfield:b=no
+        isUnit:b=no
+        forceCreate:b=no
+        useExisting:b=no
+        ignoreTeamsOnReuse:b=no
+        isIndividual:b=no
+        onlyOnePlayerPerSpawnPoint:b=no
+        removeAreas:b=no
+        replaceAreas:b=no
+        canSpawnOnNeutral:b=no
+        showOnMap:b=yes
+        radius:r=-1
+        target:t="teama_airspawn"
+        team:t="A"
+
+        tags{
+          air:b=yes
+        }
+      }
+
+      missionMarkAsRespawnPoint{
+        loc_name:t="Air Spawn B"
+        spawnEffect:b=no
+        isStrictSpawn:b=no
+        resetStrictSpawnIndex:b=no
+        isAirfield:b=no
+        isUnit:b=no
+        forceCreate:b=no
+        useExisting:b=no
+        ignoreTeamsOnReuse:b=no
+        isIndividual:b=no
+        onlyOnePlayerPerSpawnPoint:b=no
+        removeAreas:b=no
+        replaceAreas:b=no
+        canSpawnOnNeutral:b=no
+        showOnMap:b=yes
+        radius:r=-1
+        target:t="teama_airspawn01"
+        team:t="A"
+
+        tags{
+          air:b=yes
+        }
+      }
+
+      missionMarkAsRespawnPoint{
+        loc_name:t="Air Spawn C"
+        spawnEffect:b=no
+        isStrictSpawn:b=no
+        resetStrictSpawnIndex:b=no
+        isAirfield:b=no
+        isUnit:b=no
+        forceCreate:b=no
+        useExisting:b=no
+        ignoreTeamsOnReuse:b=no
+        isIndividual:b=no
+        onlyOnePlayerPerSpawnPoint:b=no
+        removeAreas:b=no
+        replaceAreas:b=no
+        canSpawnOnNeutral:b=no
+        showOnMap:b=yes
+        radius:r=-1
+        target:t="teama_airspawn02"
         team:t="A"
 
         tags{
@@ -1163,6 +1313,142 @@ triggers{
     else_actions{}
   }
 
+  RespawnBombTarget01{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      unitWhenKilled{
+        target:t="bomb_target01"
+      }
+    }
+
+    actions{
+      unitRespawn{
+        delay:r=1
+        offset:p3=0, 0, 0
+        object:t="bomb_target01"
+        target:t="bomb_target_spawn01"
+      }
+    }
+
+    else_actions{}
+  }
+
+  RespawnBombTarget02{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      unitWhenKilled{
+        target:t="bomb_target02"
+      }
+    }
+
+    actions{
+      unitRespawn{
+        delay:r=1
+        offset:p3=0, 0, 0
+        object:t="bomb_target02"
+        target:t="bomb_target_spawn02"
+      }
+    }
+
+    else_actions{}
+  }
+
+  RespawnBombTarget03{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      unitWhenKilled{
+        target:t="bomb_target03"
+      }
+    }
+
+    actions{
+      unitRespawn{
+        delay:r=1
+        offset:p3=0, 0, 0
+        object:t="bomb_target03"
+        target:t="bomb_target_spawn03"
+      }
+    }
+
+    else_actions{}
+  }
+
+  RespawnBombTarget04{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      unitWhenKilled{
+        target:t="bomb_target04"
+      }
+    }
+
+    actions{
+      unitRespawn{
+        delay:r=1
+        offset:p3=0, 0, 0
+        object:t="bomb_target04"
+        target:t="bomb_target_spawn04"
+      }
+    }
+
+    else_actions{}
+  }
+
   teamb{
     isCategory:b=yes
     is_enabled:b=yes
@@ -1240,9 +1526,6 @@ triggers{
           object:t="@teamb_current_line01"
           object_type:t="isNotMarked"
           target:t="teamb_bot_spawn_01"
-          target:t="teamb_bot_spawn_02"
-          target:t="teamb_bot_spawn_03"
-          target:t="teamb_bot_spawn_04"
           randomObjectsCount:i=1
           randomSpawn:b=yes
           setObjectMarking:i=1
@@ -1473,10 +1756,7 @@ triggers{
           offset:p3=0, 0, 0
           object:t="@teamb_current_line02"
           object_type:t="isNotMarked"
-          target:t="teamb_bot_spawn_01"
           target:t="teamb_bot_spawn_02"
-          target:t="teamb_bot_spawn_03"
-          target:t="teamb_bot_spawn_04"
           randomObjectsCount:i=1
           randomSpawn:b=yes
           setObjectMarking:i=1
@@ -1707,10 +1987,7 @@ triggers{
           offset:p3=0, 0, 0
           object:t="@teamb_current_line03"
           object_type:t="isNotMarked"
-          target:t="teamb_bot_spawn_01"
-          target:t="teamb_bot_spawn_02"
           target:t="teamb_bot_spawn_03"
-          target:t="teamb_bot_spawn_04"
           randomObjectsCount:i=1
           randomSpawn:b=yes
           setObjectMarking:i=1
@@ -1941,9 +2218,6 @@ triggers{
           offset:p3=0, 0, 0
           object:t="@teamb_current_line04"
           object_type:t="isNotMarked"
-          target:t="teamb_bot_spawn_01"
-          target:t="teamb_bot_spawn_02"
-          target:t="teamb_bot_spawn_03"
           target:t="teamb_bot_spawn_04"
           randomObjectsCount:i=1
           randomSpawn:b=yes
@@ -2190,10 +2464,7 @@ triggers{
           offset:p3=0, 0, 0
           object:t="@teamb_current_line05"
           object_type:t="isNotMarked"
-          target:t="teamb_bot_spawn_01"
-          target:t="teamb_bot_spawn_02"
-          target:t="teamb_bot_spawn_03"
-          target:t="teamb_bot_spawn_04"
+          target:t="teamb_bot_spawn_05"
           randomObjectsCount:i=1
           randomSpawn:b=yes
           setObjectMarking:i=1
@@ -2483,6 +2754,11 @@ triggers{
           playerAttracted:b=no
           object:t="teamb_bombers"
           target:t="bomb_target"
+          target:t="bomb_target01"
+          target:t="bomb_target02"
+          target:t="bomb_target03"
+          target:t="bomb_target04"
+          fireRandom:b=yes
           weaponType:t="bombs"
           fireMode:t="salvo"
         }
@@ -2527,11 +2803,45 @@ triggers{
 
       actions{
         wait{
-          time:r=45
+          time:r=90
         }
 
         unitPutToSleep{
           target:t="teamb_bombers"
+        }
+      }
+
+      else_actions{}
+    }
+
+    Respawn_Bomber_Model_teamb{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        unitWhenKilled{
+          target:t="teamb_bomber_spawn_model"
+        }
+      }
+
+      actions{
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="teamb_bomber_spawn_model"
+          target:t="teamb_bomber_spawn"
         }
       }
 
@@ -2616,9 +2926,6 @@ triggers{
           object:t="@teama_current_line01"
           object_type:t="isNotMarked"
           target:t="teama_bot_spawn_01"
-          target:t="teama_bot_spawn_02"
-          target:t="teama_bot_spawn_03"
-          target:t="teama_bot_spawn_04"
           randomObjectsCount:i=1
           randomSpawn:b=yes
           setObjectMarking:i=1
@@ -2849,10 +3156,7 @@ triggers{
           offset:p3=0, 0, 0
           object:t="@teama_current_line02"
           object_type:t="isNotMarked"
-          target:t="teama_bot_spawn_01"
           target:t="teama_bot_spawn_02"
-          target:t="teama_bot_spawn_03"
-          target:t="teama_bot_spawn_04"
           randomObjectsCount:i=1
           randomSpawn:b=yes
           setObjectMarking:i=1
@@ -3083,10 +3387,7 @@ triggers{
           offset:p3=0, 0, 0
           object:t="@teama_current_line03"
           object_type:t="isNotMarked"
-          target:t="teama_bot_spawn_01"
-          target:t="teama_bot_spawn_02"
           target:t="teama_bot_spawn_03"
-          target:t="teama_bot_spawn_04"
           randomObjectsCount:i=1
           randomSpawn:b=yes
           setObjectMarking:i=1
@@ -3317,9 +3618,6 @@ triggers{
           offset:p3=0, 0, 0
           object:t="@teama_current_line04"
           object_type:t="isNotMarked"
-          target:t="teama_bot_spawn_01"
-          target:t="teama_bot_spawn_02"
-          target:t="teama_bot_spawn_03"
           target:t="teama_bot_spawn_04"
           randomObjectsCount:i=1
           randomSpawn:b=yes
@@ -3566,10 +3864,7 @@ triggers{
           offset:p3=0, 0, 0
           object:t="@teama_current_line05"
           object_type:t="isNotMarked"
-          target:t="teama_bot_spawn_01"
-          target:t="teama_bot_spawn_02"
-          target:t="teama_bot_spawn_03"
-          target:t="teama_bot_spawn_04"
+          target:t="teama_bot_spawn_05"
           randomObjectsCount:i=1
           randomSpawn:b=yes
           setObjectMarking:i=1
@@ -3908,6 +4203,40 @@ triggers{
 
         unitPutToSleep{
           target:t="teama_bombers"
+        }
+      }
+
+      else_actions{}
+    }
+
+    Respawn_Bomber_Model_teama{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        unitWhenKilled{
+          target:t="teama_bomber_spawn_model"
+        }
+      }
+
+      actions{
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="teama_bomber_spawn_model"
+          target:t="teama_bomber_spawner"
         }
       }
 
@@ -4718,6 +5047,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -5358,7 +5688,7 @@ units{
   tankModels{
     name:t="teamb_upg35"
     tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-843.805, 4.12044, -45.4858]]
-    unit_class:t="sw_strv_103a"
+    unit_class:t="us_m60a2"
     objLayer:i=1
     closed_waypoints:b=no
     isShipSpline:b=no
@@ -5538,7 +5868,7 @@ units{
   tankModels{
     name:t="teamb_upg45"
     tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-844.674, 4.12044, -43.0906]]
-    unit_class:t="us_m60a2"
+    unit_class:t="uk_rooikat_mttd"
     objLayer:i=1
     closed_waypoints:b=no
     isShipSpline:b=no
@@ -5682,7 +6012,7 @@ units{
   tankModels{
     name:t="teamb_upg55"
     tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-843.194, 4.12044, -40.639]]
-    unit_class:t="uk_rooikat_mttd"
+    unit_class:t="us_m1128_mgs"
     objLayer:i=1
     closed_waypoints:b=no
     isShipSpline:b=no
@@ -5826,7 +6156,7 @@ units{
   tankModels{
     name:t="teamb_upg65"
     tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-843.381, 4.12044, -37.9361]]
-    unit_class:t="us_m1128_mgs"
+    unit_class:t="sw_strv_103c"
     objLayer:i=1
     closed_waypoints:b=no
     isShipSpline:b=no
@@ -5908,6 +6238,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -5947,6 +6278,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -5984,6 +6316,9 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      accuracy:r=0.9
+      effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6186,6 +6521,9 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      accuracy:r=0.9
+      effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6223,6 +6561,9 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      accuracy:r=0.9
+      effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6262,6 +6603,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6301,6 +6643,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6340,6 +6683,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6379,6 +6723,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6418,6 +6763,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6457,6 +6803,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6496,6 +6843,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6535,6 +6883,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6574,6 +6923,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6613,6 +6963,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6652,6 +7003,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6691,6 +7043,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6731,6 +7084,7 @@ units{
       targetAir:b=yes
       accuracy:r=0.8
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6771,6 +7125,7 @@ units{
       targetAir:b=yes
       accuracy:r=0.8
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6811,6 +7166,7 @@ units{
       targetAir:b=yes
       accuracy:r=0.8
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6851,6 +7207,7 @@ units{
       targetAir:b=yes
       accuracy:r=0.8
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6890,6 +7247,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6929,6 +7287,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -6937,45 +7296,6 @@ units{
   tankModels{
     name:t="teamb_t35"
     tm:m=[[0.999968, 0, 0.00801955] [-0.000212922, 0.999647, 0.0265496] [-0.00801674, -0.0265504, 0.999615] [-819.66, 4.12044, -93.1048]]
-    unit_class:t="sw_strv_103a"
-    objLayer:i=1
-    closed_waypoints:b=no
-    isShipSpline:b=no
-    shipTurnRadius:r=100
-    weapons:t=""
-    bullets0:t="105mm_sweden_APDS"
-    bullets1:t=""
-    bullets2:t=""
-    bullets3:t=""
-    bulletsCount0:i=0
-    bulletsCount1:i=0
-    bulletsCount2:i=0
-    bulletsCount3:i=0
-    modification:t="manual_extinguisher"
-    modification:t="tank_medical_kit"
-    modification:t="tank_tool_kit"
-    crewSkillK:r=0
-    applyAllMods:b=no
-
-    props{
-      army:i=2
-      count:i=10
-      formation_type:t="rows"
-      formation_div:i=3
-      formation_step:p2=2.5, 2
-      formation_noise:p2=0.1, 0.1
-      uniqueName:t=""
-      attack_type:t="fire_at_will"
-      accuracy:r=0.9
-      effShootingRate:r=1
-    }
-
-    way{}
-  }
-
-  tankModels{
-    name:t="teamb_t45"
-    tm:m=[[0.999968, 0, 0.00801955] [-0.000212922, 0.999647, 0.0265496] [-0.00801674, -0.0265504, 0.999615] [-822.708, 4.12044, -93.1048]]
     unit_class:t="us_m60a2"
     objLayer:i=1
     closed_waypoints:b=no
@@ -7007,14 +7327,15 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
   }
 
   tankModels{
-    name:t="teamb_t55"
-    tm:m=[[0.999968, 0, 0.00801955] [-0.000212922, 0.999647, 0.0265496] [-0.00801674, -0.0265504, 0.999615] [-826.736, 4.12044, -93.1048]]
+    name:t="teamb_t45"
+    tm:m=[[0.999968, 0, 0.00801955] [-0.000212922, 0.999647, 0.0265496] [-0.00801674, -0.0265504, 0.999615] [-822.708, 4.12044, -93.1048]]
     unit_class:t="uk_rooikat_mttd"
     objLayer:i=1
     closed_waypoints:b=no
@@ -7046,14 +7367,15 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
   }
 
   tankModels{
-    name:t="teamb_t65"
-    tm:m=[[0.999968, 0, 0.00801955] [-0.000212922, 0.999647, 0.0265496] [-0.00801674, -0.0265504, 0.999615] [-829.957, 4.12044, -93.1048]]
+    name:t="teamb_t55"
+    tm:m=[[0.999968, 0, 0.00801955] [-0.000212922, 0.999647, 0.0265496] [-0.00801674, -0.0265504, 0.999615] [-826.736, 4.12044, -93.1048]]
     unit_class:t="us_m1128_mgs"
     objLayer:i=1
     closed_waypoints:b=no
@@ -7085,6 +7407,47 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamb_t65"
+    tm:m=[[0.999968, 0, 0.00801955] [-0.000212922, 0.999647, 0.0265496] [-0.00801674, -0.0265504, 0.999615] [-829.957, 4.12044, -93.1048]]
+    unit_class:t="sw_strv_103c"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t="105mm_usa_M735_APDS_FS"
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="manual_extinguisher"
+    modification:t="tank_medical_kit"
+    modification:t="tank_tool_kit"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=10
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+      accuracy:r=0.9
+      effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -7417,7 +7780,7 @@ units{
   tankModels{
     name:t="teama_upg31"
     tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [526.82, 4.26889, -170.451]]
-    unit_class:t="ussr_t_10m"
+    unit_class:t="ussr_object_279"
     objLayer:i=1
     closed_waypoints:b=no
     isShipSpline:b=no
@@ -8169,6 +8532,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8208,6 +8572,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8247,6 +8612,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8287,6 +8653,7 @@ units{
       targetAir:b=yes
       accuracy:r=0.8
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8326,6 +8693,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8365,6 +8733,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8373,13 +8742,13 @@ units{
   tankModels{
     name:t="teama_t31"
     tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [559.528, 4.17719, 28.9025]]
-    unit_class:t="ussr_t_10m"
+    unit_class:t="ussr_object_279"
     objLayer:i=1
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
     weapons:t=""
-    bullets0:t="122mm_ussr_APDS"
+    bullets0:t=""
     bullets1:t=""
     bullets2:t=""
     bullets3:t=""
@@ -8404,6 +8773,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8443,6 +8813,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8482,6 +8853,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8521,6 +8893,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8560,6 +8933,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8599,6 +8973,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8638,6 +9013,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8677,6 +9053,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8716,6 +9093,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8795,6 +9173,7 @@ units{
       targetAir:b=yes
       accuracy:r=0.8
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8834,6 +9213,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8873,6 +9253,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8914,6 +9295,7 @@ units{
       targetAir:b=yes
       accuracy:r=0.8
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8953,6 +9335,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -8992,6 +9375,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -9070,6 +9454,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -9109,6 +9494,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -9148,6 +9534,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -9187,6 +9574,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -9226,6 +9614,7 @@ units{
       attack_type:t="fire_at_will"
       accuracy:r=0.9
       effShootingRate:r=1
+      avoidObstacles:b=yes
     }
 
     way{}
@@ -9323,7 +9712,7 @@ units{
 
   structures{
     name:t="bomb_target"
-    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-363.208, 39.0272, -224.462]]
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1885.88, 135.296, 2247.81]]
     unit_class:t="flag_red"
     objLayer:i=2
     closed_waypoints:b=no
@@ -9469,7 +9858,7 @@ units{
   }
 
   objectGroups{
-    name:t="objectGroups_01"
+    name:t="teama_bomber_spawn_model"
     tm:m=[[0.0439374, 0, 0.999034] [0, 1, 0] [-0.999034, 0, 0.0439374] [2627.63, 185.727, 3628.07]]
     unit_class:t="sbd_3"
     objLayer:i=2
@@ -9907,6 +10296,146 @@ units{
       squad_members:t="teamb_bomber03"
     }
   }
+
+  structures{
+    name:t="bomb_target01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1910.14, 135.296, 2247.81]]
+    unit_class:t="flag_red"
+    objLayer:i=2
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  structures{
+    name:t="bomb_target02"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1934.4, 135.296, 2247.81]]
+    unit_class:t="flag_red"
+    objLayer:i=2
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  structures{
+    name:t="bomb_target03"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1860.63, 135.296, 2247.81]]
+    unit_class:t="flag_red"
+    objLayer:i=2
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  structures{
+    name:t="bomb_target04"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1835.46, 135.296, 2247.81]]
+    unit_class:t="flag_red"
+    objLayer:i=2
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
 }
 
 areas{
@@ -9960,7 +10489,7 @@ areas{
 
   teamb_bot_spawn_01{
     type:t="Sphere"
-    tm:m=[[11.2702, 0, 10.3273] [0, 15.2863, 0] [-10.3273, 0, 11.2702] [1330.94, 203.205, 938.413]]
+    tm:m=[[11.2702, 0, 10.3273] [0, 15.2863, 0] [-10.3273, 0, 11.2702] [1409.66, 194.098, 671.611]]
     objLayer:i=0
 
     props{}
@@ -9968,7 +10497,7 @@ areas{
 
   teamb_bot_spawn_02{
     type:t="Sphere"
-    tm:m=[[11.2702, 0, 10.3273] [0, 15.2863, 0] [-10.3273, 0, 11.2702] [1319.42, 203.205, 895.788]]
+    tm:m=[[11.2702, 0, 10.3273] [0, 15.2863, 0] [-10.3273, 0, 11.2702] [1423.04, 192.327, 628.986]]
     objLayer:i=0
 
     props{}
@@ -9976,7 +10505,7 @@ areas{
 
   teamb_bot_spawn_03{
     type:t="Sphere"
-    tm:m=[[11.2702, 0, 10.3273] [0, 15.2863, 0] [-10.3273, 0, 11.2702] [1363.19, 198.393, 935.891]]
+    tm:m=[[11.2702, 0, 10.3273] [0, 15.2863, 0] [-10.3273, 0, 11.2702] [1483.48, 191.186, 669.089]]
     objLayer:i=0
 
     props{}
@@ -9984,7 +10513,7 @@ areas{
 
   teamb_bot_spawn_04{
     type:t="Sphere"
-    tm:m=[[11.2702, 0, 10.3273] [0, 15.2863, 0] [-10.3273, 0, 11.2702] [1365.73, 197.738, 981.832]]
+    tm:m=[[11.2702, 0, 10.3273] [0, 15.2863, 0] [-10.3273, 0, 11.2702] [1457.6, 193.971, 764.738]]
     objLayer:i=0
 
     props{}
@@ -10177,6 +10706,102 @@ areas{
   teamb_bomber_spawn_zone02{
     type:t="Sphere"
     tm:m=[[582.715, 0, 852.268] [0, 1032.43, 0] [-852.268, 0, 582.715] [2771.9, 2000, -4308.85]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teama_bot_spawn_05{
+    type:t="Sphere"
+    tm:m=[[-0.988635, 0, -21.1474] [0, 21.1704, 0] [21.1474, 0, -0.988635] [2295.73, 195.553, 3393.67]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teamb_bot_spawn_05{
+    type:t="Sphere"
+    tm:m=[[11.2702, 0, 10.3273] [0, 15.2863, 0] [-10.3273, 0, 11.2702] [1416.41, 194.359, 715.03]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  bomb_target_spawn01{
+    type:t="Sphere"
+    tm:m=[[51.2168, 0, 0] [0, 51.2168, 0] [0, 0, 51.2168] [1861.62, 134.594, 2248.39]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  bomb_target_spawn02{
+    type:t="Sphere"
+    tm:m=[[51.2168, 0, 0] [0, 51.2168, 0] [0, 0, 51.2168] [1836.69, 134.594, 2248.39]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  bomb_target_spawn03{
+    type:t="Sphere"
+    tm:m=[[51.2168, 0, 0] [0, 51.2168, 0] [0, 0, 51.2168] [1939.33, 134.594, 2248.39]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  bomb_target_spawn04{
+    type:t="Sphere"
+    tm:m=[[51.2168, 0, 0] [0, 51.2168, 0] [0, 0, 51.2168] [1913.22, 134.594, 2248.39]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teamb_airspawn{
+    type:t="Sphere"
+    tm:m=[[36.3528, 0, 163.977] [0, 167.958, 0] [-163.977, 0, 36.3528] [1374.73, 1506.26, -5156.13]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teama_airspawn{
+    type:t="Sphere"
+    tm:m=[[-13.4784, 0, -154.06] [0, 154.648, 0] [154.06, 0, -13.4784] [1048.58, 1504.11, 6812.86]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teama_airspawn01{
+    type:t="Sphere"
+    tm:m=[[-13.4784, 0, -154.06] [0, 154.648, 0] [154.06, 0, -13.4784] [4153.32, 1504.11, 5520.27]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teama_airspawn02{
+    type:t="Sphere"
+    tm:m=[[-13.4784, 0, -154.06] [0, 154.648, 0] [154.06, 0, -13.4784] [-928.416, 1504.11, 5366.09]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teamb_airspawn01{
+    type:t="Sphere"
+    tm:m=[[36.3528, 0, 163.977] [0, 167.958, 0] [-163.977, 0, 36.3528] [3481.7, 1506.26, -4451.55]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  teamb_airspawn02{
+    type:t="Sphere"
+    tm:m=[[36.3528, 0, 163.977] [0, 167.958, 0] [-163.977, 0, 36.3528] [-866.361, 1506.26, -3805.06]]
     objLayer:i=0
 
     props{}

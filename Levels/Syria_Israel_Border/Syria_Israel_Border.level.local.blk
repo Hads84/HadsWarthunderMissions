@@ -1,0 +1,559 @@
+noteForCuriousHumanBeings:t="HANDS OFF!!!  This file and those in sub-folders here are used by DagorEditor, don't touch them!!!"
+"render shadows":b=yes
+"render VSM shadows":b=no
+"use SSAO":b=yes
+"use SSR":b=yes
+"no sun":b=no
+"no amb":b=no
+"no envi refl":b=no
+"no transp":b=no
+"no postfx":b=no
+shadowQ:i=1
+exposure:r=1
+rdbgType:i=0
+rdbgUseNmap:b=yes
+rdbgUseDtex:b=yes
+rdbgUseLt:b=yes
+rdbgUseChrome:b=yes
+environment_settings_fn:t=""
+paint_details_tex:t=""
+viewportLayoutId:i=127
+animateViewports:b=no
+useOccludersAndPortals:b=no
+use_dyn_lighting:b=no
+lastPlugin:t="heightmapLand"
+
+render{
+  renderType:i=2
+}
+
+viewport0{
+  orthogonalProjection:b=no
+  projectionFov:r=1.57
+  projectionFarPlane:r=15000
+  projectionNearPlane:r=0.1
+  orthogonalZoom:r=1
+  currentProjection:t="Perspective"
+  viewMatrix0:p3=0.484338, 0.44105, 0.755574
+  viewMatrix1:p3=1.09822e-05, 0.863628, -0.504131
+  viewMatrix2:p3=-0.874881, 0.244178, 0.418282
+  viewMatrix3:p3=-1111.03, -2755.5, 11917.1
+  wireframe:b=no
+  stat3d:b=no
+  stat3d_opaque:b=no
+  show_camera_pos:b=no
+
+  stat3d_list{}
+}
+
+freeCamera{
+  move_step:r=18
+  rotation_step:r=18
+  strife_step:r=18
+  control_multiplier:r=88.6667
+
+  commonInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+
+  hangInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+
+  vangInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+}
+
+maxCamera{
+  move_step:r=8
+  rotation_step:r=18
+  strife_step:r=8
+  control_multiplier:r=12
+
+  commonInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+
+  hangInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+
+  vangInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+}
+
+fpsCamera{
+  move_step:r=3.5
+  rotation_step:r=18
+  strife_step:r=3.5
+  control_multiplier:r=3.5
+  height:r=1.8
+  half_height:r=1.2
+  step_height:r=0.5
+  step_half_height:r=0.2
+  radius:r=0.3
+  gravity:r=9.8
+  jumpSpeed:r=4
+
+  commonInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+
+  hangInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+
+  vangInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+}
+
+tpsCamera{
+  move_step:r=3.5
+  rotation_step:r=18
+  strife_step:r=3.5
+  control_multiplier:r=3.5
+  height:r=1.8
+  half_height:r=1.2
+  step_height:r=0.5
+  step_half_height:r=0.2
+  radius:r=0.3
+  gravity:r=9.8
+  jumpSpeed:r=4
+  minDist:r=4.5
+  maxMaxDist:r=10
+  maxOutSpeed:r=5
+  minVAng:r=-1.53589
+  maxVAng:r=1.39626
+
+  commonInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+
+  hangInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+
+  vangInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+}
+
+carCamera{
+  move_step:r=3.5
+  rotation_step:r=18
+  strife_step:r=3.5
+  control_multiplier:r=3.5
+  height:r=1.8
+  half_height:r=1.2
+  step_height:r=0.5
+  step_half_height:r=0.2
+  radius:r=0.3
+  gravity:r=9.8
+  jumpSpeed:r=4
+  minDist:r=4.5
+  maxMaxDist:r=10
+  maxOutSpeed:r=5
+  minVAng:r=-1.53589
+  maxVAng:r=1.39626
+
+  commonInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+
+  hangInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+
+  vangInertia{
+    stop:r=0.05
+    move:r=0.9
+  }
+}
+
+grid{
+  grid_visible0:b=yes
+  grid_visible1:b=no
+  grid_visible2:b=no
+  grid_visible3:b=no
+  step:r=1000
+  angle_step:r=2.5
+  scale_step:r=10
+  grid_height:r=0
+  move_snap_on:b=yes
+  rotate_snap_on:b=yes
+  scale_snap_on:b=yes
+  draw_major_lines:b=yes
+}
+
+ViewportsParams{}
+local_plugin_data{
+  environment{
+    visible:b=yes
+    forceWeather:b=no
+    forceGeoDate:b=no
+    forceTime:b=no
+    forceSeed:b=no
+    latitude:r=55
+    yyyy:i=1944
+    mm:i=6
+    dd:i=6
+    timeOfDay:r=12
+    rndSeed:i=1234
+    znzfScale:r=1
+
+    panel_state{
+      panel_0{
+        vscroll:i=0
+      }
+
+      group_20045{
+        minimize:b=no
+      }
+
+      group_20023{
+        minimize:b=yes
+      }
+
+      group_20029{
+        minimize:b=yes
+      }
+    }
+  }
+
+  scnExport{
+    visible:b=yes
+  }
+
+  _acEntMgr{
+    visible:b=no
+  }
+
+  _collision{
+    visible:b=no
+  }
+
+  _dmEntMgr{
+    visible:b=no
+  }
+
+  _fxEntMgr{
+    visible:b=yes
+  }
+
+  _genSpline{
+    visible:b=yes
+  }
+
+  _goEntMgr{
+    visible:b=yes
+  }
+
+  _grassObj{
+    visible:b=yes
+  }
+
+  _hmapObj{
+    visible:b=yes
+  }
+
+  _lmeshObj{
+    visible:b=no
+  }
+
+  _lmeshObjDet{
+    visible:b=yes
+  }
+
+  _prefabEntMgr{
+    visible:b=yes
+  }
+
+  _rend_ent_geom{
+    visible:b=yes
+  }
+
+  _riEntMgr{
+    visible:b=yes
+  }
+
+  _singleEnt{
+    visible:b=yes
+  }
+
+  _tileLcPoly{
+    visible:b=yes
+  }
+
+  _tileMask{
+    visible:b=yes
+  }
+
+  _waterSurf{
+    visible:b=yes
+  }
+
+  staticGeometry{
+    visible:b=no
+    lastImported:t=""
+  }
+
+  heightmapLand{
+    visible:b=yes
+    lastHmapImportPath:t="C:/Users/hadle/Downloads/render.tif"
+    lastLandExportPath:t="E:/Games/Steam/steamapps/common/War Thunder/levels"
+    lastHmapExportPath:t=""
+    lastColormapExportPath:t=""
+    lastTexImportPath:t=""
+    autoUpdateSpline:b=yes
+    maxPointVisDist:r=5000
+    lastExpLoftFolder:t=""
+    lastExportPath:t="./."
+    lastImportPath:t="./."
+    showMonochromeLand:b=no
+    showHtLevelCurves:b=no
+    htLevelCurveStep:r=5
+    htLevelCurveThickness:r=0.3
+    htLevelCurveOfs:r=0
+    htLevelCurveDarkness:r=0.8
+    render.hm2YbaseForLod:r=0
+    showExportedNavMesh:b=yes
+    showExportedCovers:b=yes
+    showExportedNavMeshContours:b=yes
+    lastExpLoftMain:b=yes
+    lastExpLoftDet:b=yes
+    lastExpLoftMainSz:i=4096
+    lastExpLoftDetSz:i=4096
+    lastExpLoftUseRectM:b=no
+    lastExpLoftRectM0:p2=0, 0
+    lastExpLoftRectM1:p2=1024, 1024
+    lastExpLoftUseRectD:b=no
+    lastExpLoftRectD0:p2=0, 0
+    lastExpLoftRectD1:p2=1024, 1024
+    lastExpLoftCreateAreaSubfolders:b=yes
+
+    smoothBrush{
+      stepDiv:r=2
+      radius:r=1
+      opacity:i=100
+      hardness:i=100
+      autorepeat:b=no
+      useAutoAngle:b=no
+      currentAngle:r=0
+      maskName:t="plateu_eros_512.r16"
+      halfKernelSize:i=1
+      sigma:r=1
+    }
+
+    alignBrush{
+      stepDiv:r=2
+      radius:r=1
+      opacity:i=100
+      hardness:i=100
+      autorepeat:b=no
+      useAutoAngle:b=no
+      currentAngle:r=0
+      maskName:t="plateu_eros_512.r16"
+      trail:r=1
+      sigma:r=1
+      continuos:b=no
+      alignCollision:b=no
+      collisionOffset:r=-0.1
+      alignCollisionTop:b=no
+    }
+
+    shadowsBrush{
+      radius:r=1
+    }
+
+    scriptBrush{
+      radius:r=960
+    }
+
+    hillUpBrush{
+      stepDiv:r=2
+      radius:r=800
+      opacity:i=100
+      hardness:i=100
+      autorepeat:b=no
+      useAutoAngle:b=no
+      currentAngle:r=0
+      maskName:t="peak_eros_512.r16"
+      limitValue:r=0
+      power:r=128
+      limitValueUse:b=no
+    }
+
+    hillDownBrush{
+      stepDiv:r=2
+      radius:r=1
+      opacity:i=100
+      hardness:i=100
+      autorepeat:b=no
+      useAutoAngle:b=no
+      currentAngle:r=0
+      maskName:t="plateu_eros_512.r16"
+      limitValue:r=0
+      power:r=1
+      limitValueUse:b=no
+    }
+
+    panel_state{
+      panel_0{
+        vscroll:i=0
+      }
+
+      group_35{
+        minimize:b=yes
+      }
+
+      group_5216{
+        minimize:b=no
+      }
+
+      group_1{
+        minimize:b=yes
+      }
+
+      group_0{
+        minimize:b=yes
+      }
+
+      group_895{
+        minimize:b=yes
+      }
+
+      group_903{
+        minimize:b=no
+      }
+
+      group_922{
+        minimize:b=no
+      }
+
+      group_941{
+        minimize:b=no
+      }
+
+      group_960{
+        minimize:b=no
+      }
+
+      group_979{
+        minimize:b=no
+      }
+
+      group_998{
+        minimize:b=no
+      }
+
+      group_22{
+        minimize:b=no
+      }
+
+      group_40{
+        minimize:b=no
+      }
+
+      group_290{
+        minimize:b=yes
+      }
+
+      group_5189{
+        minimize:b=yes
+      }
+
+      group_5180{
+        minimize:b=yes
+      }
+
+      group_5170{
+        minimize:b=yes
+      }
+
+      group_5193{
+        minimize:b=yes
+      }
+
+      group_58{
+        minimize:b=yes
+      }
+
+      group_5185{
+        minimize:b=yes
+      }
+
+      group_5284{
+        minimize:b=yes
+      }
+
+      group_5247{
+        minimize:b=yes
+      }
+
+      group_5241{
+        minimize:b=yes
+      }
+    }
+  }
+
+  clipping{
+    visible:b=no
+    vcm_rad:r=50
+    showGcBox:b=yes
+    showGcSph:b=yes
+    showGcCap:b=yes
+    showGcMesh:b=yes
+    showVcm:b=yes
+    showDags:b=no
+    showGameFrt:b=no
+  }
+
+  mission_editor{
+    visible:b=no
+    trigger_panel_width:i=560
+
+    editor_mode{
+      show_units_zones_names:b=no
+      show_waypoints:b=no
+      show_units_icons:b=yes
+      show_units_assets:b=no
+      draw_objects_axis:b=no
+      select_mode:i=-1
+    }
+
+    viewPt{
+      targetHt:r=1
+      zbias:r=0
+      zslopebias:r=0
+    }
+  }
+}
+
+filters_export{
+  _genSpline:b=yes
+  _grassObj:b=yes
+  _hmapObj:b=yes
+  _lmeshObj:b=yes
+  _lmeshObjDet:b=yes
+  _singleEnt:b=yes
+  _tileLcPoly:b=yes
+  _tileMask:b=yes
+  _waterSurf:b=yes
+}

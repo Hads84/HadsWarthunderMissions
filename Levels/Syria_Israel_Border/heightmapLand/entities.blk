@@ -1,0 +1,11 @@
+entity_colliders{
+  tracertUpOffset:r=1
+  plugin:t="(srv) Prefab entities"
+  plugin:t="(srv) Render instance entities"
+  plugin:t="Collision plugin"
+  plugin:t="HeightMap"
+  plugin:t="LoftGeom"
+  plugin:t="PolyGeom"
+  plugin:t="RoadGeom"
+  plugin:t="SGeometry"
+}

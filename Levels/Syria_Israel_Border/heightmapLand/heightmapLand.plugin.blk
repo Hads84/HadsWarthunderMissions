@@ -1,0 +1,325 @@
+lastExpLoftMain:b=yes
+lastExpLoftDet:b=yes
+lastExpLoftMainSz:i=4096
+lastExpLoftDetSz:i=4096
+lastExpLoftUseRectM:b=no
+lastExpLoftRectM0:p2=0, 0
+lastExpLoftRectM1:p2=1024, 1024
+lastExpLoftUseRectD:b=no
+lastExpLoftRectD0:p2=0, 0
+lastExpLoftRectD1:p2=1024, 1024
+lastExpLoftCreateAreaSubfolders:b=yes
+hmapExportType:t="lmesh"
+meshPreviewDistance:r=45000
+meshCells:i=16
+meshErrorThreshold:r=1
+numMeshVertices:i=50000
+lod1TrisDensity:i=30
+importanceMaskScale:r=0.35
+geomLoftBelowAll:b=no
+hasWaterSurface:b=no
+waterMatAsset:t=""
+waterSurfaceLevel:r=0
+minUnderwaterBottomDepth:r=0
+hasWorldOcean:b=no
+worldOceanExpand:r=100
+worldOceanShorelineTolerance:r=0.9
+lastMinHeight:r=963
+lastHeightRange:r=250
+doAutocenter:b=yes
+gridCellSize:r=8.75
+heightScale:r=250
+heightOffset:r=963
+detDivisor:i=0
+detRect0:p2=0, 0
+detRect1:p2=0, 0
+collisionArea_ofs:p2=0, 0
+collisionArea_sz:p2=100, 100
+collisionArea_show:b=no
+heightMapOffset:p2=-2240, -2240
+shadowBias:r=0.01
+shadowTraceDist:r=1000
+shadowDensity:r=0.9
+tileXSize:r=4
+tileYSize:r=4
+tileTexName:t="detail_stones"
+useVertTex:b=yes
+useVertTexForHMAP:b=yes
+vertTexName:t="afr_rocks_b"
+vertNmTexName:t="afr_rocks_b_nm"
+vertDetTexName:t=""
+vertTexXZtile:r=256
+vertTexYtile:r=256
+vertTexYOffset:r=0
+vertTexAng0:r=40
+vertTexAng1:r=43
+vertTexHorBlend:r=10
+vertDetTexXZtile:r=1
+vertDetTexYtile:r=1
+vertDetTexYOffset:r=0
+sunLightColor:c=81, 74, 55, 255
+skyLightColor:c=3, 5, 9, 255
+sunLightPower:r=5
+skyLightPower:r=5
+specularColor:c=81, 74, 55, 255
+specularMul:r=5
+specularPower:r=30
+sunAzimuth:r=0.242631
+sunZenith:r=0.16935
+landClsMapScaleFactor:i=4
+lightmapScaleFactor:i=1
+syncLight:b=no
+syncDirLight:b=no
+showBlueWhiteMask:b=no
+
+objects{
+  areLandHoleBoxesVisible:b=yes
+}
+
+render{
+  gridStep:i=1
+  elemSize:i=8
+  radiusElems:i=8
+  ringElems:i=2
+  numLods:i=5
+  maxDetailLod:i=4
+  detailTile:r=4
+  canyonHorTile:r=10
+  canyonVertTile:r=10
+  canyonAngle:r=60
+  canyonFadeAngle:r=10
+  holesLod:i=5
+  showFinalHM:i=0
+  monoLand:c=20, 120, 20, 255
+}
+
+colorGenParams{
+  fullGrassAngle:r=20
+  startGrassAngle:r=40
+  sandCurvature:r=50
+  dirtColor:c=120, 90, 40, 0
+  sandColor:c=160, 150, 120, 0
+  grassColor:c=120, 120, 30, 1
+  oceanHeight:r=1
+  waterHeight:r=1
+  debug:r=0
+  shoreGrad:r=1
+  jungleAngleStart:r=15
+  jungleAngleGrad:r=20
+  cliffFullAngle:r=20
+  cliffAngleGrad:r=31
+
+  town{
+    asset:t=""
+  }
+
+  forest{
+    asset:t="florida_island_jungle_b"
+  }
+
+  field{
+    asset:t="stalingrad_fields_b"
+  }
+
+  ocean{
+    asset:t=""
+  }
+
+  clouds{
+    asset:t=""
+  }
+
+  airfield{
+    asset:t=""
+  }
+
+  town_tile{
+    asset:t=""
+  }
+
+  largefield{
+    asset:t=""
+  }
+
+  field_b{
+    asset:t="stalingrad_fields_b"
+  }
+
+  field_a{
+    asset:t="stalingrad_fields_b"
+  }
+
+  meadows{
+    asset:t=""
+  }
+
+  village{
+    asset:t="honolulu_cottages_b"
+  }
+
+  ground{
+    asset:t=""
+  }
+
+  unique{
+    asset:t=""
+  }
+
+  factory{
+    asset:t=""
+  }
+
+  field_village{
+    asset:t=""
+  }
+
+  fields_b{
+    asset:t="iwo_jima_fields_b"
+  }
+
+  fields_a{
+    asset:t="iwo_jima_fields_a"
+  }
+
+  city{
+    asset:t="sicily_village"
+  }
+
+  shore{
+    asset:t="iwo_jima_sand"
+  }
+
+  rocks{
+    asset:t="iwo_jima_rock"
+  }
+
+  debug_landclass{
+    asset:t=""
+  }
+
+  unic{
+    asset:t="florida_island_unic"
+  }
+
+  unic_a{
+    asset:t="iwo_jima_airfields_unic"
+  }
+
+  unic_b{
+    asset:t="iwo_jima_village"
+  }
+}
+
+disabled_shadows{
+  disable:t="(srv) Prefab entities"
+  disable:t="Collision plugin"
+  disable:t="RoadGeom"
+  disable:t="LoftGeom"
+  disable:t="PolyGeom"
+  disable:t="SGeometry"
+}
+
+genLayers{
+  layer{
+    name:t="base"
+    lc1:t="iwo_jima_fields_b"
+    lcIdx:i=0
+    writeDetTexThres:r=0.001
+    writeLand1Thres:r=0.001
+    writeLand2Thres:r=0.001
+  }
+
+  layer{
+    name:t="forest"
+    lc1:t="mozdok_forest"
+    lcIdx:i=1
+    ht_conv:i=1
+    ht_v0:r=17
+    ht_dv:r=5
+    ang_conv:i=2
+    ang_v0:r=14
+    ang_dv:r=5
+    writeDetTexThres:r=0.01
+    writeLand1Thres:r=0.3
+    writeLand2Thres:r=0.001
+  }
+
+  layer{
+    name:t="sand"
+    lc1:t="florida_island_sand"
+    lcIdx:i=2
+    ht_conv:i=1
+    ht_v0:r=32
+    ht_dv:r=-8
+    writeDetTexThres:r=0.001
+    writeLand1Thres:r=0.3
+    writeLand2Thres:r=0.001
+  }
+
+  layer{
+    name:t="airfields"
+    lc1:t="iwo_jima_airfields_unic"
+    lcIdx:i=3
+    mask_conv:i=1
+    mask:t="unic_a_mask"
+    writeImportance:b=yes
+    writeDetTexThres:r=0.001
+    writeLand1Thres:r=0.1
+    writeLand2Thres:r=0.001
+  }
+
+  layer{
+    name:t="village"
+    lc1:t="iwo_jima_village"
+    lcIdx:i=4
+    mask_conv:i=1
+    mask:t="unic_b_mask"
+    writeDetTexThres:r=0.001
+    writeLand1Thres:r=0.1
+    writeLand2Thres:r=0.001
+  }
+
+  layer{
+    name:t="shore"
+    lc1:t="florida_island_sand"
+    lcIdx:i=5
+    mask_conv:i=1
+    mask:t="shore_mask"
+    writeDetTexThres:r=0.001
+    writeLand1Thres:r=0.3
+    writeLand2Thres:r=0.001
+  }
+}
+
+rendinstDetail2Color{
+  useRendinstDetail2Modulation:b=no
+  detail2_color_from:c=128, 128, 128, 128
+  detail2_color_to:c=128, 128, 128, 128
+}
+
+landModulateColorTex{
+  use:b=no
+  texName:t=""
+  edge0:r=0
+  edge1:r=1
+}
+
+horizontalTex{
+  use:b=no
+  texName:t=""
+  detailTexName:t=""
+  tileSizeX:r=128
+  tileSizeY:r=128
+  offsetX:r=0
+  offsetY:r=0
+  detailTexSizeX:r=128
+  detailTexSizeY:r=128
+}
+
+navMesh{
+  navArea:i=0
+  export:b=yes
+  hasWater:b=yes
+  cellSize:r=8
+  cellHeight:r=4
+}

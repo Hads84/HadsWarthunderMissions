@@ -1,0 +1,122 @@
+noteForCuriousHumanBeings:t="HANDS OFF!!!  This file and those in sub-folders here are used by DagorEditor, don't touch them!!!"
+lastUniqueId:i=1
+exportPath:t=""
+ambient_light_color:c=100, 172, 200, 255
+ambient_light_mult:r=0.375
+direct_light_color:c=255, 255, 242, 255
+direct_light_mult:r=0.685272
+light_direction_alpha:r=0.16935
+light_direction_beta:r=1.32817
+use_direct_light:b=yes
+tex_quality:i=0
+
+pluginsExport{
+  environment:b=yes
+  scnExport:b=yes
+  _acEntMgr:b=yes
+  _collision:b=yes
+  _dmEntMgr:b=yes
+  _fxEntMgr:b=yes
+  _genSpline:b=yes
+  _goEntMgr:b=yes
+  _grassObj:b=yes
+  _hmapObj:b=yes
+  _lmeshObj:b=yes
+  _lmeshObjDet:b=yes
+  _prefabEntMgr:b=yes
+  _rend_ent_geom:b=yes
+  _riEntMgr:b=yes
+  _singleEnt:b=yes
+  _tileLcPoly:b=yes
+  _tileMask:b=yes
+  _waterSurf:b=yes
+  staticGeometry:b=yes
+  heightmapLand:b=yes
+  clipping:b=yes
+  mission_editor:b=yes
+}
+
+pluginsExternal{
+  environment:b=no
+  scnExport:b=no
+  _acEntMgr:b=no
+  _collision:b=no
+  _dmEntMgr:b=no
+  _fxEntMgr:b=no
+  _genSpline:b=no
+  _goEntMgr:b=no
+  _grassObj:b=no
+  _hmapObj:b=no
+  _lmeshObj:b=no
+  _lmeshObjDet:b=no
+  _prefabEntMgr:b=no
+  _rend_ent_geom:b=no
+  _riEntMgr:b=no
+  _singleEnt:b=no
+  _tileLcPoly:b=no
+  _tileMask:b=no
+  _waterSurf:b=no
+  staticGeometry:b=no
+  heightmapLand:b=no
+  clipping:b=no
+  mission_editor:b=no
+}
+
+externalSource{
+  environment:b=no
+  scnExport:b=no
+  _acEntMgr:b=no
+  _collision:b=no
+  _dmEntMgr:b=no
+  _fxEntMgr:b=no
+  _genSpline:b=no
+  _goEntMgr:b=no
+  _grassObj:b=no
+  _hmapObj:b=no
+  _lmeshObj:b=no
+  _lmeshObjDet:b=no
+  _prefabEntMgr:b=no
+  _rend_ent_geom:b=no
+  _riEntMgr:b=no
+  _singleEnt:b=no
+  _tileLcPoly:b=no
+  _tileMask:b=no
+  _waterSurf:b=no
+  staticGeometry:b=no
+  heightmapLand:b=no
+  clipping:b=no
+  mission_editor:b=no
+}
+
+externalPathes{
+  environment:t=""
+  scnExport:t=""
+  _acEntMgr:t=""
+  _collision:t=""
+  _dmEntMgr:t=""
+  _fxEntMgr:t=""
+  _genSpline:t=""
+  _goEntMgr:t=""
+  _grassObj:t=""
+  _hmapObj:t=""
+  _lmeshObj:t=""
+  _lmeshObjDet:t=""
+  _prefabEntMgr:t=""
+  _rend_ent_geom:t=""
+  _riEntMgr:t=""
+  _singleEnt:t=""
+  _tileLcPoly:t=""
+  _tileMask:t=""
+  _waterSurf:t=""
+  staticGeometry:t=""
+  heightmapLand:t=""
+  clipping:t=""
+  mission_editor:t=""
+}
+
+disabled_colliders{
+  name:t="(srv) Render instance entities"
+  name:t="Collision plugin"
+  name:t="PolyGeom"
+  name:t="RoadGeom"
+}

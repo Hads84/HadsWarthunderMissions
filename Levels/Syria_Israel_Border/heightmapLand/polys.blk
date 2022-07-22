@@ -1,0 +1,49 @@
+polygon{
+  name:t="water_3d_001"
+  notes:t=""
+  layerOrder:i=0
+  blkGenName:t="water_3d"
+  modifType:i=0
+  polyHmapAlign:b=no
+  polyObjOffs:p2=0, 0
+  polyObjRot:r=0
+  polySmooth:b=no
+  polyCurv:r=1
+  polyMinStep:r=10
+  polyMaxStep:r=100
+  exportable:b=yes
+  altGeom:b=yes
+  rseed:i=7153
+
+  modifParams{
+    width:r=60
+    smooth:r=10
+    offsetPow:r=2
+    offset:p2=-0.05, 0
+    additive:b=no
+  }
+
+  point{
+    useDefSplineGen:b=yes
+    blkGenName:t=""
+    pt:p3=-64000, 1, 64000
+  }
+
+  point{
+    useDefSplineGen:b=yes
+    blkGenName:t=""
+    pt:p3=64000, 1, 64000
+  }
+
+  point{
+    useDefSplineGen:b=yes
+    blkGenName:t=""
+    pt:p3=64000, 1, -64000
+  }
+
+  point{
+    useDefSplineGen:b=yes
+    blkGenName:t=""
+    pt:p3=-64000, 1, -64000
+  }
+}

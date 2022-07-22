@@ -1,0 +1,25 @@
+disabled_geom_export{
+  name:t="(filter) Show entity collision geom"
+  name:t="(filter) Show entity visual geom"
+  name:t="(filter) Water surface geom"
+  name:t="(srv) AnimChar entities"
+  name:t="(srv) DynModel entities"
+  name:t="(srv) Effect entities"
+  name:t="(srv) Invalid entities"
+  name:t="Collision"
+  name:t="Environment"
+  name:t="Mission Editor"
+  name:t="ScnExport"
+  name:t="Script panel customizer"
+  name:t="Wind"
+}
+
+splitter{
+  trianglesPerObjectTargeted:i=5000
+  minRadiusToSplit:r=1000
+  maxCombinedSize:r=2000
+  combineObjects:b=yes
+  splitObjects:b=yes
+  optimizeForVertexCache:b=yes
+  buildShadowSD:b=no
+}

@@ -1,0 +1,5 @@
+weatherPreset:t="../gamedata/environments/weather_preset_1.blk"
+weatherType:t="clear"
+enviName:t="morning"
+commonFile:t="../tools/stub_for_editor_env_plugin_common.blk"
+levelFile:t="../tools/stub_for_editor_env_plugin.blk"

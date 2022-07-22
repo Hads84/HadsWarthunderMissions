@@ -1453,7 +1453,7 @@ triggers{
     isCategory:b=yes
     is_enabled:b=yes
 
-    teamb_spawn_line01{
+    teamb_try_spawn_line01{
       is_enabled:b=yes
       comments:t=""
 
@@ -1475,7 +1475,50 @@ triggers{
           value:i=0
           comparasion_func:t="equal"
         }
+      }
 
+      actions{
+        triggerEnable{
+          target:t="teamb_spawn_line01"
+        }
+
+        wait{
+          time:r=5
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teamb_next_line"
+        }
+
+        varModify{
+          operator:t="modAB"
+          value:r=4
+          var:t="teamb_next_line"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teamb_spawn_line01{
+      is_enabled:b=no
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
         unitWhenCountMatches{
           object_type:t="isNotMarked"
           object_marking:i=0
@@ -1503,70 +1546,6 @@ triggers{
           name:t="tankBot"
           objects:t="@teamb_current_line01"
           loadType:t="tree"
-        }
-
-        wait{
-          time:r=5
-        }
-
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teamb_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teamb_next_line"
-        }
-      }
-
-      else_actions{
-        triggerActivate{
-          target:t="teamb_nospawn_next_line01"
-          activate_type:t="checkConidtions"
-          check_trigger_status:b=no
-          after_activation:t="disable"
-        }
-      }
-    }
-
-    teamb_nospawn_next_line01{
-      is_enabled:b=no
-      comments:t=""
-
-      props{
-        actionsType:t="PERFORM_ONE_BY_ONE"
-        conditionsType:t="ALL"
-        enableAfterComplete:b=no
-      }
-
-      events{
-        periodicEvent{
-          time:r=1
-        }
-      }
-
-      conditions{
-        varCompareInt{
-          var_value:t="teamb_next_line"
-          value:i=0
-          comparasion_func:t="equal"
-        }
-      }
-
-      actions{
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teamb_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teamb_next_line"
         }
       }
 
@@ -1712,7 +1691,7 @@ triggers{
       else_actions{}
     }
 
-    teamb_spawn_line02{
+    teamb_try_spawn_line02{
       is_enabled:b=yes
       comments:t=""
 
@@ -1734,7 +1713,50 @@ triggers{
           value:i=1
           comparasion_func:t="equal"
         }
+      }
 
+      actions{
+        triggerEnable{
+          target:t="teamb_spawn_line02"
+        }
+
+        wait{
+          time:r=5
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teamb_next_line"
+        }
+
+        varModify{
+          operator:t="modAB"
+          value:r=4
+          var:t="teamb_next_line"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teamb_spawn_line02{
+      is_enabled:b=no
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
         unitWhenCountMatches{
           object_type:t="isNotMarked"
           object_marking:i=0
@@ -1762,70 +1784,6 @@ triggers{
           name:t="tankBot"
           objects:t="@teamb_current_line02"
           loadType:t="tree"
-        }
-
-        wait{
-          time:r=5
-        }
-
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teamb_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teamb_next_line"
-        }
-      }
-
-      else_actions{
-        triggerActivate{
-          target:t="teamb_nospawn_next_line02"
-          activate_type:t="checkConidtions"
-          check_trigger_status:b=no
-          after_activation:t="disable"
-        }
-      }
-    }
-
-    teamb_nospawn_next_line02{
-      is_enabled:b=no
-      comments:t=""
-
-      props{
-        actionsType:t="PERFORM_ONE_BY_ONE"
-        conditionsType:t="ALL"
-        enableAfterComplete:b=no
-      }
-
-      events{
-        periodicEvent{
-          time:r=1
-        }
-      }
-
-      conditions{
-        varCompareInt{
-          var_value:t="teamb_next_line"
-          value:i=1
-          comparasion_func:t="equal"
-        }
-      }
-
-      actions{
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teamb_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teamb_next_line"
         }
       }
 
@@ -1971,7 +1929,7 @@ triggers{
       else_actions{}
     }
 
-    teamb_spawn_line03{
+    teamb_try_spawn_line03{
       is_enabled:b=yes
       comments:t=""
 
@@ -1993,7 +1951,50 @@ triggers{
           value:i=2
           comparasion_func:t="equal"
         }
+      }
 
+      actions{
+        triggerEnable{
+          target:t="teamb_spawn_line03"
+        }
+
+        wait{
+          time:r=5
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teamb_next_line"
+        }
+
+        varModify{
+          operator:t="modAB"
+          value:r=4
+          var:t="teamb_next_line"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teamb_spawn_line03{
+      is_enabled:b=no
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
         unitWhenCountMatches{
           object_type:t="isNotMarked"
           object_marking:i=0
@@ -2021,70 +2022,6 @@ triggers{
           name:t="tankBot"
           objects:t="@teamb_current_line03"
           loadType:t="tree"
-        }
-
-        wait{
-          time:r=5
-        }
-
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teamb_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teamb_next_line"
-        }
-      }
-
-      else_actions{
-        triggerActivate{
-          target:t="teamb_nospawn_next_line03"
-          activate_type:t="checkConidtions"
-          check_trigger_status:b=no
-          after_activation:t="disable"
-        }
-      }
-    }
-
-    teamb_nospawn_next_line03{
-      is_enabled:b=no
-      comments:t=""
-
-      props{
-        actionsType:t="PERFORM_ONE_BY_ONE"
-        conditionsType:t="ALL"
-        enableAfterComplete:b=no
-      }
-
-      events{
-        periodicEvent{
-          time:r=1
-        }
-      }
-
-      conditions{
-        varCompareInt{
-          var_value:t="teamb_next_line"
-          value:i=2
-          comparasion_func:t="equal"
-        }
-      }
-
-      actions{
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teamb_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teamb_next_line"
         }
       }
 
@@ -2230,7 +2167,7 @@ triggers{
       else_actions{}
     }
 
-    teamb_spawn_line04{
+    teamb_try_spawn_line04{
       is_enabled:b=yes
       comments:t=""
 
@@ -2248,11 +2185,74 @@ triggers{
 
       conditions{
         varCompareInt{
-          var_value:t="teamb_next_line"
-          value:i=3
-          comparasion_func:t="equal"
+          var_value:t="teamb_spawn_points"
+          value:i=500
+          comparasion_func:t="notLess"
         }
 
+        unitWhenInArea{
+          math:t="3D"
+          object_type:t="isAlive"
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          check_objects:t="any"
+          object:t="players"
+          target:t="teamb_spawner_line04"
+        }
+      }
+
+      actions{
+        triggerEnable{
+          target:t="teamb_spawn_line04"
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=-500
+          var:t="teamb_spawn_points"
+        }
+
+        missionSetTargetsIndicator{
+          target_type:t="isAlive"
+          target_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          delta:i=0
+          icon:t="tank"
+          "icon army":i=2
+          set:b=yes
+          target:t="bot_vehicles"
+          var:t="teamb_spawn_points"
+          team:t="Both"
+        }
+
+        wait{
+          time:r=5
+        }
+      }
+
+      else_actions{}
+    }
+
+    teamb_spawn_line04{
+      is_enabled:b=no
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
         unitWhenCountMatches{
           object_type:t="isNotMarked"
           object_marking:i=0
@@ -2271,9 +2271,16 @@ triggers{
           object:t="@teamb_current_line04"
           object_type:t="isNotMarked"
           target:t="teamb_bot_spawn_04"
-          randomObjectsCount:i=1
+          randomObjectsCount:i=4
           randomSpawn:b=yes
           setObjectMarking:i=1
+
+          formation{
+            formation_type:t="rows"
+            formation_div:i=3
+            formation_step:p2=2.5, 2
+            formation_noise:p2=0.1, 0.1
+          }
         }
 
         unitMoveTo{
@@ -2295,70 +2302,6 @@ triggers{
           horizontalDirectionForTeleport:b=yes
           object:t="@teamb_current_line04"
           move_type:t="move"
-        }
-
-        wait{
-          time:r=5
-        }
-
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teamb_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teamb_next_line"
-        }
-      }
-
-      else_actions{
-        triggerActivate{
-          target:t="teamb_nospawn_next_line04"
-          activate_type:t="checkConidtions"
-          check_trigger_status:b=no
-          after_activation:t="disable"
-        }
-      }
-    }
-
-    teamb_nospawn_next_line04{
-      is_enabled:b=no
-      comments:t=""
-
-      props{
-        actionsType:t="PERFORM_ONE_BY_ONE"
-        conditionsType:t="ALL"
-        enableAfterComplete:b=no
-      }
-
-      events{
-        periodicEvent{
-          time:r=1
-        }
-      }
-
-      conditions{
-        varCompareInt{
-          var_value:t="teamb_next_line"
-          value:i=3
-          comparasion_func:t="equal"
-        }
-      }
-
-      actions{
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teamb_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teamb_next_line"
         }
       }
 
@@ -2504,7 +2447,7 @@ triggers{
       else_actions{}
     }
 
-    teamb_spawn_line05{
+    teamb_try_spawn_line05{
       is_enabled:b=yes
       comments:t=""
 
@@ -2523,10 +2466,53 @@ triggers{
       conditions{
         varCompareInt{
           var_value:t="teamb_next_line"
-          value:i=4
+          value:i=3
           comparasion_func:t="equal"
         }
+      }
 
+      actions{
+        triggerEnable{
+          target:t="teamb_spawn_line05"
+        }
+
+        wait{
+          time:r=5
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teamb_next_line"
+        }
+
+        varModify{
+          operator:t="modAB"
+          value:r=4
+          var:t="teamb_next_line"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teamb_spawn_line05{
+      is_enabled:b=no
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
         unitWhenCountMatches{
           object_type:t="isNotMarked"
           object_marking:i=0
@@ -2554,70 +2540,6 @@ triggers{
           name:t="tankBot"
           objects:t="@teamb_current_line05"
           loadType:t="tree"
-        }
-
-        wait{
-          time:r=5
-        }
-
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teamb_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teamb_next_line"
-        }
-      }
-
-      else_actions{
-        triggerActivate{
-          target:t="teamb_nospawn_next_line05"
-          activate_type:t="checkConidtions"
-          check_trigger_status:b=no
-          after_activation:t="disable"
-        }
-      }
-    }
-
-    teamb_nospawn_next_line05{
-      is_enabled:b=no
-      comments:t=""
-
-      props{
-        actionsType:t="PERFORM_ONE_BY_ONE"
-        conditionsType:t="ALL"
-        enableAfterComplete:b=no
-      }
-
-      events{
-        periodicEvent{
-          time:r=1
-        }
-      }
-
-      conditions{
-        varCompareInt{
-          var_value:t="teamb_next_line"
-          value:i=4
-          comparasion_func:t="equal"
-        }
-      }
-
-      actions{
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teamb_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teamb_next_line"
         }
       }
 
@@ -2993,7 +2915,7 @@ triggers{
     isCategory:b=yes
     is_enabled:b=yes
 
-    teama_spawn_line01{
+    teama_try_spawn_line01{
       is_enabled:b=yes
       comments:t=""
 
@@ -3015,7 +2937,50 @@ triggers{
           value:i=0
           comparasion_func:t="equal"
         }
+      }
 
+      actions{
+        triggerEnable{
+          target:t="teama_spawn_line01"
+        }
+
+        wait{
+          time:r=5
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teama_next_line"
+        }
+
+        varModify{
+          operator:t="modAB"
+          value:r=4
+          var:t="teama_next_line"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teama_spawn_line01{
+      is_enabled:b=no
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
         unitWhenCountMatches{
           object_type:t="isNotMarked"
           object_marking:i=0
@@ -3043,70 +3008,6 @@ triggers{
           name:t="tankBot"
           objects:t="@teama_current_line01"
           loadType:t="tree"
-        }
-
-        wait{
-          time:r=5
-        }
-
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teama_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teama_next_line"
-        }
-      }
-
-      else_actions{
-        triggerActivate{
-          target:t="teama_nospawn_next_line01"
-          activate_type:t="checkConidtions"
-          check_trigger_status:b=no
-          after_activation:t="disable"
-        }
-      }
-    }
-
-    teama_nospawn_next_line01{
-      is_enabled:b=no
-      comments:t=""
-
-      props{
-        actionsType:t="PERFORM_ONE_BY_ONE"
-        conditionsType:t="ALL"
-        enableAfterComplete:b=no
-      }
-
-      events{
-        periodicEvent{
-          time:r=1
-        }
-      }
-
-      conditions{
-        varCompareInt{
-          var_value:t="teama_next_line"
-          value:i=0
-          comparasion_func:t="equal"
-        }
-      }
-
-      actions{
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teama_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teama_next_line"
         }
       }
 
@@ -3252,7 +3153,7 @@ triggers{
       else_actions{}
     }
 
-    teama_spawn_line02{
+    teama_try_spawn_line02{
       is_enabled:b=yes
       comments:t=""
 
@@ -3274,7 +3175,50 @@ triggers{
           value:i=1
           comparasion_func:t="equal"
         }
+      }
 
+      actions{
+        triggerEnable{
+          target:t="teama_spawn_line02"
+        }
+
+        wait{
+          time:r=5
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teama_next_line"
+        }
+
+        varModify{
+          operator:t="modAB"
+          value:r=4
+          var:t="teama_next_line"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teama_spawn_line02{
+      is_enabled:b=no
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
         unitWhenCountMatches{
           object_type:t="isNotMarked"
           object_marking:i=0
@@ -3302,70 +3246,6 @@ triggers{
           name:t="tankBot"
           objects:t="@teama_current_line02"
           loadType:t="tree"
-        }
-
-        wait{
-          time:r=5
-        }
-
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teama_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teama_next_line"
-        }
-      }
-
-      else_actions{
-        triggerActivate{
-          target:t="teama_nospawn_next_line02"
-          activate_type:t="checkConidtions"
-          check_trigger_status:b=no
-          after_activation:t="disable"
-        }
-      }
-    }
-
-    teama_nospawn_next_line02{
-      is_enabled:b=no
-      comments:t=""
-
-      props{
-        actionsType:t="PERFORM_ONE_BY_ONE"
-        conditionsType:t="ALL"
-        enableAfterComplete:b=no
-      }
-
-      events{
-        periodicEvent{
-          time:r=1
-        }
-      }
-
-      conditions{
-        varCompareInt{
-          var_value:t="teama_next_line"
-          value:i=1
-          comparasion_func:t="equal"
-        }
-      }
-
-      actions{
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teama_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teama_next_line"
         }
       }
 
@@ -3511,7 +3391,7 @@ triggers{
       else_actions{}
     }
 
-    teama_spawn_line03{
+    teama_try_spawn_line03{
       is_enabled:b=yes
       comments:t=""
 
@@ -3533,7 +3413,50 @@ triggers{
           value:i=2
           comparasion_func:t="equal"
         }
+      }
 
+      actions{
+        triggerEnable{
+          target:t="teama_spawn_line03"
+        }
+
+        wait{
+          time:r=5
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teama_next_line"
+        }
+
+        varModify{
+          operator:t="modAB"
+          value:r=4
+          var:t="teama_next_line"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teama_spawn_line03{
+      is_enabled:b=no
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
         unitWhenCountMatches{
           object_type:t="isNotMarked"
           object_marking:i=0
@@ -3561,70 +3484,6 @@ triggers{
           name:t="tankBot"
           objects:t="@teama_current_line03"
           loadType:t="tree"
-        }
-
-        wait{
-          time:r=5
-        }
-
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teama_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teama_next_line"
-        }
-      }
-
-      else_actions{
-        triggerActivate{
-          target:t="teama_nospawn_next_line03"
-          activate_type:t="checkConidtions"
-          check_trigger_status:b=no
-          after_activation:t="disable"
-        }
-      }
-    }
-
-    teama_nospawn_next_line03{
-      is_enabled:b=no
-      comments:t=""
-
-      props{
-        actionsType:t="PERFORM_ONE_BY_ONE"
-        conditionsType:t="ALL"
-        enableAfterComplete:b=no
-      }
-
-      events{
-        periodicEvent{
-          time:r=1
-        }
-      }
-
-      conditions{
-        varCompareInt{
-          var_value:t="teama_next_line"
-          value:i=2
-          comparasion_func:t="equal"
-        }
-      }
-
-      actions{
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teama_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teama_next_line"
         }
       }
 
@@ -3770,7 +3629,7 @@ triggers{
       else_actions{}
     }
 
-    teama_spawn_line04{
+    teama_try_spawn_line04{
       is_enabled:b=yes
       comments:t=""
 
@@ -3788,11 +3647,74 @@ triggers{
 
       conditions{
         varCompareInt{
-          var_value:t="teama_next_line"
-          value:i=3
-          comparasion_func:t="equal"
+          var_value:t="teama_spawn_points"
+          value:i=500
+          comparasion_func:t="notLess"
         }
 
+        unitWhenInArea{
+          math:t="3D"
+          object_type:t="isAlive"
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          check_objects:t="any"
+          object:t="players"
+          target:t="teama_spawner_line04"
+        }
+      }
+
+      actions{
+        triggerEnable{
+          target:t="teama_spawn_line04"
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=-500
+          var:t="teama_spawn_points"
+        }
+
+        missionSetTargetsIndicator{
+          target_type:t="isAlive"
+          target_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          delta:i=0
+          icon:t="tank"
+          "icon army":i=2
+          set:b=yes
+          target:t="bot_vehicles"
+          var:t="teama_spawn_points"
+          team:t="Both"
+        }
+
+        wait{
+          time:r=5
+        }
+      }
+
+      else_actions{}
+    }
+
+    teama_spawn_line04{
+      is_enabled:b=no
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
         unitWhenCountMatches{
           object_type:t="isNotMarked"
           object_marking:i=0
@@ -3811,9 +3733,16 @@ triggers{
           object:t="@teama_current_line04"
           object_type:t="isNotMarked"
           target:t="teama_bot_spawn_04"
-          randomObjectsCount:i=1
+          randomObjectsCount:i=4
           randomSpawn:b=yes
           setObjectMarking:i=1
+
+          formation{
+            formation_type:t="rows"
+            formation_div:i=3
+            formation_step:p2=2.5, 2
+            formation_noise:p2=0.1, 0.1
+          }
         }
 
         unitMoveTo{
@@ -3835,70 +3764,6 @@ triggers{
           horizontalDirectionForTeleport:b=yes
           object:t="@teama_current_line04"
           move_type:t="move"
-        }
-
-        wait{
-          time:r=5
-        }
-
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teama_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teama_next_line"
-        }
-      }
-
-      else_actions{
-        triggerActivate{
-          target:t="teama_nospawn_next_line04"
-          activate_type:t="checkConidtions"
-          check_trigger_status:b=no
-          after_activation:t="disable"
-        }
-      }
-    }
-
-    teama_nospawn_next_line04{
-      is_enabled:b=no
-      comments:t=""
-
-      props{
-        actionsType:t="PERFORM_ONE_BY_ONE"
-        conditionsType:t="ALL"
-        enableAfterComplete:b=no
-      }
-
-      events{
-        periodicEvent{
-          time:r=1
-        }
-      }
-
-      conditions{
-        varCompareInt{
-          var_value:t="teama_next_line"
-          value:i=3
-          comparasion_func:t="equal"
-        }
-      }
-
-      actions{
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teama_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teama_next_line"
         }
       }
 
@@ -4044,7 +3909,7 @@ triggers{
       else_actions{}
     }
 
-    teama_spawn_line05{
+    teama_try_spawn_line05{
       is_enabled:b=yes
       comments:t=""
 
@@ -4063,10 +3928,53 @@ triggers{
       conditions{
         varCompareInt{
           var_value:t="teama_next_line"
-          value:i=4
-          comparasion_func:t="more"
+          value:i=3
+          comparasion_func:t="equal"
+        }
+      }
+
+      actions{
+        triggerEnable{
+          target:t="teama_spawn_line05"
         }
 
+        wait{
+          time:r=5
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teama_next_line"
+        }
+
+        varModify{
+          operator:t="modAB"
+          value:r=4
+          var:t="teama_next_line"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teama_spawn_line05{
+      is_enabled:b=no
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
         unitWhenCountMatches{
           object_type:t="isNotMarked"
           object_marking:i=0
@@ -4094,70 +4002,6 @@ triggers{
           name:t="tankBot"
           objects:t="@teama_current_line05"
           loadType:t="tree"
-        }
-
-        wait{
-          time:r=5
-        }
-
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teama_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teama_next_line"
-        }
-      }
-
-      else_actions{
-        triggerActivate{
-          target:t="teama_nospawn_next_line05"
-          activate_type:t="checkConidtions"
-          check_trigger_status:b=no
-          after_activation:t="disable"
-        }
-      }
-    }
-
-    teama_nospawn_next_line05{
-      is_enabled:b=no
-      comments:t=""
-
-      props{
-        actionsType:t="PERFORM_ONE_BY_ONE"
-        conditionsType:t="ALL"
-        enableAfterComplete:b=no
-      }
-
-      events{
-        periodicEvent{
-          time:r=1
-        }
-      }
-
-      conditions{
-        varCompareInt{
-          var_value:t="teama_next_line"
-          value:i=4
-          comparasion_func:t="equal"
-        }
-      }
-
-      actions{
-        varModify{
-          operator:t="add"
-          value:r=1
-          var:t="teama_next_line"
-        }
-
-        varModify{
-          operator:t="modAB"
-          value:r=5
-          var:t="teama_next_line"
         }
       }
 
@@ -4630,7 +4474,7 @@ triggers{
       else_actions{}
     }
 
-    teama_points_on_kill{
+    teama_removeunit_on_kill{
       is_enabled:b=yes
       comments:t=""
 
@@ -4650,7 +4494,49 @@ triggers{
         unitWhenKilled{
           target:t="teamb_bots"
         }
+      }
 
+      actions{
+        triggerActivate{
+          target:t="teama_points_on_kill"
+          activate_type:t="checkConidtions"
+          check_trigger_status:b=no
+          after_activation:t="disable"
+        }
+
+        unitMark{
+          target_marking:i=0
+          target:t="teamb_bots"
+          useForTriggerFiltered:b=yes
+          reset_marking:b=yes
+        }
+
+        unitPutToSleep{
+          target:t="teamb_bots"
+          useForTriggerFiltered:b=yes
+        }
+      }
+
+      else_actions{}
+    }
+
+    teama_points_on_kill{
+      is_enabled:b=no
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=no
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
         varCompareInt{
           var_value:t="teama_spawn_points"
           value:i=0
@@ -4680,16 +4566,50 @@ triggers{
           var:t="teama_spawn_points"
           team:t="Both"
         }
+      }
+
+      else_actions{}
+    }
+
+    teamb_removeunit_on_kill{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        unitWhenKilled{
+          target:t="teama_bots"
+        }
+      }
+
+      actions{
+        triggerActivate{
+          target:t="teamb_points_on_kill"
+          activate_type:t="checkConidtions"
+          check_trigger_status:b=no
+          after_activation:t="disable"
+        }
 
         unitMark{
           target_marking:i=0
-          target:t="teamb_bots"
+          target:t="teama_bots"
           useForTriggerFiltered:b=yes
           reset_marking:b=yes
         }
 
         unitPutToSleep{
-          target:t="teamb_bots"
+          target:t="teama_bots"
           useForTriggerFiltered:b=yes
         }
       }
@@ -4698,13 +4618,13 @@ triggers{
     }
 
     teamb_points_on_kill{
-      is_enabled:b=yes
+      is_enabled:b=no
       comments:t=""
 
       props{
         actionsType:t="PERFORM_ONE_BY_ONE"
         conditionsType:t="ALL"
-        enableAfterComplete:b=yes
+        enableAfterComplete:b=no
       }
 
       events{
@@ -4746,18 +4666,6 @@ triggers{
           target:t="bot_vehicles"
           var:t="teamb_spawn_points"
           team:t="Both"
-        }
-
-        unitMark{
-          target_marking:i=0
-          target:t="teama_bots"
-          useForTriggerFiltered:b=yes
-          reset_marking:b=yes
-        }
-
-        unitPutToSleep{
-          target:t="teama_bots"
-          useForTriggerFiltered:b=yes
         }
       }
 

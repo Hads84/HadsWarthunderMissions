@@ -4400,6 +4400,11 @@ triggers{
           var:t="teama_spawn_points"
           team:t="Both"
         }
+
+        unitPutToSleep{
+          target:t="teamb_bots"
+          useForTriggerFiltered:b=yes
+        }
       }
 
       else_actions{}
@@ -4454,6 +4459,11 @@ triggers{
           target:t="bot_vehicles"
           var:t="teamb_spawn_points"
           team:t="Both"
+        }
+
+        unitPutToSleep{
+          target:t="teama_bots"
+          useForTriggerFiltered:b=yes
         }
       }
 

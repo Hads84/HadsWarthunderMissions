@@ -700,7 +700,7 @@ triggers{
       unitSetVar{
         object_var_name:t="next"
         object:t="teamb_upg44"
-        object_var_string:t="teamb_upg14"
+        object_var_string:t="teamb_upg54"
       }
 
       unitSetVar{
@@ -798,25 +798,25 @@ triggers{
       unitSetVar{
         object_var_name:t="next"
         object:t="teamb_upg61"
-        object_var_string:t="teamb_upg11"
+        object_var_string:t="teamb_upg71"
       }
 
       unitSetVar{
         object_var_name:t="next"
         object:t="teamb_upg62"
-        object_var_string:t="teamb_upg12"
+        object_var_string:t="teamb_upg72"
       }
 
       unitSetVar{
         object_var_name:t="next"
         object:t="teamb_upg63"
-        object_var_string:t="teamb_upg13"
+        object_var_string:t="teamb_upg73"
       }
 
       unitSetVar{
         object_var_name:t="next"
         object:t="teamb_upg65"
-        object_var_string:t="teamb_upg15"
+        object_var_string:t="teamb_upg75"
       }
 
       unitSetVar{
@@ -840,6 +840,100 @@ triggers{
       unitSetVar{
         object_var_name:t="unit"
         object:t="teamb_upg65"
+        object_var_string:t="teamb_t65"
+      }
+
+      comment{
+        value:t="End Tier Vehicles"
+      }
+
+      unitSetVar{
+        object_var_name:t="isEnd"
+        object:t="teamb_upg71"
+        object_var_value:i=1
+      }
+
+      unitSetVar{
+        object_var_name:t="isEnd"
+        object:t="teamb_upg72"
+        object_var_value:i=1
+      }
+
+      unitSetVar{
+        object_var_name:t="isEnd"
+        object:t="teamb_upg73"
+        object_var_value:i=1
+      }
+
+      unitSetVar{
+        object_var_name:t="isEnd"
+        object:t="teamb_upg54"
+        object_var_value:i=1
+      }
+
+      unitSetVar{
+        object_var_name:t="isEnd"
+        object:t="teamb_upg75"
+        object_var_value:i=1
+      }
+
+      unitSetVar{
+        object_var_name:t="next"
+        object:t="teamb_upg71"
+        object_var_string:t="teamb_upg71"
+      }
+
+      unitSetVar{
+        object_var_name:t="next"
+        object:t="teamb_upg72"
+        object_var_string:t="teamb_upg72"
+      }
+
+      unitSetVar{
+        object_var_name:t="next"
+        object:t="teamb_upg73"
+        object_var_string:t="teamb_upg73"
+      }
+
+      unitSetVar{
+        object_var_name:t="next"
+        object:t="teamb_upg54"
+        object_var_string:t="teamb_upg54"
+      }
+
+      unitSetVar{
+        object_var_name:t="next"
+        object:t="teamb_upg75"
+        object_var_string:t="teamb_upg75"
+      }
+
+      unitSetVar{
+        object_var_name:t="unit"
+        object:t="teamb_upg71"
+        object_var_string:t="teamb_t61"
+      }
+
+      unitSetVar{
+        object_var_name:t="unit"
+        object:t="teamb_upg72"
+        object_var_string:t="teamb_t62"
+      }
+
+      unitSetVar{
+        object_var_name:t="unit"
+        object:t="teamb_upg73"
+        object_var_string:t="teamb_t63"
+      }
+
+      unitSetVar{
+        object_var_name:t="unit"
+        object:t="teamb_upg54"
+        object_var_string:t="teamb_t44"
+      }
+
+      unitSetVar{
+        object_var_name:t="unit"
+        object:t="teamb_upg75"
         object_var_string:t="teamb_t65"
       }
     }
@@ -1080,7 +1174,7 @@ triggers{
       unitSetVar{
         object_var_name:t="next"
         object:t="teama_upg44"
-        object_var_string:t="teama_upg14"
+        object_var_string:t="teama_upg54"
       }
 
       unitSetVar{
@@ -1178,25 +1272,25 @@ triggers{
       unitSetVar{
         object_var_name:t="next"
         object:t="teama_upg61"
-        object_var_string:t="teama_upg11"
+        object_var_string:t="teama_upg71"
       }
 
       unitSetVar{
         object_var_name:t="next"
         object:t="teama_upg62"
-        object_var_string:t="teama_upg12"
+        object_var_string:t="teama_upg72"
       }
 
       unitSetVar{
         object_var_name:t="next"
         object:t="teama_upg63"
-        object_var_string:t="teama_upg13"
+        object_var_string:t="teama_upg73"
       }
 
       unitSetVar{
         object_var_name:t="next"
         object:t="teama_upg65"
-        object_var_string:t="teama_upg15"
+        object_var_string:t="teama_upg75"
       }
 
       unitSetVar{
@@ -1220,6 +1314,100 @@ triggers{
       unitSetVar{
         object_var_name:t="unit"
         object:t="teama_upg65"
+        object_var_string:t="teama_t65"
+      }
+
+      comment{
+        value:t="End Tier Vehicles"
+      }
+
+      unitSetVar{
+        object_var_name:t="isEnd"
+        object:t="teama_upg71"
+        object_var_value:i=1
+      }
+
+      unitSetVar{
+        object_var_name:t="isEnd"
+        object:t="teama_upg72"
+        object_var_value:i=1
+      }
+
+      unitSetVar{
+        object_var_name:t="isEnd"
+        object:t="teamb_upg73"
+        object_var_value:i=1
+      }
+
+      unitSetVar{
+        object_var_name:t="isEnd"
+        object:t="teamb_upg54"
+        object_var_value:i=1
+      }
+
+      unitSetVar{
+        object_var_name:t="isEnd"
+        object:t="teama_upg75"
+        object_var_value:i=1
+      }
+
+      unitSetVar{
+        object_var_name:t="next"
+        object:t="teama_upg71"
+        object_var_string:t="teama_upg71"
+      }
+
+      unitSetVar{
+        object_var_name:t="next"
+        object:t="teama_upg72"
+        object_var_string:t="teama_upg72"
+      }
+
+      unitSetVar{
+        object_var_name:t="next"
+        object:t="teama_upg73"
+        object_var_string:t="teama_upg73"
+      }
+
+      unitSetVar{
+        object_var_name:t="next"
+        object:t="teama_upg54"
+        object_var_string:t="teama_upg54"
+      }
+
+      unitSetVar{
+        object_var_name:t="next"
+        object:t="teama_upg75"
+        object_var_string:t="teama_upg75"
+      }
+
+      unitSetVar{
+        object_var_name:t="unit"
+        object:t="teama_upg71"
+        object_var_string:t="teama_t61"
+      }
+
+      unitSetVar{
+        object_var_name:t="unit"
+        object:t="teama_upg72"
+        object_var_string:t="teama_t62"
+      }
+
+      unitSetVar{
+        object_var_name:t="unit"
+        object:t="teama_upg73"
+        object_var_string:t="teama_t63"
+      }
+
+      unitSetVar{
+        object_var_name:t="unit"
+        object:t="teama_upg54"
+        object_var_string:t="teama_t44"
+      }
+
+      unitSetVar{
+        object_var_name:t="unit"
+        object:t="teama_upg75"
         object_var_string:t="teama_t65"
       }
     }
@@ -1449,6 +1637,178 @@ triggers{
     else_actions{}
   }
 
+  "clean_up_dead tanks"{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=5
+      }
+    }
+
+    conditions{
+      unitWhenStatus{
+        object_type:t="isKilled"
+        check_objects:t="any"
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        target_type:t="isAlive"
+        check_period:r=1
+        object:t="bot_vehicles"
+      }
+    }
+
+    actions{
+      unitMoveTo{
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        target:t="cz_01"
+        target_marking:i=0
+        waypointReachedDist:r=10
+        recalculatePathDist:r=-1
+        follow_target:b=no
+        fastClimb:b=no
+        destTimeMode:b=no
+        teleportHeightType:t="absolute"
+        useUnitHeightForTele:b=yes
+        shouldKeepFormation:b=no
+        teleportHeightValue:r=1000
+        horizontalDirectionForTeleport:b=yes
+        object:t="bot_vehicles"
+        move_type:t="HALT"
+        useForTriggerFiltered:b=yes
+      }
+
+      unitMark{
+        target_marking:i=0
+        target:t="bot_vehicles"
+        useForTriggerFiltered:b=yes
+        reset_marking:b=yes
+      }
+
+      unitPutToSleep{
+        target:t="bot_vehicles"
+        useForTriggerFiltered:b=yes
+      }
+    }
+
+    else_actions{}
+  }
+
+  "clean_up_dead player tanks"{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=5
+      }
+    }
+
+    conditions{
+      unitWhenStatus{
+        object_type:t="isKilled"
+        check_objects:t="any"
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        target_type:t="isAlive"
+        check_period:r=1
+        object:t="players"
+      }
+    }
+
+    actions{
+      unitMark{
+        target_marking:i=0
+        target:t="players"
+        useForTriggerFiltered:b=yes
+        reset_marking:b=yes
+      }
+
+      unitPutToSleep{
+        target:t="players"
+        useForTriggerFiltered:b=yes
+      }
+    }
+
+    else_actions{}
+  }
+
+  change_to_bot_logic_inspawn{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      unitWhenInArea{
+        math:t="3D"
+        object_type:t="isAlive"
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        check_objects:t="any"
+        object:t="bot_vehicles"
+        target:t="cz_01"
+      }
+    }
+
+    actions{
+      unitMoveTo{
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        target:t="cz_01"
+        target_marking:i=0
+        waypointReachedDist:r=10
+        recalculatePathDist:r=-1
+        follow_target:b=no
+        fastClimb:b=no
+        destTimeMode:b=no
+        teleportHeightType:t="absolute"
+        useUnitHeightForTele:b=yes
+        shouldKeepFormation:b=no
+        teleportHeightValue:r=1000
+        horizontalDirectionForTeleport:b=yes
+        object:t="bot_vehicles"
+        move_type:t="HALT"
+        useForTriggerFiltered:b=yes
+      }
+    }
+
+    else_actions{}
+  }
+
   teamb{
     isCategory:b=yes
     is_enabled:b=yes
@@ -1483,7 +1843,7 @@ triggers{
         }
 
         wait{
-          time:r=5
+          time:r=20
         }
 
         varModify{
@@ -1539,13 +1899,63 @@ triggers{
           target:t="teamb_bot_spawn_01"
           randomObjectsCount:i=1
           randomSpawn:b=yes
-          setObjectMarking:i=1
+          setObjectMarkingVar:t="teamb_current_mark_line01"
         }
 
-        unitLoadBehTree{
-          name:t="tankBot"
-          objects:t="@teamb_current_line01"
-          loadType:t="tree"
+        wait{
+          time:r=1
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teamb_current_line01"
+          object_type:t="isMarked"
+          object_marking_var:t="teamb_current_mark_line01"
+          move_type:t="HALT"
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teamb_current_line01"
+          object_type:t="isMarked"
+          object_marking_var:t="teamb_current_mark_line01"
+          move_type:t="move"
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teamb_current_mark_line01"
         }
       }
 
@@ -1577,6 +1987,12 @@ triggers{
           var_value:t="teamb_spawn_points"
           value:i=1000
           comparasion_func:t="more"
+        }
+
+        varCompareInt{
+          var_value:t="teamb_line01_isend"
+          value:i=0
+          comparasion_func:t="equal"
         }
       }
 
@@ -1645,6 +2061,54 @@ triggers{
           target:t="@teamb_current_line01"
           reset_marking:b=yes
         }
+
+        unitGetVar{
+          object_marking:i=0
+          object:t="@teamb_upg_line01"
+          object_var_name:t="isEnd"
+          out_var:t="teamb_line01_isend"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teamb_respawn_upg_line01_end{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        varCompareInt{
+          var_value:t="teamb_line01_isend"
+          value:i=1
+          comparasion_func:t="equal"
+        }
+
+        unitWhenKilled{
+          target:t="@teamb_upg_line01"
+        }
+      }
+
+      actions{
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="@teamb_upg_line01"
+          target:t="teamb_spawner_line01"
+          isStealth:b=yes
+        }
       }
 
       else_actions{}
@@ -1670,7 +2134,7 @@ triggers{
         varCompareInt{
           var_value:t="teamb_spawn_points"
           value:i=1000
-          comparasion_func:t="notMore"
+          comparasion_func:t="less"
         }
 
         unitWhenKilled{
@@ -1721,7 +2185,7 @@ triggers{
         }
 
         wait{
-          time:r=5
+          time:r=20
         }
 
         varModify{
@@ -1777,13 +2241,62 @@ triggers{
           target:t="teamb_bot_spawn_02"
           randomObjectsCount:i=1
           randomSpawn:b=yes
-          setObjectMarking:i=1
+          setObjectMarkingVar:t="teamb_current_mark_line02"
         }
 
-        unitLoadBehTree{
-          name:t="tankBot"
-          objects:t="@teamb_current_line02"
-          loadType:t="tree"
+        wait{
+          time:r=1
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teamb_current_line02"
+          object_type:t="isMarked"
+          object_marking_var:t="teamb_current_mark_line02"
+          move_type:t="HALT"
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teamb_current_line02"
+          object_type:t="isMarked"
+          object_marking_var:t="teamb_current_mark_line02"
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teamb_current_mark_line02"
         }
       }
 
@@ -1815,6 +2328,12 @@ triggers{
           var_value:t="teamb_spawn_points"
           value:i=1000
           comparasion_func:t="more"
+        }
+
+        varCompareInt{
+          var_value:t="teamb_line02_isend"
+          value:i=0
+          comparasion_func:t="equal"
         }
       }
 
@@ -1883,6 +2402,54 @@ triggers{
           target:t="@teamb_current_line02"
           reset_marking:b=yes
         }
+
+        unitGetVar{
+          object_marking:i=0
+          object:t="@teamb_upg_line02"
+          object_var_name:t="isEnd"
+          out_var:t="teamb_line02_isend"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teamb_respawn_upg_line02_end{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        varCompareInt{
+          var_value:t="teamb_line02_isend"
+          value:i=1
+          comparasion_func:t="equal"
+        }
+
+        unitWhenKilled{
+          target:t="@teamb_upg_line02"
+        }
+      }
+
+      actions{
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="@teamb_upg_line02"
+          target:t="teamb_spawner_line02"
+          isStealth:b=yes
+        }
       }
 
       else_actions{}
@@ -1908,7 +2475,7 @@ triggers{
         varCompareInt{
           var_value:t="teamb_spawn_points"
           value:i=1000
-          comparasion_func:t="notMore"
+          comparasion_func:t="less"
         }
 
         unitWhenKilled{
@@ -2015,13 +2582,63 @@ triggers{
           target:t="teamb_bot_spawn_03"
           randomObjectsCount:i=1
           randomSpawn:b=yes
-          setObjectMarking:i=1
+          setObjectMarkingVar:t="teamb_current_mark_line03"
         }
 
-        unitLoadBehTree{
-          name:t="tankBot"
-          objects:t="@teamb_current_line03"
-          loadType:t="tree"
+        wait{
+          time:r=1
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teamb_current_line03"
+          object_type:t="isMarked"
+          object_marking_var:t="teamb_current_mark_line03"
+          move_type:t="HALT"
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teamb_current_line03"
+          object_type:t="isMarked"
+          object_marking_var:t="teamb_current_mark_line03"
+          zzAmp:r=50
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teamb_current_mark_line03"
         }
       }
 
@@ -2053,6 +2670,12 @@ triggers{
           var_value:t="teamb_spawn_points"
           value:i=1000
           comparasion_func:t="more"
+        }
+
+        varCompareInt{
+          var_value:t="teamb_line03_isend"
+          value:i=0
+          comparasion_func:t="equal"
         }
       }
 
@@ -2121,6 +2744,54 @@ triggers{
           target:t="@teamb_current_line03"
           reset_marking:b=yes
         }
+
+        unitGetVar{
+          object_marking:i=0
+          object:t="@teamb_upg_line03"
+          object_var_name:t="isEnd"
+          out_var:t="teamb_line03_isend"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teamb_respawn_upg_line03_end{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        varCompareInt{
+          var_value:t="teamb_line03_isend"
+          value:i=1
+          comparasion_func:t="equal"
+        }
+
+        unitWhenKilled{
+          target:t="@teamb_upg_line03"
+        }
+      }
+
+      actions{
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="@teamb_upg_line03"
+          target:t="teamb_spawner_line03"
+          isStealth:b=yes
+        }
       }
 
       else_actions{}
@@ -2146,7 +2817,7 @@ triggers{
         varCompareInt{
           var_value:t="teamb_spawn_points"
           value:i=1000
-          comparasion_func:t="notMore"
+          comparasion_func:t="less"
         }
 
         unitWhenKilled{
@@ -2186,7 +2857,7 @@ triggers{
       conditions{
         varCompareInt{
           var_value:t="teamb_spawn_points"
-          value:i=500
+          value:i=100
           comparasion_func:t="notLess"
         }
 
@@ -2209,7 +2880,7 @@ triggers{
 
         varModify{
           operator:t="add"
-          value:r=-500
+          value:r=-100
           var:t="teamb_spawn_points"
         }
 
@@ -2267,13 +2938,13 @@ triggers{
       actions{
         unitRespawn{
           delay:r=0
-          offset:p3=0, 0, 0
+          offset:p3=1, 1, 1
           object:t="@teamb_current_line04"
           object_type:t="isNotMarked"
           target:t="teamb_bot_spawn_04"
-          randomObjectsCount:i=4
+          randomObjectsCount:i=1
           randomSpawn:b=yes
-          setObjectMarking:i=1
+          setObjectMarkingVar:t="teamb_current_mark_line04"
 
           formation{
             formation_type:t="rows"
@@ -2281,6 +2952,10 @@ triggers{
             formation_step:p2=2.5, 2
             formation_noise:p2=0.1, 0.1
           }
+        }
+
+        wait{
+          time:r=1
         }
 
         unitMoveTo{
@@ -2301,7 +2976,38 @@ triggers{
           teleportHeightValue:r=1000
           horizontalDirectionForTeleport:b=yes
           object:t="@teamb_current_line04"
+          object_type:t="isMarked"
+          object_marking_var:t="teamb_current_mark_line04"
+          move_type:t="HALT"
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teamb_current_line04"
+          object_type:t="isMarked"
+          object_marking_var:t="teamb_current_mark_line04"
           move_type:t="move"
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teamb_current_mark_line04"
         }
       }
 
@@ -2333,6 +3039,12 @@ triggers{
           var_value:t="teamb_spawn_points"
           value:i=1000
           comparasion_func:t="more"
+        }
+
+        varCompareInt{
+          var_value:t="teamb_line04_isend"
+          value:i=0
+          comparasion_func:t="equal"
         }
       }
 
@@ -2401,6 +3113,54 @@ triggers{
           target:t="@teamb_current_line04"
           reset_marking:b=yes
         }
+
+        unitGetVar{
+          object_marking:i=0
+          object:t="@teamb_upg_line04"
+          object_var_name:t="isEnd"
+          out_var:t="teamb_line04_isend"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teamb_respawn_upg_line04_end{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        varCompareInt{
+          var_value:t="teamb_line04_isend"
+          value:i=1
+          comparasion_func:t="equal"
+        }
+
+        unitWhenKilled{
+          target:t="@teamb_upg_line04"
+        }
+      }
+
+      actions{
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="@teamb_upg_line04"
+          target:t="teamb_spawner_line04"
+          isStealth:b=yes
+        }
       }
 
       else_actions{}
@@ -2426,7 +3186,7 @@ triggers{
         varCompareInt{
           var_value:t="teamb_spawn_points"
           value:i=1000
-          comparasion_func:t="notMore"
+          comparasion_func:t="less"
         }
 
         unitWhenKilled{
@@ -2459,7 +3219,7 @@ triggers{
 
       events{
         periodicEvent{
-          time:r=1
+          time:r=20
         }
       }
 
@@ -2533,13 +3293,62 @@ triggers{
           target:t="teamb_bot_spawn_05"
           randomObjectsCount:i=1
           randomSpawn:b=yes
-          setObjectMarking:i=1
+          setObjectMarkingVar:t="teamb_current_mark_line05"
         }
 
-        unitLoadBehTree{
-          name:t="tankBot"
-          objects:t="@teamb_current_line05"
-          loadType:t="tree"
+        wait{
+          time:r=1
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teamb_current_line05"
+          object_type:t="isMarked"
+          object_marking_var:t="teamb_current_mark_line05"
+          move_type:t="HALT"
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teamb_current_line05"
+          object_type:t="isMarked"
+          object_marking_var:t="teamb_current_mark_line05"
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teamb_current_mark_line05"
         }
       }
 
@@ -2571,6 +3380,12 @@ triggers{
           var_value:t="teamb_spawn_points"
           value:i=1000
           comparasion_func:t="more"
+        }
+
+        varCompareInt{
+          var_value:t="teamb_line05_isend"
+          value:i=0
+          comparasion_func:t="equal"
         }
       }
 
@@ -2639,6 +3454,54 @@ triggers{
           target:t="@teamb_current_line05"
           reset_marking:b=yes
         }
+
+        unitGetVar{
+          object_marking:i=0
+          object:t="@teamb_upg_line05"
+          object_var_name:t="isEnd"
+          out_var:t="teamb_line05_isend"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teamb_respawn_upg_line05_end{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        varCompareInt{
+          var_value:t="teamb_line05_isend"
+          value:i=1
+          comparasion_func:t="equal"
+        }
+
+        unitWhenKilled{
+          target:t="@teamb_upg_line05"
+        }
+      }
+
+      actions{
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="@teamb_upg_line05"
+          target:t="teamb_spawner_line05"
+          isStealth:b=yes
+        }
       }
 
       else_actions{}
@@ -2664,7 +3527,7 @@ triggers{
         varCompareInt{
           var_value:t="teamb_spawn_points"
           value:i=1000
-          comparasion_func:t="notMore"
+          comparasion_func:t="less"
         }
 
         unitWhenKilled{
@@ -2945,7 +3808,7 @@ triggers{
         }
 
         wait{
-          time:r=5
+          time:r=20
         }
 
         varModify{
@@ -3001,13 +3864,39 @@ triggers{
           target:t="teama_bot_spawn_01"
           randomObjectsCount:i=1
           randomSpawn:b=yes
-          setObjectMarking:i=1
+          setObjectMarkingVar:t="teama_current_mark_line01"
         }
 
-        unitLoadBehTree{
-          name:t="tankBot"
-          objects:t="@teama_current_line01"
-          loadType:t="tree"
+        wait{
+          time:r=1
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teama_current_line01"
+          object_type:t="isMarked"
+          object_marking_var:t="teama_current_mark_line01"
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teama_current_mark_line01"
         }
       }
 
@@ -3039,6 +3928,12 @@ triggers{
           var_value:t="teama_spawn_points"
           value:i=1000
           comparasion_func:t="more"
+        }
+
+        varCompareInt{
+          var_value:t="teama_line01_isend"
+          value:i=0
+          comparasion_func:t="equal"
         }
       }
 
@@ -3107,6 +4002,54 @@ triggers{
           target:t="@teama_current_line01"
           reset_marking:b=yes
         }
+
+        unitGetVar{
+          object_marking:i=0
+          object:t="@teama_upg_line01"
+          object_var_name:t="isEnd"
+          out_var:t="teama_line01_isend"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teama_respawn_upg_line01_end{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        varCompareInt{
+          var_value:t="teama_line01_isend"
+          value:i=1
+          comparasion_func:t="equal"
+        }
+
+        unitWhenKilled{
+          target:t="@teama_upg_line01"
+        }
+      }
+
+      actions{
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="@teama_upg_line01"
+          target:t="teama_spawner_line01"
+          isStealth:b=yes
+        }
       }
 
       else_actions{}
@@ -3132,7 +4075,7 @@ triggers{
         varCompareInt{
           var_value:t="teama_spawn_points"
           value:i=1000
-          comparasion_func:t="notMore"
+          comparasion_func:t="less"
         }
 
         unitWhenKilled{
@@ -3183,7 +4126,7 @@ triggers{
         }
 
         wait{
-          time:r=5
+          time:r=20
         }
 
         varModify{
@@ -3239,13 +4182,39 @@ triggers{
           target:t="teama_bot_spawn_02"
           randomObjectsCount:i=1
           randomSpawn:b=yes
-          setObjectMarking:i=1
+          setObjectMarkingVar:t="teama_current_mark_line02"
         }
 
-        unitLoadBehTree{
-          name:t="tankBot"
-          objects:t="@teama_current_line02"
-          loadType:t="tree"
+        wait{
+          time:r=1
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teama_current_line02"
+          object_type:t="isMarked"
+          object_marking_var:t="teama_current_mark_line02"
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teama_current_mark_line02"
         }
       }
 
@@ -3277,6 +4246,12 @@ triggers{
           var_value:t="teama_spawn_points"
           value:i=1000
           comparasion_func:t="more"
+        }
+
+        varCompareInt{
+          var_value:t="teama_line02_isend"
+          value:i=0
+          comparasion_func:t="equal"
         }
       }
 
@@ -3345,6 +4320,54 @@ triggers{
           target:t="@teama_current_line02"
           reset_marking:b=yes
         }
+
+        unitGetVar{
+          object_marking:i=0
+          object:t="@teama_upg_line02"
+          object_var_name:t="isEnd"
+          out_var:t="teama_line02_isend"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teama_respawn_upg_line02_end{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        unitWhenKilled{
+          target:t="@teama_upg_line02"
+        }
+
+        varCompareInt{
+          var_value:t="teama_line02_isend"
+          value:i=1
+          comparasion_func:t="equal"
+        }
+      }
+
+      actions{
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="@teama_upg_line02"
+          target:t="teama_spawner_line02"
+          isStealth:b=yes
+        }
       }
 
       else_actions{}
@@ -3370,7 +4393,7 @@ triggers{
         varCompareInt{
           var_value:t="teama_spawn_points"
           value:i=1000
-          comparasion_func:t="notMore"
+          comparasion_func:t="less"
         }
 
         unitWhenKilled{
@@ -3421,7 +4444,7 @@ triggers{
         }
 
         wait{
-          time:r=5
+          time:r=20
         }
 
         varModify{
@@ -3477,13 +4500,39 @@ triggers{
           target:t="teama_bot_spawn_03"
           randomObjectsCount:i=1
           randomSpawn:b=yes
-          setObjectMarking:i=1
+          setObjectMarkingVar:t="teama_current_mark_line03"
         }
 
-        unitLoadBehTree{
-          name:t="tankBot"
-          objects:t="@teama_current_line03"
-          loadType:t="tree"
+        wait{
+          time:r=1
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teama_current_line03"
+          object_type:t="isMarked"
+          object_marking_var:t="teama_current_mark_line03"
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teama_current_mark_line03"
         }
       }
 
@@ -3515,6 +4564,12 @@ triggers{
           var_value:t="teama_spawn_points"
           value:i=1000
           comparasion_func:t="more"
+        }
+
+        varCompareInt{
+          var_value:t="teama_line03_isend"
+          value:i=0
+          comparasion_func:t="equal"
         }
       }
 
@@ -3583,6 +4638,54 @@ triggers{
           target:t="@teama_current_line03"
           reset_marking:b=yes
         }
+
+        unitGetVar{
+          object_marking:i=0
+          object:t="@teama_upg_line03"
+          object_var_name:t="isEnd"
+          out_var:t="teama_line03_isend"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teama_respawn_upg_line03_end{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        unitWhenKilled{
+          target:t="@teama_upg_line03"
+        }
+
+        varCompareInt{
+          var_value:t="teama_line03_isend"
+          value:i=1
+          comparasion_func:t="equal"
+        }
+      }
+
+      actions{
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="@teama_upg_line03"
+          target:t="teama_spawner_line03"
+          isStealth:b=yes
+        }
       }
 
       else_actions{}
@@ -3608,7 +4711,7 @@ triggers{
         varCompareInt{
           var_value:t="teama_spawn_points"
           value:i=1000
-          comparasion_func:t="notMore"
+          comparasion_func:t="less"
         }
 
         unitWhenKilled{
@@ -3648,7 +4751,7 @@ triggers{
       conditions{
         varCompareInt{
           var_value:t="teama_spawn_points"
-          value:i=500
+          value:i=100
           comparasion_func:t="notLess"
         }
 
@@ -3671,7 +4774,7 @@ triggers{
 
         varModify{
           operator:t="add"
-          value:r=-500
+          value:r=-100
           var:t="teama_spawn_points"
         }
 
@@ -3733,9 +4836,9 @@ triggers{
           object:t="@teama_current_line04"
           object_type:t="isNotMarked"
           target:t="teama_bot_spawn_04"
-          randomObjectsCount:i=4
+          randomObjectsCount:i=1
           randomSpawn:b=yes
-          setObjectMarking:i=1
+          setObjectMarkingVar:t="teama_current_mark_line04"
 
           formation{
             formation_type:t="rows"
@@ -3743,6 +4846,10 @@ triggers{
             formation_step:p2=2.5, 2
             formation_noise:p2=0.1, 0.1
           }
+        }
+
+        wait{
+          time:r=1
         }
 
         unitMoveTo{
@@ -3763,7 +4870,14 @@ triggers{
           teleportHeightValue:r=1000
           horizontalDirectionForTeleport:b=yes
           object:t="@teama_current_line04"
-          move_type:t="move"
+          object_type:t="isMarked"
+          object_marking_var:t="teama_current_mark_line04"
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teama_current_mark_line04"
         }
       }
 
@@ -3795,6 +4909,12 @@ triggers{
           var_value:t="teama_spawn_points"
           value:i=1000
           comparasion_func:t="more"
+        }
+
+        varCompareInt{
+          var_value:t="teama_line04_isend"
+          value:i=0
+          comparasion_func:t="equal"
         }
       }
 
@@ -3863,6 +4983,54 @@ triggers{
           target:t="@teama_current_line04"
           reset_marking:b=yes
         }
+
+        unitGetVar{
+          object_marking:i=0
+          object:t="@teama_upg_line04"
+          object_var_name:t="isEnd"
+          out_var:t="teama_line04_isend"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teama_respawn_upg_line04_copy{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        unitWhenKilled{
+          target:t="@teama_upg_line04"
+        }
+
+        varCompareInt{
+          var_value:t="teama_line04_isend"
+          value:i=1
+          comparasion_func:t="equal"
+        }
+      }
+
+      actions{
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="@teama_upg_line04"
+          target:t="teama_spawner_line04"
+          isStealth:b=yes
+        }
       }
 
       else_actions{}
@@ -3888,7 +5056,7 @@ triggers{
         varCompareInt{
           var_value:t="teama_spawn_points"
           value:i=1000
-          comparasion_func:t="notMore"
+          comparasion_func:t="less"
         }
 
         unitWhenKilled{
@@ -3939,7 +5107,7 @@ triggers{
         }
 
         wait{
-          time:r=5
+          time:r=20
         }
 
         varModify{
@@ -3995,13 +5163,39 @@ triggers{
           target:t="teama_bot_spawn_05"
           randomObjectsCount:i=1
           randomSpawn:b=yes
-          setObjectMarking:i=1
+          setObjectMarkingVar:t="teama_current_mark_line05"
         }
 
-        unitLoadBehTree{
-          name:t="tankBot"
-          objects:t="@teama_current_line05"
-          loadType:t="tree"
+        wait{
+          time:r=1
+        }
+
+        unitMoveTo{
+          object_marking:i=0
+          object_var_name:t=""
+          object_var_comp_op:t="equal"
+          object_var_value:i=0
+          target:t="cz_01"
+          target_marking:i=0
+          waypointReachedDist:r=10
+          recalculatePathDist:r=-1
+          follow_target:b=no
+          fastClimb:b=no
+          destTimeMode:b=no
+          teleportHeightType:t="absolute"
+          useUnitHeightForTele:b=yes
+          shouldKeepFormation:b=no
+          teleportHeightValue:r=1000
+          horizontalDirectionForTeleport:b=yes
+          object:t="@teama_current_line05"
+          object_type:t="isMarked"
+          object_marking_var:t="teama_current_mark_line05"
+        }
+
+        varModify{
+          operator:t="add"
+          value:r=1
+          var:t="teama_current_mark_line05"
         }
       }
 
@@ -4033,6 +5227,12 @@ triggers{
           var_value:t="teama_spawn_points"
           value:i=1000
           comparasion_func:t="more"
+        }
+
+        varCompareInt{
+          var_value:t="teama_line05_isend"
+          value:i=0
+          comparasion_func:t="equal"
         }
       }
 
@@ -4101,6 +5301,54 @@ triggers{
           target:t="@teama_current_line05"
           reset_marking:b=yes
         }
+
+        unitGetVar{
+          object_marking:i=0
+          object:t="@teama_upg_line05"
+          object_var_name:t="isEnd"
+          out_var:t="teama_line05_isend"
+        }
+      }
+
+      else_actions{}
+    }
+
+    teama_respawn_upg_line05_end{
+      is_enabled:b=yes
+      comments:t=""
+
+      props{
+        actionsType:t="PERFORM_ONE_BY_ONE"
+        conditionsType:t="ALL"
+        enableAfterComplete:b=yes
+      }
+
+      events{
+        periodicEvent{
+          time:r=1
+        }
+      }
+
+      conditions{
+        unitWhenKilled{
+          target:t="@teama_upg_line05"
+        }
+
+        varCompareInt{
+          var_value:t="teama_line05_isend"
+          value:i=1
+          comparasion_func:t="equal"
+        }
+      }
+
+      actions{
+        unitRespawn{
+          delay:r=1
+          offset:p3=0, 0, 0
+          object:t="@teama_upg_line05"
+          target:t="teama_spawner_line05"
+          isStealth:b=yes
+        }
       }
 
       else_actions{}
@@ -4126,7 +5374,7 @@ triggers{
         varCompareInt{
           var_value:t="teama_spawn_points"
           value:i=1000
-          comparasion_func:t="notMore"
+          comparasion_func:t="less"
         }
 
         unitWhenKilled{
@@ -4503,18 +5751,6 @@ triggers{
           check_trigger_status:b=no
           after_activation:t="disable"
         }
-
-        unitMark{
-          target_marking:i=0
-          target:t="teamb_bots"
-          useForTriggerFiltered:b=yes
-          reset_marking:b=yes
-        }
-
-        unitPutToSleep{
-          target:t="teamb_bots"
-          useForTriggerFiltered:b=yes
-        }
       }
 
       else_actions{}
@@ -4599,18 +5835,6 @@ triggers{
           activate_type:t="checkConidtions"
           check_trigger_status:b=no
           after_activation:t="disable"
-        }
-
-        unitMark{
-          target_marking:i=0
-          target:t="teama_bots"
-          useForTriggerFiltered:b=yes
-          reset_marking:b=yes
-        }
-
-        unitPutToSleep{
-          target:t="teama_bots"
-          useForTriggerFiltered:b=yes
         }
       }
 
@@ -4854,7 +6078,7 @@ mission_objectives{
   isCategory:b=yes
   is_enabled:b=yes
 
-  "Spawn Vehicles by moving next to vehicle (100 points)"{
+  "Spawn AA Vehicles by moving next AA vehicle (500 points)"{
     is_enabled:b=yes
     comments:t=""
     type:t="abstractMissionObjective"
@@ -4884,6 +6108,21 @@ mission_objectives{
     onFailed{}
   }
 
+  "Spawn Bombers by being next to plane (3000 pts)"{
+    is_enabled:b=yes
+    comments:t=""
+    type:t="abstractMissionObjective"
+
+    props{
+      isPrimary:b=yes
+      timeLimit:i=20000
+      team:t="Both"
+    }
+
+    onSuccess{}
+    onFailed{}
+  }
+
   "Capture and Hold the central Objective"{
     is_enabled:b=yes
     comments:t=""
@@ -4892,6 +6131,7 @@ mission_objectives{
     props{
       isPrimary:b=yes
       timeLimit:i=20000
+      team:t="Both"
     }
 
     onSuccess{}
@@ -4948,6 +6188,26 @@ variables{
   winning_score:i=1000
   teama_next_line:i=0
   teamb_next_line:i=0
+  teamb_current_mark_line01:i=1
+  teamb_current_mark_line02:i=1
+  teamb_current_mark_line03:i=1
+  teamb_current_mark_line04:i=1
+  teamb_current_mark_line05:i=1
+  teama_current_mark_line01:i=1
+  teama_current_mark_line02:i=1
+  teama_current_mark_line03:i=1
+  teama_current_mark_line04:i=1
+  teama_current_mark_line05:i=1
+  teamb_line01_isend:i=0
+  teamb_line02_isend:i=0
+  teamb_line03_isend:i=0
+  teamb_line04_isend:i=0
+  teamb_line05_isend:i=0
+  teama_line01_isend:i=0
+  teama_line02_isend:i=0
+  teama_line03_isend:i=0
+  teama_line04_isend:i=0
+  teama_line05_isend:i=0
 }
 
 dialogs{}
@@ -5259,6 +6519,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -6450,6 +7712,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -6490,6 +7754,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -6530,6 +7796,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -6735,6 +8003,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -6775,6 +8045,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -6815,6 +8087,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -6855,6 +8129,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -6895,6 +8171,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -6935,6 +8213,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -6975,6 +8255,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7015,6 +8297,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7055,6 +8339,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7095,6 +8381,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7135,6 +8423,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7175,6 +8465,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7215,6 +8507,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7255,6 +8549,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7459,6 +8755,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7499,6 +8797,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7539,6 +8839,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7579,6 +8881,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7619,6 +8923,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -7659,6 +8965,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -8282,7 +9590,7 @@ units{
   tankModels{
     name:t="teama_upg44"
     tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [555.291, 4.26889, -180.244]]
-    unit_class:t="ussr_zsu_23_4"
+    unit_class:t="ussr_zprk_2s6"
     objLayer:i=1
     closed_waypoints:b=no
     isShipSpline:b=no
@@ -8744,6 +10052,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -8784,6 +10094,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -8824,6 +10136,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -8865,6 +10179,7 @@ units{
       uniqueName:t=""
       attack_type:t="fire_at_will"
       targetAir:b=yes
+      targetGnd:b=no
       accuracy:r=0.8
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -8905,6 +10220,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -8945,6 +10262,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -8985,6 +10304,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9025,6 +10346,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9065,6 +10388,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9105,6 +10430,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9145,6 +10472,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9185,6 +10514,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9225,6 +10556,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9265,6 +10598,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9305,6 +10640,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9345,6 +10682,9 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
+      accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
     }
@@ -9385,6 +10725,7 @@ units{
       uniqueName:t=""
       attack_type:t="fire_at_will"
       targetAir:b=yes
+      targetGnd:b=no
       accuracy:r=0.8
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9425,6 +10766,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9465,6 +10808,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9507,6 +10852,7 @@ units{
       attack_type:t="fire_at_will"
       use_search_radar:b=yes
       targetAir:b=yes
+      targetGnd:b=no
       accuracy:r=0.8
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9547,6 +10893,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9587,6 +10935,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9598,13 +10948,13 @@ units{
   tankModels{
     name:t="teama_t44"
     tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [561.062, 4.17719, 37.4586]]
-    unit_class:t="ussr_zsu_23_4"
+    unit_class:t="ussr_zprk_2s6"
     objLayer:i=1
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
     weapons:t=""
-    bullets0:t="23mm_ussr_HEIT"
+    bullets0:t=""
     bullets1:t=""
     bullets2:t=""
     bullets3:t=""
@@ -9629,6 +10979,7 @@ units{
       attack_type:t="fire_at_will"
       use_search_radar:b=yes
       targetAir:b=yes
+      targetGnd:b=no
       accuracy:r=0.8
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9666,6 +11017,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9706,6 +11059,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9746,6 +11101,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9786,6 +11143,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9826,6 +11185,8 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetAir:b=no
+      targetGnd:b=yes
       accuracy:r=0.9
       effShootingRate:r=1
       avoidObstacles:b=yes
@@ -9879,7 +11240,7 @@ units{
   objectGroups{
     name:t="teamb_af"
     tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1400, 223.289, -5200]]
-    unit_class:t="dynaf_universal_1line_a"
+    unit_class:t="dynaf_universal_1line_d_modern"
     objLayer:i=2
 
     props{
@@ -9890,8 +11251,8 @@ units{
 
   objectGroups{
     name:t="teama_af"
-    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1064.77, 105.723, 6781.49]]
-    unit_class:t="dynaf_universal_1line_a"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1064.77, 126.164, 6781.49]]
+    unit_class:t="dynaf_universal_1line_d_modern"
     objLayer:i=2
 
     props{
@@ -9967,7 +11328,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="tu-4_12xfab500"
+    weapons:t="tu-4_8xfab1000"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -9981,7 +11342,7 @@ units{
 
     props{
       army:i=1
-      count:i=10
+      count:i=3
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -10029,7 +11390,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="B29_12x1000lbs"
+    weapons:t="B29_8x2000lbs"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -10043,7 +11404,7 @@ units{
 
     props{
       army:i=2
-      count:i=10
+      count:i=3
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -10091,7 +11452,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="tu-4_12xfab500"
+    weapons:t="tu-4_8xfab1000"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -10105,7 +11466,7 @@ units{
 
     props{
       army:i=1
-      count:i=10
+      count:i=3
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -10141,7 +11502,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="tu-4_12xfab500"
+    weapons:t="tu-4_8xfab1000"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -10155,7 +11516,7 @@ units{
 
     props{
       army:i=1
-      count:i=10
+      count:i=3
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -10191,7 +11552,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="tu-4_12xfab500"
+    weapons:t="tu-4_8xfab1000"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -10205,7 +11566,7 @@ units{
 
     props{
       army:i=1
-      count:i=10
+      count:i=3
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -10241,7 +11602,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="tu-4_12xfab500"
+    weapons:t="tu-4_8xfab1000"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -10255,7 +11616,7 @@ units{
 
     props{
       army:i=1
-      count:i=10
+      count:i=3
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -10305,7 +11666,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="B29_12x1000lbs"
+    weapons:t="B29_8x2000lbs"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -10319,7 +11680,7 @@ units{
 
     props{
       army:i=2
-      count:i=10
+      count:i=3
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -10355,7 +11716,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="B29_12x1000lbs"
+    weapons:t="B29_8x2000lbs"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -10369,7 +11730,7 @@ units{
 
     props{
       army:i=2
-      count:i=10
+      count:i=3
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -10405,7 +11766,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="B29_12x1000lbs"
+    weapons:t="B29_8x2000lbs"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -10419,7 +11780,7 @@ units{
 
     props{
       army:i=2
-      count:i=10
+      count:i=3
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -10455,7 +11816,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="B29_12x1000lbs"
+    weapons:t="B29_8x2000lbs"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -10469,7 +11830,7 @@ units{
 
     props{
       army:i=2
-      count:i=10
+      count:i=3
       free_distance:r=70
       floating_distance:r=50
       minimum_distance_to_earth:r=20
@@ -10645,6 +12006,938 @@ units{
       formation_noise:p2=0.1, 0.1
       uniqueName:t=""
       attack_type:t="fire_at_will"
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  squad{
+    name:t="teama_toptier_upgrades"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [545.8, 4.26889, -195.762]]
+
+    props{
+      object_marking:i=0
+      squad_members:t="teama_upg65"
+      squad_members:t="teama_upg44"
+      squad_members:t="teama_upg63"
+      squad_members:t="teama_upg62"
+      squad_members:t="teama_upg61"
+    }
+  }
+
+  squad{
+    name:t="teamb_toptier_upgrades"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-849.54, 4.12044, -38.967]]
+
+    props{
+      object_marking:i=0
+      squad_members:t="teamb_upg75"
+      squad_members:t="teamb_upg54"
+      squad_members:t="teamb_upg73"
+      squad_members:t="teamb_upg72"
+      squad_members:t="teamb_upg71"
+    }
+  }
+
+  air_defence{
+    name:t="air_defence_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1374.64, 201.367, -856.676]]
+    unit_class:t="germ_20mm_flak38_helipad"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=3
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_02"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1409.42, 193.916, -1161.68]]
+    unit_class:t="germ_20mm_flak38_helipad"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=3
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_03"
+    tm:m=[[5.96046e-08, 0.0436194, 0.999048] [0, 0.999048, -0.0436194] [-1, 2.59992e-09, 5.95479e-08] [1142.62, 203.023, -925.682]]
+    unit_class:t="germ_20mm_flak38_helipad"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=3
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_04"
+    tm:m=[[-0.0436193, 0, -0.999048] [0, 1, 0] [0.999048, 0, -0.0436193] [1423.74, 191.277, -1117.48]]
+    unit_class:t="germ_20mm_flak38_helipad"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=3
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_05"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [2252.18, 230.139, -5409.57]]
+    unit_class:t="germ_88mm_flak36"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=4
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_06"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [2252.18, 230.139, -4933.25]]
+    unit_class:t="germ_88mm_flak36"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=4
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_07"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [586.964, 230.139, -4893]]
+    unit_class:t="germ_88mm_flak36"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=4
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_08"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [794.607, 230.139, -5291.07]]
+    unit_class:t="germ_88mm_flak36"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=4
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_09"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1212.47, 142.688, 4732.92]]
+    unit_class:t="ussr_37mm_61k"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=3
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_10"
+    tm:m=[[0.996195, 0, -0.0871557] [0, 1, 0] [0.0871557, 0, 0.996195] [1251.77, 146.985, 5018.46]]
+    unit_class:t="ussr_37mm_61k"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=3
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_13"
+    tm:m=[[8.9407e-08, 0, 1] [0, 1, 0] [-1, 0, 8.9407e-08] [1251.77, 146.985, 4980.69]]
+    unit_class:t="ussr_37mm_61k"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=3
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_14"
+    tm:m=[[8.9407e-08, 0, 1] [0, 1, 0] [-1, 0, 8.9407e-08] [953.231, 146.985, 4980.69]]
+    unit_class:t="ussr_37mm_61k"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=3
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_11"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [201.144, 134.459, 6636.1]]
+    unit_class:t="ussr_85mm_52k"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=4
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_12"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [229.859, 134.459, 7043.93]]
+    unit_class:t="ussr_85mm_52k"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=4
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_15"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1717.06, 134.459, 6563.81]]
+    unit_class:t="ussr_85mm_52k"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=4
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  air_defence{
+    name:t="air_defence_16"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1629.06, 134.459, 7065.75]]
+    unit_class:t="ussr_85mm_52k"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=4
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="fire_at_will"
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamb_upg75"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-843.381, 4.12044, -34.5618]]
+    unit_class:t="sw_strv_103c"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="dont_aim"
+      setStealth:b=yes
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamb_upg54"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-847.334, 4.12044, -40.6514]]
+    unit_class:t="it_otomatic"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="dont_aim"
+      setStealth:b=yes
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamb_upg73"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-849.346, 4.12044, -34.2714]]
+    unit_class:t="us_m1a1_abrams"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="dont_aim"
+      setStealth:b=yes
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamb_upg72"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-852.329, 4.12044, -34.934]]
+    unit_class:t="germ_leopard_2a4"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="dont_aim"
+      setStealth:b=yes
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamb_upg71"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-855.311, 4.12044, -34.7754]]
+    unit_class:t="it_b1_centauro_romor"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="dont_aim"
+      setStealth:b=yes
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_upg75"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [564.781, 12.1461, -198.628]]
+    unit_class:t="cn_ptz_89"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="dont_aim"
+      setStealth:b=yes
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_upg54"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [555.291, 16.9941, -180.244]]
+    unit_class:t="ussr_zprk_2s6"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="dont_aim"
+      setStealth:b=yes
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_upg73"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [545.8, 12.1718, -200.589]]
+    unit_class:t="ussr_2s25"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="dont_aim"
+      setStealth:b=yes
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_upg72"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [536.31, 12.1624, -199.634]]
+    unit_class:t="ussr_t_72b"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="dont_aim"
+      setStealth:b=yes
+      targetableByAi:b=no
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_upg71"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [526.82, 13.4082, -199.713]]
+    unit_class:t="ussr_t_80b"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      uniqueName:t=""
+      attack_type:t="dont_aim"
+      setStealth:b=yes
       targetableByAi:b=no
     }
 

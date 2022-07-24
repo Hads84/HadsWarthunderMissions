@@ -1335,13 +1335,13 @@ triggers{
 
       unitSetVar{
         object_var_name:t="isEnd"
-        object:t="teamb_upg73"
+        object:t="teama_upg73"
         object_var_value:i=1
       }
 
       unitSetVar{
         object_var_name:t="isEnd"
-        object:t="teamb_upg54"
+        object:t="teama_upg54"
         object_var_value:i=1
       }
 
@@ -1655,7 +1655,7 @@ triggers{
 
     conditions{
       unitWhenStatus{
-        object_type:t="isKilled"
+        object_type:t="cantFight"
         check_objects:t="any"
         object_marking:i=0
         object_var_name:t=""
@@ -4995,7 +4995,7 @@ triggers{
       else_actions{}
     }
 
-    teama_respawn_upg_line04_copy{
+    teama_respawn_upg_line04_end{
       is_enabled:b=yes
       comments:t=""
 
@@ -6078,7 +6078,7 @@ mission_objectives{
   isCategory:b=yes
   is_enabled:b=yes
 
-  "Spawn AA Vehicles by moving next AA vehicle (500 points)"{
+  "Spawn AA Vehicles by moving next AA vehicle (100 points)"{
     is_enabled:b=yes
     comments:t=""
     type:t="abstractMissionObjective"
@@ -7926,6 +7926,16 @@ units{
       squad_members:t="teama_upg63"
       squad_members:t="teama_upg55"
       squad_members:t="teama_upg65"
+      squad_members:t="teamb_upg75"
+      squad_members:t="teamb_upg54"
+      squad_members:t="teamb_upg73"
+      squad_members:t="teamb_upg72"
+      squad_members:t="teamb_upg71"
+      squad_members:t="teama_upg75"
+      squad_members:t="teama_upg54"
+      squad_members:t="teama_upg73"
+      squad_members:t="teama_upg72"
+      squad_members:t="teama_upg71"
     }
   }
 

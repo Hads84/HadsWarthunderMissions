@@ -1,0 +1,3488 @@
+selected_tag:t=""
+bin_dump_file:t=""
+
+mission_settings{
+  player{
+    army:i=1
+    wing:t="teama_player_01"
+    wing:t="teama_player_02"
+    wing:t="teama_player_03"
+    wing:t="teama_player_04"
+    wing:t="teama_player_05"
+    wing:t="teama_player_06"
+    wing:t="teama_player_07"
+    wing:t="teama_player_08"
+    wing:t="teama_player_09"
+    wing:t="teama_player_10"
+    wing:t="teama_player_11"
+    wing:t="teama_player_12"
+    wing:t="teama_player_13"
+    wing:t="teama_player_14"
+    wing:t="teama_player_15"
+    wing:t="teama_player_16"
+    wing:t="teama_player_17"
+    wing:t="teama_player_18"
+    wing:t="teama_player_19"
+    wing:t="teama_player_20"
+    wing:t="teama_player_21"
+    wing:t="teama_player_22"
+    wing:t="teama_player_23"
+    wing:t="teama_player_24"
+    wing:t="teama_player_25"
+    wing:t="teama_player_26"
+    wing:t="teama_player_27"
+    wing:t="teama_player_28"
+    wing:t="teama_player_29"
+    wing:t="teama_player_30"
+    wing:t="teama_player_31"
+    wing:t="teama_player_32"
+  }
+
+  player_teamB{
+    army:i=2
+    wing:t="teamba_player_01"
+    wing:t="teamba_player_02"
+    wing:t="teamba_player_03"
+    wing:t="teamba_player_04"
+    wing:t="teamba_player_05"
+    wing:t="teamba_player_06"
+    wing:t="teamba_player_07"
+    wing:t="teamba_player_08"
+    wing:t="teamba_player_09"
+    wing:t="teamba_player_10"
+    wing:t="teamba_player_11"
+    wing:t="teamba_player_12"
+    wing:t="teamba_player_13"
+    wing:t="teamba_player_14"
+    wing:t="teamba_player_15"
+    wing:t="teamba_player_16"
+    wing:t="teamba_player_17"
+    wing:t="teamba_player_18"
+    wing:t="teamba_player_19"
+    wing:t="teamba_player_20"
+    wing:t="teamba_player_21"
+    wing:t="teamba_player_22"
+    wing:t="teamba_player_23"
+    wing:t="teamba_player_24"
+    wing:t="teamba_player_25"
+    wing:t="teamba_player_26"
+    wing:t="teamba_player_27"
+    wing:t="teamba_player_28"
+    wing:t="teamba_player_29"
+    wing:t="teamba_player_30"
+    wing:t="teamba_player_31"
+    wing:t="teamba_player_32"
+  }
+
+  mission{
+    type:t="event"
+    level:t="levels/avg_sector_montmedy_snow.bin"
+    environment:t="Day"
+    weather:t="hazy"
+    gt_versus:b=yes
+    isLimitedAmmo:b=yes
+    scoreLimit:i=50000
+    deathPenaltyMul:r=0
+    allowEmptyTeams:b=yes
+  }
+}
+
+imports{}
+triggers{
+  isCategory:b=yes
+  is_enabled:b=yes
+
+  make_unsafe{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      varCompareBool{
+        var_value:t="toggle_safe_zone"
+        value:b=yes
+        comparasion_func:t="equal"
+      }
+
+      varCompareBool{
+        var_value:t="move_mode"
+        value:b=no
+        comparasion_func:t="equal"
+      }
+    }
+
+    actions{
+      varSetBool{
+        value:b=no
+        var:t="toggle_safe_zone"
+      }
+
+      missionBattleArea{
+        air:b=no
+        ground:b=no
+        mapArea:b=yes
+        airMapArea:b=no
+        killArea:b=no
+        detectionArea:b=no
+        killOutOfBattleArea:b=no
+        area:t="main_battle_area"
+        team:t="Both"
+      }
+
+      missionBattleArea{
+        air:b=no
+        ground:b=yes
+        mapArea:b=no
+        airMapArea:b=no
+        killArea:b=no
+        detectionArea:b=no
+        killOutOfBattleArea:b=yes
+        area:t="town_01"
+        area:t="town_02"
+        area:t="town_03"
+        team:t="Both"
+      }
+
+      wait{
+        time:r=5
+      }
+
+      unitDamage{
+        power:r=1
+        useEffect:b=no
+        countEffects:i=1
+        delay:p2=1, 1
+        offset:p3=0, 0, 0
+        radiusOffset:p2=10, 15
+        target:t="players"
+        partName:t="transmission_dm"
+        fireAmmo:b=no
+        setOnFire:b=no
+      }
+
+      wait{
+        time:r=15
+      }
+
+      unitDamage{
+        power:r=1
+        useEffect:b=no
+        countEffects:i=1
+        delay:p2=1, 1
+        offset:p3=0, 0, 0
+        radiusOffset:p2=10, 15
+        target:t="players"
+        partName:t="transmission_dm"
+        fireAmmo:b=no
+        setOnFire:b=no
+      }
+
+      wait{
+        time:r=15
+      }
+
+      unitDamage{
+        power:r=1
+        useEffect:b=no
+        countEffects:i=1
+        delay:p2=1, 1
+        offset:p3=0, 0, 0
+        radiusOffset:p2=10, 15
+        target:t="players"
+        partName:t="transmission_dm"
+        fireAmmo:b=no
+        setOnFire:b=no
+      }
+
+      wait{
+        time:r=15
+      }
+
+      unitDamage{
+        power:r=1
+        useEffect:b=no
+        countEffects:i=1
+        delay:p2=1, 1
+        offset:p3=0, 0, 0
+        radiusOffset:p2=10, 15
+        target:t="players"
+        partName:t="transmission_dm"
+        fireAmmo:b=no
+        setOnFire:b=no
+      }
+    }
+
+    else_actions{}
+  }
+
+  setup_mission{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=no
+    }
+
+    events{
+      initMission{}
+    }
+
+    conditions{}
+    actions{
+      unitSetProperties{
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        object:t="bombers"
+        object:t="bomb_target_03"
+        object:t="bomb_target_02"
+        object:t="bomb_target_01"
+        isImmortal:b=yes
+        stealthRadius:r=2000
+        calmDetection:b=no
+        forceVisibleOnMap:b=yes
+        registerCollisions:b=no
+      }
+
+      unitPutToSleep{
+        target:t="bombers"
+      }
+
+      missionMarkAsRespawnPoint{
+        loc_name:t="Player Spawn"
+        spawnEffect:b=no
+        isStrictSpawn:b=yes
+        resetStrictSpawnIndex:b=no
+        isAirfield:b=no
+        isUnit:b=no
+        forceCreate:b=no
+        useExisting:b=no
+        ignoreTeamsOnReuse:b=no
+        isIndividual:b=no
+        onlyOnePlayerPerSpawnPoint:b=no
+        removeAreas:b=no
+        replaceAreas:b=no
+        canSpawnOnNeutral:b=yes
+        showOnMap:b=yes
+        radius:r=-1
+        target:t="player_spawn_01"
+        target:t="player_spawn_02"
+        target:t="player_spawn_03"
+        target:t="player_spawn_04"
+        target:t="player_spawn_05"
+        target:t="player_spawn_06"
+        target:t="player_spawn_07"
+        target:t="player_spawn_08"
+        target:t="player_spawn_09"
+        target:t="player_spawn_10"
+        target:t="player_spawn_11"
+        target:t="player_spawn_12"
+        target:t="player_spawn_13"
+        target:t="player_spawn_14"
+        target:t="player_spawn_15"
+        target:t="player_spawn_16"
+        target:t="player_spawn_17"
+        target:t="player_spawn_18"
+        target:t="player_spawn_19"
+        target:t="player_spawn_20"
+        target:t="player_spawn_21"
+        target:t="player_spawn_22"
+        target:t="player_spawn_23"
+        target:t="player_spawn_24"
+        target:t="player_spawn_25"
+        target:t="player_spawn_26"
+        target:t="player_spawn_27"
+        target:t="player_spawn_28"
+        target:t="player_spawn_29"
+        target:t="player_spawn_30"
+        target:t="player_spawn_31"
+        target:t="player_spawn_32"
+        target:t="player_spawn_33"
+        target:t="player_spawn_34"
+        target:t="player_spawn_35"
+        target:t="player_spawn_36"
+        target:t="player_spawn_37"
+        target:t="player_spawn_38"
+        target:t="player_spawn_39"
+        target:t="player_spawn_40"
+        target:t="player_spawn_41"
+        target:t="player_spawn_42"
+        target:t="player_spawn_43"
+        target:t="player_spawn_44"
+        target:t="player_spawn_45"
+        target:t="player_spawn_46"
+        target:t="player_spawn_47"
+        target:t="player_spawn_48"
+        target:t="player_spawn_49"
+        target:t="player_spawn_50"
+        team:t="Both"
+
+        tags{
+          tank:b=yes
+        }
+      }
+    }
+
+    else_actions{}
+  }
+
+  spawn_bombers{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      varCompareBool{
+        var_value:t="start_bombing"
+        value:b=yes
+        comparasion_func:t="equal"
+      }
+
+      varCompareBool{
+        var_value:t="bombing_mode"
+        value:b=yes
+        comparasion_func:t="equal"
+      }
+    }
+
+    actions{
+      varSetBool{
+        value:b=no
+        var:t="start_bombing"
+      }
+
+      unitPutToSleep{
+        target:t="bombers"
+      }
+
+      varSetRandomInt{
+        var:t="next_target"
+        from:i=1
+        to_not_including:i=4
+      }
+
+      varSetString{
+        value:t="bomber_spawn_"
+        var:t="temp_str"
+      }
+
+      varAddString{
+        value:t=""
+        digits:i=2
+        var:t="temp_str"
+        input_var:t="next_target"
+      }
+
+      unitRespawn{
+        delay:r=1
+        offset:p3=0, 0, 0
+        object:t="bombers"
+        object_type:t="isInactive"
+        target:t="@temp_str"
+        randomObjectsCount:i=5
+      }
+
+      varSetString{
+        value:t="bomb_target_"
+        var:t="temp_str"
+      }
+
+      varAddString{
+        value:t=""
+        digits:i=2
+        var:t="temp_str"
+        input_var:t="next_target"
+      }
+
+      unitAttackTarget{
+        playerAttracted:b=no
+        object:t="bombers"
+        attack_type:t="kill_target"
+        target:t="@temp_str"
+        weaponType:t="bombs"
+        fireMode:t="salvo"
+        forceTarget:b=yes
+      }
+    }
+
+    else_actions{}
+  }
+
+  remove_ammo{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      playerWhenSpawn{
+        team:t="Both"
+      }
+    }
+
+    actions{
+      unitSetZeroAmmo{
+        target:t="players"
+        triggerGroup:t="primary"
+        triggerGroup:t="secondary"
+        triggerGroup:t="coaxial"
+        triggerGroup:t="machinegun"
+        triggerGroup:t="special"
+        triggerGroup:t="rockets"
+      }
+    }
+
+    else_actions{}
+  }
+
+  manage_modes{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=150
+      }
+    }
+
+    conditions{
+      varCompareBool{
+        var_value:t="bombing_mode"
+        value:b=yes
+        comparasion_func:t="equal"
+      }
+    }
+
+    actions{
+      varSetBool{
+        value:b=no
+        var:t="bombing_mode"
+      }
+
+      varSetBool{
+        value:b=yes
+        var:t="move_mode"
+        var:t="toggle_safe_zone"
+      }
+    }
+
+    else_actions{
+      varSetBool{
+        value:b=no
+        var:t="move_mode"
+      }
+
+      varSetBool{
+        value:b=yes
+        var:t="bombing_mode"
+        var:t="start_bombing"
+        var:t="toggle_safe_zone"
+      }
+    }
+  }
+
+  make_safe_again{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      varCompareBool{
+        var_value:t="move_mode"
+        value:b=yes
+        comparasion_func:t="equal"
+      }
+
+      varCompareBool{
+        var_value:t="toggle_safe_zone"
+        value:b=yes
+        comparasion_func:t="equal"
+      }
+    }
+
+    actions{
+      varSetBool{
+        value:b=no
+        var:t="toggle_safe_zone"
+      }
+
+      missionSetBombingArea{
+        army:i=1
+        target:t="town_01"
+        target:t="town_02"
+        target:t="town_03"
+        hp:r=10000
+      }
+
+      missionBattleArea{
+        air:b=no
+        ground:b=no
+        mapArea:b=no
+        airMapArea:b=no
+        killArea:b=no
+        detectionArea:b=no
+        killOutOfBattleArea:b=no
+        area:t="town_01"
+        area:t="town_02"
+        area:t="town_03"
+        team:t="Both"
+      }
+
+      missionBattleArea{
+        air:b=no
+        ground:b=yes
+        mapArea:b=yes
+        airMapArea:b=no
+        killArea:b=no
+        detectionArea:b=no
+        killOutOfBattleArea:b=yes
+        area:t="main_battle_area"
+        team:t="Both"
+      }
+
+      unitRestore{
+        target_marking:i=0
+        ressurectIfDead:b=no
+        fullRestore:b=no
+        target:t="players"
+        ammoRestore:b=no
+        partRestore:b=yes
+        tankPart:t="transmission_dm"
+        power:r=1
+      }
+    }
+
+    else_actions{}
+  }
+}
+
+mission_objectives{
+  isCategory:b=yes
+  is_enabled:b=yes
+}
+
+variables{
+  temp_str:t=""
+  next_target:i=0
+  start_bombing:b=no
+  toggle_safe_zone:b=yes
+  bombing_mode:b=no
+  move_mode:b=yes
+}
+
+dialogs{}
+airfields{}
+effects{}
+units{
+  tankModels{
+    name:t="teama_player_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1509.47]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1509.47]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_02"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1527.15]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_03"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1544.83]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_04"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1562.51]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_05"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1580.19]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_06"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1597.88]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_07"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1615.56]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_08"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1633.24]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_09"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1650.92]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_10"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1668.6]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="tank_tool_kit"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_11"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1686.28]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_12"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1703.96]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_13"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1721.64]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_14"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1739.32]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_15"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1757]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_16"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1774.68]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="manual_extinguisher"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_17"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1792.36]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_18"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1810.04]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_19"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1827.72]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_20"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1845.4]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_21"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1863.08]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_22"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1880.76]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_23"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1898.44]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_24"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1916.12]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_25"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1933.81]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_26"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1951.49]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_27"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1969.17]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_28"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 1986.85]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_29"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 2004.53]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_30"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 2022.21]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_31"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 2039.89]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teama_player_32"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3073.45, 0, 2057.57]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_02"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1525.8]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_03"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1542.14]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_04"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1558.47]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_05"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1574.8]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_06"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1591.13]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_07"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1607.46]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_08"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1623.8]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_09"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1640.13]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_10"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1656.46]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_11"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1672.79]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_12"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1689.12]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_13"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1705.46]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_14"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1721.79]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_15"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1738.12]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_16"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1754.45]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_17"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1770.78]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_18"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1787.12]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_19"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1803.45]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_20"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1819.78]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_21"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1836.11]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_22"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1852.45]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_23"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1868.78]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_24"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1885.11]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_25"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1901.44]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_26"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1917.77]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_27"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1934.11]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_28"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1950.44]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_29"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1966.77]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_30"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1983.1]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_31"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 1999.43]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="teamba_player_32"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3127.15, 0, 2015.77]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="bombers"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-951.272, 421.687, 1559.76]]
+    unit_class:t="lancaster_mk3"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="lancaster_mk3_1x_12000"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=15
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="kill_target"
+      skill:i=5
+      canLeaveRouteForAtack:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.8
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  structures{
+    name:t="bomb_target_03"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-1739.9, 34.4616, 2291.71]]
+    unit_class:t="flag_red"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      targetableByAi:b=yes
+    }
+
+    way{}
+  }
+
+  squad{
+    name:t="players"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-3100.3, 0, 1773.07]]
+
+    props{
+      squad_members:t="teama_player_01"
+      squad_members:t="teamba_player_01"
+      squad_members:t="teama_player_02"
+      squad_members:t="teama_player_03"
+      squad_members:t="teama_player_04"
+      squad_members:t="teama_player_05"
+      squad_members:t="teama_player_06"
+      squad_members:t="teama_player_07"
+      squad_members:t="teama_player_08"
+      squad_members:t="teama_player_09"
+      squad_members:t="teama_player_10"
+      squad_members:t="teama_player_11"
+      squad_members:t="teama_player_12"
+      squad_members:t="teama_player_13"
+      squad_members:t="teama_player_14"
+      squad_members:t="teama_player_15"
+      squad_members:t="teama_player_16"
+      squad_members:t="teama_player_17"
+      squad_members:t="teama_player_18"
+      squad_members:t="teama_player_19"
+      squad_members:t="teama_player_20"
+      squad_members:t="teama_player_21"
+      squad_members:t="teama_player_22"
+      squad_members:t="teama_player_23"
+      squad_members:t="teama_player_24"
+      squad_members:t="teama_player_25"
+      squad_members:t="teama_player_26"
+      squad_members:t="teama_player_27"
+      squad_members:t="teama_player_28"
+      squad_members:t="teama_player_29"
+      squad_members:t="teama_player_30"
+      squad_members:t="teama_player_31"
+      squad_members:t="teama_player_32"
+      squad_members:t="teamba_player_02"
+      squad_members:t="teamba_player_03"
+      squad_members:t="teamba_player_04"
+      squad_members:t="teamba_player_05"
+      squad_members:t="teamba_player_06"
+      squad_members:t="teamba_player_07"
+      squad_members:t="teamba_player_08"
+      squad_members:t="teamba_player_09"
+      squad_members:t="teamba_player_10"
+      squad_members:t="teamba_player_11"
+      squad_members:t="teamba_player_12"
+      squad_members:t="teamba_player_13"
+      squad_members:t="teamba_player_14"
+      squad_members:t="teamba_player_15"
+      squad_members:t="teamba_player_16"
+      squad_members:t="teamba_player_17"
+      squad_members:t="teamba_player_18"
+      squad_members:t="teamba_player_19"
+      squad_members:t="teamba_player_20"
+      squad_members:t="teamba_player_21"
+      squad_members:t="teamba_player_22"
+      squad_members:t="teamba_player_23"
+      squad_members:t="teamba_player_24"
+      squad_members:t="teamba_player_25"
+      squad_members:t="teamba_player_26"
+      squad_members:t="teamba_player_27"
+      squad_members:t="teamba_player_28"
+      squad_members:t="teamba_player_29"
+      squad_members:t="teamba_player_30"
+      squad_members:t="teamba_player_31"
+      squad_members:t="teamba_player_32"
+    }
+  }
+
+  structures{
+    name:t="bomb_target_02"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-2299.36, 33.7929, 2321.38]]
+    unit_class:t="flag_red"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      targetableByAi:b=yes
+    }
+
+    way{}
+  }
+
+  structures{
+    name:t="bomb_target_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [-2513.89, 7.77376, 1496.95]]
+    unit_class:t="flag_red"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=0
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      targetableByAi:b=yes
+    }
+
+    way{}
+  }
+}
+
+areas{
+  main_battle_area{
+    type:t="Box"
+    tm:m=[[927.022, 0, 0] [0, 500, 0] [0, 0, 983.698] [-2120.67, 0, 1938.34]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  town_01{
+    type:t="Sphere"
+    tm:m=[[80, 0, 0] [0, 80, 0] [0, 0, 80] [-2512.78, 5.18597, 1493.24]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  town_02{
+    type:t="Sphere"
+    tm:m=[[80, 0, 0] [0, 80, 0] [0, 0, 80] [-2299.34, 33.3263, 2321.42]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  town_03{
+    type:t="Sphere"
+    tm:m=[[80, 0, 0] [0, 80, 0] [0, 0, 80] [-1740.35, 34.0255, 2291.45]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_01{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2180.98, 30.5981, 1920.62]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_02{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2180.98, 30.5981, 1941.57]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_03{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2180.98, 30.5981, 1962.52]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_04{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2180.98, 30.5981, 1983.48]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_05{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2180.98, 30.5981, 2004.43]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_06{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2180.98, 30.5981, 2025.38]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_07{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2180.98, 30.5981, 2046.33]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_08{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2180.98, 30.5981, 2067.28]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_09{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2180.98, 30.5981, 2088.23]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_10{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2180.98, 30.5981, 2109.18]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_11{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2180.98, 30.5981, 2130.13]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_12{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2180.98, 30.5981, 2151.08]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_13{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2161.16, 30.5981, 2151.08]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_14{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2161.16, 30.5981, 2129.34]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_15{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2161.16, 30.5981, 2107.6]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_16{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2161.16, 30.5981, 2085.86]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_17{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2161.16, 30.5981, 2064.12]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_18{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2161.16, 30.5981, 2042.38]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_19{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2161.16, 30.5981, 2020.63]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_20{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2161.16, 30.5981, 1998.89]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_21{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2161.16, 30.5981, 1977.15]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_22{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2161.16, 30.5981, 1955.41]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_23{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2161.16, 30.5981, 1933.67]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_24{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2161.16, 30.5981, 1911.93]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_25{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2140.42, 30.5981, 1911.93]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_26{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2140.42, 30.5981, 1934.36]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_27{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2140.42, 30.5981, 1956.79]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_28{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2140.42, 30.5981, 1979.22]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_29{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2140.42, 30.5981, 2001.65]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_30{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2140.42, 30.5981, 2024.07]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_31{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2140.42, 30.5981, 2046.5]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_32{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2140.42, 30.5981, 2068.93]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_33{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2140.42, 30.5981, 2091.36]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_34{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2140.42, 30.5981, 2113.79]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_35{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2140.42, 30.5981, 2136.22]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_36{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2140.42, 30.5981, 2158.65]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_37{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2119.61, 30.5981, 2158.65]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_38{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2119.61, 30.5981, 2134.9]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_39{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2119.61, 30.5981, 2111.15]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_40{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2119.61, 30.5981, 2087.4]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_41{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2119.61, 30.5981, 2063.65]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_42{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2119.61, 30.5981, 2039.9]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_43{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2119.61, 30.5981, 2016.14]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_44{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2119.61, 30.5981, 1992.39]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_45{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2119.61, 30.5981, 1968.64]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_46{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2119.61, 30.5981, 1944.89]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_47{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2119.61, 30.5981, 1921.14]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_48{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2119.61, 30.5981, 1897.39]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_49{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2098.27, 30.5981, 1897.39]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_50{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2098.27, 30.5981, 1922.43]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_51{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2098.27, 30.5981, 1947.47]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_52{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2098.27, 30.5981, 1972.51]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_53{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2098.27, 30.5981, 1997.55]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_54{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2098.27, 30.5981, 2022.59]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_55{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2098.27, 30.5981, 2047.63]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_56{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2098.27, 30.5981, 2072.67]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_57{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2098.27, 30.5981, 2097.71]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_58{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2098.27, 30.5981, 2122.75]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_59{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2098.27, 30.5981, 2147.79]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_60{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2098.27, 30.5981, 2172.83]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_61{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2078.7, 30.5981, 2172.83]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_62{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2078.7, 30.5981, 2150.3]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_63{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2078.7, 30.5981, 2127.77]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn_64{
+    type:t="Sphere"
+    tm:m=[[17.899, 0, 0] [0, 17.899, 0] [0, 0, 17.899] [-2078.7, 30.5981, 2105.24]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  bomber_spawn_01{
+    type:t="Sphere"
+    tm:m=[[-282.682, 0, -325.52] [0, 431.129, 0] [325.52, 0, -282.682] [795.846, 500, 4807.9]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  bomber_spawn_02{
+    type:t="Sphere"
+    tm:m=[[-349.555, 0, 252.355] [0, 431.129, 0] [-252.355, 0, -349.555] [-391.607, 500, -1077.36]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  bomber_spawn_03{
+    type:t="Sphere"
+    tm:m=[[289.89, 0, 319.117] [0, 431.129, 0] [-319.117, 0, 289.89] [-5372.11, 500, -1055.46]]
+    objLayer:i=0
+
+    props{}
+  }
+}
+
+objLayers{
+  layer{
+    enabled:b=yes
+  }
+
+  layer{
+    enabled:b=yes
+  }
+
+  layer{
+    enabled:b=yes
+  }
+
+  layer{
+    enabled:b=yes
+  }
+}
+
+wayPoints{}

@@ -213,6 +213,7 @@ triggers{
         target:t="player_spawn_41"
         target:t="player_spawn_42"
         team:t="Both"
+        disableAfter:i=60
 
         tags{
           tank:b=yes

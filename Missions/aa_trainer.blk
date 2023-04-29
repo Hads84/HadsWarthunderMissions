@@ -1,0 +1,2484 @@
+selected_tag:t=""
+bin_dump_file:t=""
+
+mission_settings{
+  player{
+    army:i=1
+    wing:t="player_01"
+    wing:t="player_02"
+    wing:t="player_03"
+    wing:t="player_04"
+  }
+
+  player_teamB{
+    army:i=2
+    wing:t="player_05"
+    wing:t="player_06"
+    wing:t="player_07"
+    wing:t="player_08"
+  }
+
+  mission{
+    type:t="domination"
+    level:t="levels/avg_egypt_sinai.bin"
+    environment:t="Day"
+    weather:t="hazy"
+    gt_mp_tickets:b=yes
+    gt_versus:b=yes
+    scoreLimit:i=50000
+    deathPenaltyMul:r=0
+    ctaCaptureZoneEqualPenaltyMul:r=0
+    ctaCaptureZoneDiffPenaltyExp:r=0
+    allowEmptyTeams:b=yes
+  }
+}
+
+imports{}
+triggers{
+  isCategory:b=yes
+  is_enabled:b=yes
+
+  spawn_planes{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      unitWhenInArea{
+        math:t="2D"
+        object_type:t="isActive"
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        check_objects:t="any"
+        object:t="players"
+        target:t="aa_fight_zone"
+      }
+
+      unitWhenCountMatches{
+        object_type:t="isActive"
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        func:t="less"
+        value:i=1
+        object:t="bot_air"
+      }
+    }
+
+    actions{
+      unitRestore{
+        target_marking:i=0
+        ressurectIfDead:b=no
+        fullRestore:b=no
+        target:t="@cur_plane"
+        ammoRestore:b=yes
+      }
+
+      unitRespawn{
+        delay:r=1
+        offset:p3=0, 0, 0
+        object:t="@cur_plane"
+        target:t="air_spawn_01"
+        target:t="air_spawn_02"
+        target:t="air_spawn_03"
+        target:t="air_spawn_04"
+        target:t="air_spawn_05"
+        target:t="air_spawn_06"
+        target:t="air_spawn_07"
+        target:t="air_spawn_08"
+        target:t="air_spawn_09"
+        target:t="air_spawn_10"
+        target:t="air_spawn_11"
+        target:t="air_spawn_12"
+        randomObjectsCountVar:t="cur_num_to_spawn"
+        randomSpawn:b=yes
+      }
+
+      unitAttackTarget{
+        playerAttracted:b=no
+        object:t="@cur_plane"
+        attack_type:t="kill_player"
+        weaponType:t="all"
+        fireMode:t="single"
+      }
+    }
+
+    else_actions{}
+  }
+
+  mission_setup{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=no
+    }
+
+    events{
+      initMission{}
+    }
+
+    conditions{}
+    actions{
+      unitPutToSleep{
+        target:t="bot_air"
+      }
+
+      missionMarkAsCaptureZone{
+        army:i=1
+        timeMultiplier:r=1
+        disableZone:b=no
+        name_for_respawn_base:t=""
+        target:t="aa_fight_zone"
+        iconIndex:i=0
+        canCaptureOnGround:b=yes
+        zoneType:t="capture"
+        captureNoPenalty:b=yes
+        markUnitPreset:t="tank_decal"
+        markUnits:t="fight_area_circle"
+        showBorderOnMap:b=yes
+
+        zoneDefenders{}
+      }
+
+      missionMarkAsCaptureZone{
+        army:i=1
+        timeMultiplier:r=1
+        disableZone:b=no
+        name_for_respawn_base:t=""
+        target:t="increase_num_planes"
+        iconIndex:i=1
+        canCaptureOnGround:b=yes
+        zoneType:t="capture"
+        captureNoPenalty:b=yes
+        markUnitPreset:t="tank_decal"
+        markUnits:t="increase_num_circle"
+        showBorderOnMap:b=yes
+
+        zoneDefenders{}
+      }
+
+      missionMarkAsCaptureZone{
+        army:i=1
+        timeMultiplier:r=1
+        disableZone:b=no
+        name_for_respawn_base:t=""
+        target:t="decrease_num_planes"
+        iconIndex:i=2
+        canCaptureOnGround:b=yes
+        zoneType:t="capture"
+        captureNoPenalty:b=yes
+        markUnitPreset:t="tank_decal"
+        markUnits:t="decrease_num_circle"
+        showBorderOnMap:b=yes
+
+        zoneDefenders{}
+      }
+
+      missionMarkAsCaptureZone{
+        army:i=1
+        timeMultiplier:r=1
+        disableZone:b=no
+        name_for_respawn_base:t=""
+        target:t="cycle_type"
+        iconIndex:i=3
+        canCaptureOnGround:b=yes
+        zoneType:t="capture"
+        captureNoPenalty:b=yes
+        markUnitPreset:t="tank_decal"
+        markUnits:t="cycle_type_circle"
+        showBorderOnMap:b=yes
+
+        zoneDefenders{}
+      }
+
+      missionMarkAsCaptureZone{
+        army:i=1
+        timeMultiplier:r=1
+        disableZone:b=no
+        name_for_respawn_base:t=""
+        target:t="kill_all_planes"
+        iconIndexVar:t="kill_all_icon_index"
+        canCaptureOnGround:b=yes
+        zoneType:t="capture"
+        captureNoPenalty:b=yes
+        markUnitPreset:t="tank_decal"
+        markUnits:t="kill_all_circle"
+        showBorderOnMap:b=yes
+
+        zoneDefenders{}
+      }
+
+      missionMarkAsRespawnPoint{
+        loc_name:t="Player Spawn"
+        spawnEffect:b=no
+        isStrictSpawn:b=no
+        resetStrictSpawnIndex:b=no
+        isAirfield:b=no
+        isUnit:b=no
+        forceCreate:b=no
+        useExisting:b=no
+        ignoreTeamsOnReuse:b=no
+        isIndividual:b=no
+        onlyOnePlayerPerSpawnPoint:b=no
+        removeAreas:b=no
+        replaceAreas:b=no
+        canSpawnOnNeutral:b=yes
+        showOnMap:b=yes
+        radius:r=-1
+        target:t="player_spawn"
+        team:t="Both"
+        spawnOffset:p3=5, 0, 5
+        spawnOffsetSpace:t="world"
+
+        tags{
+          tank:b=yes
+        }
+      }
+
+      missionSetTargetsIndicator{
+        target_type:t="isAlive"
+        target_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        delta:i=0
+        icon:t="air"
+        "icon army":i=2
+        set:b=yes
+        target:t="bot_air"
+        var:t="cur_num_to_spawn"
+        team:t="Both"
+      }
+
+      moAddMissionObjective{
+        target:t="A - Spawn Aircraft"
+        object_marking:i=0
+        object_var_comp_op:t="equal"
+        object_var_name:t=""
+      }
+
+      moAddMissionObjective{
+        target:t="B - Increase Number Spawned"
+        object_marking:i=0
+        object_var_comp_op:t="equal"
+        object_var_name:t=""
+      }
+
+      moAddMissionObjective{
+        target:t="C - Decrease Number Spawned"
+        object_marking:i=0
+        object_var_comp_op:t="equal"
+        object_var_name:t=""
+      }
+
+      moAddMissionObjective{
+        target:t="D - Change Type Spawned"
+        object_marking:i=0
+        object_var_comp_op:t="equal"
+        object_var_name:t=""
+      }
+
+      moAddMissionObjective{
+        target:t="E - Destroy all Bots"
+        object_marking:i=0
+        object_var_comp_op:t="equal"
+        object_var_name:t=""
+      }
+    }
+
+    else_actions{}
+  }
+
+  set_team_on_spawn{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      playerWhenSpawn{
+        team:t="B"
+      }
+    }
+
+    actions{
+      playHint{
+        hintType:t="custom"
+        name:t="Please choose different team"
+        action:t="show"
+        shouldFadeOut:b=no
+        isOverFade:b=no
+        time:r=-1
+        priority:i=0
+        target_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        team:t="B"
+      }
+    }
+
+    else_actions{}
+  }
+
+  restore_all_ammo{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=5
+      }
+    }
+
+    conditions{}
+    actions{
+      unitRestore{
+        target_marking:i=0
+        ressurectIfDead:b=no
+        fullRestore:b=no
+        target:t="players"
+        target:t="@cur_plane"
+        ammoRestore:b=yes
+      }
+    }
+
+    else_actions{}
+  }
+
+  increase_num_planes{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=5
+      }
+    }
+
+    conditions{
+      unitWhenInArea{
+        math:t="2D"
+        object_type:t="isAlive"
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        check_objects:t="any"
+        object:t="players"
+        target:t="increase_num_planes"
+      }
+    }
+
+    actions{
+      varModify{
+        operator:t="modAB"
+        value:r=20
+        var:t="cur_num_to_spawn"
+      }
+
+      varModify{
+        operator:t="add"
+        value:r=1
+        var:t="cur_num_to_spawn"
+      }
+
+      missionSetTargetsIndicator{
+        target_type:t="isAlive"
+        target_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        delta:i=0
+        icon:t="air"
+        "icon army":i=2
+        set:b=yes
+        target:t="bot_air"
+        var:t="cur_num_to_spawn"
+        team:t="Both"
+      }
+    }
+
+    else_actions{}
+  }
+
+  decrease_num_planes{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=5
+      }
+    }
+
+    conditions{
+      unitWhenInArea{
+        math:t="2D"
+        object_type:t="isAlive"
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        check_objects:t="any"
+        object:t="players"
+        target:t="decrease_num_planes"
+      }
+
+      varCompareInt{
+        var_value:t="cur_num_to_spawn"
+        value:i=1
+        comparasion_func:t="more"
+      }
+    }
+
+    actions{
+      varModify{
+        operator:t="subAB"
+        value:r=1
+        var:t="cur_num_to_spawn"
+      }
+
+      missionSetTargetsIndicator{
+        target_type:t="isAlive"
+        target_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        delta:i=0
+        icon:t="air"
+        "icon army":i=2
+        set:b=yes
+        target:t="bot_air"
+        var:t="cur_num_to_spawn"
+        team:t="Both"
+      }
+    }
+
+    else_actions{}
+  }
+
+  cycle_planes{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=5
+      }
+    }
+
+    conditions{
+      unitWhenInArea{
+        math:t="2D"
+        object_type:t="isAlive"
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        check_objects:t="any"
+        object:t="players"
+        target:t="cycle_type"
+      }
+    }
+
+    actions{
+      varModify{
+        operator:t="modAB"
+        value:r=20
+        var:t="cur_plane_index"
+      }
+
+      varModify{
+        operator:t="add"
+        value:r=1
+        var:t="cur_plane_index"
+      }
+
+      varSetString{
+        value:t="air_"
+        var:t="cur_plane"
+      }
+
+      varAddString{
+        value:t=""
+        digits:i=2
+        var:t="cur_plane"
+        input_var:t="cur_plane_index"
+      }
+
+      unitGetVar{
+        object_marking:i=0
+        object:t="@cur_plane"
+        object_var_name:t="friendly_name"
+        out_var_string:t="cur_plane_friendly_name"
+      }
+
+      playHint{
+        hintType:t="custom"
+        name:t="@cur_plane_friendly_name"
+        action:t="show"
+        shouldFadeOut:b=no
+        isOverFade:b=no
+        time:r=-1
+        priority:i=0
+        target_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        team:t="A"
+      }
+    }
+
+    else_actions{}
+  }
+
+  set_unit_names{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=no
+    }
+
+    events{
+      initMission{}
+    }
+
+    conditions{}
+    actions{
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_01"
+        object_var_string:t="I 16"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_02"
+        object_var_string:t="HS 129"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_03"
+        object_var_string:t="BF 110G"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_04"
+        object_var_string:t="F4U 1D"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_05"
+        object_var_string:t="P-47D-28"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_06"
+        object_var_string:t="PE 8"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_07"
+        object_var_string:t="TU-2"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_08"
+        object_var_string:t="Spitfire LF Mk 9"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_09"
+        object_var_string:t="A2D"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_10"
+        object_var_string:t="HO 229"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_11"
+        object_var_string:t="ME 262a 1a U1"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_12"
+        object_var_string:t="F-84G"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_13"
+        object_var_string:t="G-91 R4"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_14"
+        object_var_string:t="A4E Early"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_15"
+        object_var_string:t="Harrier GR1"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_16"
+        object_var_string:t="A10a Late"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_17"
+        object_var_string:t="SU-25K"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_18"
+        object_var_string:t="Harrier GR. 7"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_19"
+        object_var_string:t="F-14a"
+      }
+
+      unitSetVar{
+        object_var_name:t="friendly_name"
+        object:t="air_20"
+        object_var_string:t="Mig 29"
+      }
+
+      unitGetVar{
+        object_marking:i=0
+        object:t="@cur_plane"
+        object_var_name:t="friendly_name"
+        out_var_string:t="cur_plane_friendly_name"
+      }
+
+      playHint{
+        hintType:t="custom"
+        name:t="@cur_plane_friendly_name"
+        action:t="show"
+        shouldFadeOut:b=no
+        isOverFade:b=no
+        time:r=-1
+        priority:i=0
+        target_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        team:t="A"
+      }
+    }
+
+    else_actions{}
+  }
+
+  set_plane_hint{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      playerWhenSpawn{
+        team:t="A"
+      }
+    }
+
+    actions{
+      unitGetVar{
+        object_marking:i=0
+        object:t="@cur_plane"
+        object_var_name:t="friendly_name"
+        out_var_string:t="cur_plane_friendly_name"
+      }
+
+      playHint{
+        hintType:t="custom"
+        name:t="@cur_plane_friendly_name"
+        action:t="show"
+        shouldFadeOut:b=no
+        isOverFade:b=no
+        time:r=-1
+        priority:i=0
+        target_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        useForTriggerFiltered:b=yes
+        team:t="A"
+      }
+    }
+
+    else_actions{}
+  }
+
+  kill_all_ai{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      unitWhenInArea{
+        math:t="2D"
+        object_type:t="isAlive"
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        check_objects:t="any"
+        object:t="players"
+        target:t="kill_all_planes"
+      }
+
+      unitWhenCountMatches{
+        object_type:t="isActive"
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        func:t="notLess"
+        value:i=1
+        object:t="bot_air"
+      }
+    }
+
+    actions{
+      unitDamage{
+        power:r=1
+        useEffect:b=no
+        countEffects:i=1
+        delay:p2=1, 1
+        offset:p3=0, 0, 0
+        radiusOffset:p2=10, 15
+        target:t="bot_air"
+        doExplosion:b=yes
+        target_type:t="isActive"
+      }
+    }
+
+    else_actions{}
+  }
+}
+
+mission_objectives{
+  isCategory:b=yes
+  is_enabled:b=yes
+
+  "A - Spawn Aircraft"{
+    is_enabled:b=yes
+    comments:t=""
+    type:t="abstractMissionObjective"
+
+    props{
+      isPrimary:b=yes
+      timeLimit:i=18000
+      team:t="A"
+    }
+
+    onSuccess{}
+    onFailed{}
+  }
+
+  "B - Increase Number Spawned"{
+    is_enabled:b=yes
+    comments:t=""
+    type:t="abstractMissionObjective"
+
+    props{
+      isPrimary:b=yes
+      timeLimit:i=18000
+      team:t="A"
+    }
+
+    onSuccess{}
+    onFailed{}
+  }
+
+  "C - Decrease Number Spawned"{
+    is_enabled:b=yes
+    comments:t=""
+    type:t="abstractMissionObjective"
+
+    props{
+      isPrimary:b=yes
+      timeLimit:i=18000
+      team:t="A"
+    }
+
+    onSuccess{}
+    onFailed{}
+  }
+
+  "D - Change Type Spawned"{
+    is_enabled:b=yes
+    comments:t=""
+    type:t="abstractMissionObjective"
+
+    props{
+      isPrimary:b=yes
+      timeLimit:i=18000
+      team:t="A"
+    }
+
+    onSuccess{}
+    onFailed{}
+  }
+
+  "E - Destroy all Bots"{
+    is_enabled:b=yes
+    comments:t=""
+    type:t="abstractMissionObjective"
+
+    props{
+      isPrimary:b=yes
+      timeLimit:i=18000
+      team:t="A"
+    }
+
+    onSuccess{}
+    onFailed{}
+  }
+}
+
+variables{
+  cur_plane:t="air_01"
+  cur_plane_index:i=1
+  cur_num_to_spawn:i=1
+  cur_plane_friendly_name:t=""
+  kill_all_icon_index:i=4
+}
+
+dialogs{}
+airfields{}
+effects{}
+units{
+  structures{
+    name:t="fight_zone_flag"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1333.92, 626.876, 2382.84]]
+    unit_class:t="flag_blue"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  objectGroups{
+    name:t="fight_area_circle"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1333.17, 626.832, 2381.76]]
+    unit_class:t="capture_zone_circle"
+    objLayer:i=2
+
+    props{
+      army:i=0
+      active:b=yes
+    }
+  }
+
+  tankModels{
+    name:t="player_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1266.74, 631.258, 2550.74]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="player_02"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1274.95, 631.258, 2550.74]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="player_03"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1283.15, 631.258, 2550.74]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="player_04"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1291.35, 631.258, 2550.74]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="player_05"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1291.35, 631.258, 2536.61]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="player_06"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1284.34, 631.258, 2536.61]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="player_07"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1277.34, 631.258, 2536.61]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="player_08"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1270.33, 631.258, 2536.61]]
+    unit_class:t="aaa_dummy"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3090.46]]
+    unit_class:t="i-16_type10"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="i_16_type24_rockets_rbs"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  squad{
+    name:t="players"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1279.94, 631.258, 2543.67]]
+
+    props{
+      squad_members:t="player_01"
+      squad_members:t="player_02"
+      squad_members:t="player_03"
+      squad_members:t="player_04"
+      squad_members:t="player_05"
+      squad_members:t="player_06"
+      squad_members:t="player_07"
+      squad_members:t="player_08"
+    }
+  }
+
+  armada{
+    name:t="air_02"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3152.06]]
+    unit_class:t="hs-129b-3"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="hs_129b_3_default"
+    bullets0:t="bk75_antitank"
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_03"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3213.65]]
+    unit_class:t="bf-110g-2"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="Bf-110G-2_BK37_rockets"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_04"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3275.25]]
+    unit_class:t="f4u-1d"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="f4u-1d_rockets"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_05"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3336.84]]
+    unit_class:t="p-47d-28"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="p-47d_rockets_3x_500"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_06"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3398.44]]
+    unit_class:t="pe-8_m82"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="pe-8_fab5000"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_07"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3460.03]]
+    unit_class:t="tu-2_postwar_late"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="tu-2_postwar_3x_fab1000"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_08"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3521.63]]
+    unit_class:t="spitfire_lf_mk9e_weisman"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="iaf_2x250lbs_16x8cm_rockets"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_09"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3583.22]]
+    unit_class:t="a2d"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="a2d_2x2000lbs_rockets"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_10"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3644.82]]
+    unit_class:t="go229_v3"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="go_229_default"
+    bullets0:t="mk_103_antitank"
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_11"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3706.41]]
+    unit_class:t="me-262a1_u1"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="me-262a_1_u1_default"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_12"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3768.01]]
+    unit_class:t="f-84g"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="f_84g_32hvar"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_13"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3829.6]]
+    unit_class:t="fiat_g91_r4"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="fiat_g91_r4_2_75in_ffar_rockets"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="new_cover"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      use_search_radar:b=yes
+      allowAntimissile:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_14"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3891.2]]
+    unit_class:t="a_4e_early"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="a_4e_early_rockets_lau18"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="countermeasures_launcher_flare_priority"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      use_search_radar:b=yes
+      allowAntimissile:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_15"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3952.79]]
+    unit_class:t="harrier_gr1"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="harrier_gr1_rocket_matra155_dlt_matra155"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="air_extinguisher"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      use_search_radar:b=yes
+      allowAntimissile:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_16"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 4014.39]]
+    unit_class:t="a_10a_early"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="a_10a_early_suu_23a"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="countermeasures_launcher_flare_priority"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      use_search_radar:b=yes
+      allowAntimissile:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_17"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 4075.98]]
+    unit_class:t="su_25k"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="su_25k_b8m_r_60m"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="countermeasures_launcher_flare_priority"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      use_search_radar:b=yes
+      allowAntimissile:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_18"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 4137.58]]
+    unit_class:t="harrier_gr7"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="harrier_gr7_lau_5003b"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="countermeasures_launcher_flare_priority"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      use_search_radar:b=yes
+      allowAntimissile:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_19"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 4199.17]]
+    unit_class:t="f_14a_early"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="f_14a_early_lau_10a"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="countermeasures_launcher_flare_priority"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      use_search_radar:b=yes
+      allowAntimissile:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  armada{
+    name:t="air_20"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 4260.76]]
+    unit_class:t="mig_29_9_13"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t="mig_29_9_13_s24"
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    modification:t="countermeasures_launcher_flare_priority"
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=2
+      count:i=20
+      free_distance:r=70
+      floating_distance:r=50
+      minimum_distance_to_earth:r=20
+      altLimit:r=6000
+      attack_type:t="fire_at_will"
+      skill:i=5
+      use_search_radar:b=yes
+      allowAntimissile:b=yes
+      targetGnd:b=yes
+      accuracy:r=0.9
+      targetableByAi:b=no
+
+      plane{
+        wing_formation:t="Diamond"
+        row_distances:r=3
+        col_distances:r=3
+        super_formation:t="Diamond"
+        super_row_distances:r=1.5
+        super_col_distances:r=1.5
+        ai_skill:t="NORMAL"
+        task:t="FLY_WAYPOINT"
+      }
+    }
+
+    way{}
+  }
+
+  squad{
+    name:t="bot_air"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3675.61]]
+
+    props{
+      squad_members:t="air_02"
+      squad_members:t="air_01"
+      squad_members:t="air_03"
+      squad_members:t="air_04"
+      squad_members:t="air_05"
+      squad_members:t="air_06"
+      squad_members:t="air_07"
+      squad_members:t="air_08"
+      squad_members:t="air_09"
+      squad_members:t="air_10"
+      squad_members:t="air_11"
+      squad_members:t="air_12"
+      squad_members:t="air_13"
+      squad_members:t="air_14"
+      squad_members:t="air_15"
+      squad_members:t="air_16"
+      squad_members:t="air_17"
+      squad_members:t="air_18"
+      squad_members:t="air_19"
+      squad_members:t="air_20"
+    }
+  }
+
+  objectGroups{
+    name:t="increase_num_circle"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1333.17, 626.832, 2245.04]]
+    unit_class:t="capture_zone_circle"
+    objLayer:i=2
+
+    props{
+      army:i=0
+      active:b=yes
+    }
+  }
+
+  objectGroups{
+    name:t="decrease_num_circle"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1324.6, 626.832, 2245.04]]
+    unit_class:t="capture_zone_circle"
+    objLayer:i=2
+
+    props{
+      army:i=0
+      active:b=yes
+    }
+  }
+
+  objectGroups{
+    name:t="cycle_type_circle"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1312.05, 626.832, 2245.04]]
+    unit_class:t="capture_zone_circle"
+    objLayer:i=2
+
+    props{
+      army:i=0
+      active:b=yes
+    }
+  }
+
+  objectGroups{
+    name:t="kill_all_circle"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1219.66, 626.832, 2245.04]]
+    unit_class:t="capture_zone_circle"
+    objLayer:i=2
+
+    props{
+      army:i=0
+      active:b=yes
+    }
+  }
+}
+
+areas{
+  aa_fight_zone{
+    type:t="Sphere"
+    tm:m=[[123.027, 0, 0] [0, 123.027, 0] [0, 0, 123.027] [1334.37, 626.91, 2383.65]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  player_spawn{
+    type:t="Sphere"
+    tm:m=[[-2.25807, 0, -25.8099] [0, 25.9085, 0] [25.8099, 0, -2.25807] [1343.44, 631.096, 2508.75]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  air_spawn_01{
+    type:t="Sphere"
+    tm:m=[[17.8121, 0, -27.9594] [0, 33.1512, 0] [27.9594, 0, 17.8121] [73.3041, 900, 4633.97]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  air_spawn_02{
+    type:t="Sphere"
+    tm:m=[[5.75664, 0, -32.6475] [0, 33.1512, 0] [32.6475, 0, 5.75664] [557.649, 900, 5065.88]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  air_spawn_03{
+    type:t="Sphere"
+    tm:m=[[-19.0147, 0, -27.1558] [0, 33.1512, 0] [27.1558, 0, -19.0147] [2379.08, 900, 4795.52]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  air_spawn_04{
+    type:t="Sphere"
+    tm:m=[[-17.8121, 0, -27.9594] [0, 33.1512, 0] [27.9594, 0, -17.8121] [2936.86, 900, 4383.98]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  air_spawn_05{
+    type:t="Sphere"
+    tm:m=[[28.7098, 0, -16.5756] [0, 33.1512, 0] [16.5756, 0, 28.7098] [-890.864, 1114.2, 3551.6]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  air_spawn_06{
+    type:t="Sphere"
+    tm:m=[[-27.9594, 0, -17.8121] [0, 33.1512, 0] [17.8121, 0, -27.9594] [2498.12, 1441.19, 3525.44]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  air_spawn_07{
+    type:t="Sphere"
+    tm:m=[[-32.0216, 0, -8.58016] [0, 33.1512, 0] [8.58016, 0, -32.0216] [3518.19, 900, 2688.44]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  air_spawn_08{
+    type:t="Sphere"
+    tm:m=[[-29.4054, 0, 15.3075] [0, 33.1512, 0] [-15.3075, 0, -29.4054] [3468.97, 900, 1462.42]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  air_spawn_09{
+    type:t="Sphere"
+    tm:m=[[-19.0147, 0, 27.1558] [0, 33.1512, 0] [-27.1558, 0, -19.0147] [2704.9, 900, -514.328]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  air_spawn_10{
+    type:t="Sphere"
+    tm:m=[[22.3966, 0, 24.4416] [0, 33.1512, 0] [-24.4416, 0, 22.3966] [-28.1023, 900, 22.8066]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  air_spawn_11{
+    type:t="Sphere"
+    tm:m=[[30.6277, 0, 12.6864] [0, 33.1512, 0] [-12.6864, 0, 30.6277] [-1003.57, 900, 2424.71]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  air_spawn_12{
+    type:t="Sphere"
+    tm:m=[[28.7098, 0, 16.5756] [0, 33.1512, 0] [-16.5756, 0, 28.7098] [-1053.45, 900, 1049.41]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  increase_num_planes{
+    type:t="Sphere"
+    tm:m=[[23.9581, 0, 0] [0, 23.9581, 0] [0, 0, 23.9581] [1330.93, 630.824, 2239.8]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  decrease_num_planes{
+    type:t="Sphere"
+    tm:m=[[23.9581, 0, 0] [0, 23.9581, 0] [0, 0, 23.9581] [1304.21, 630.824, 2239.8]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  cycle_type{
+    type:t="Sphere"
+    tm:m=[[24.6382, 0, 0] [0, 24.6382, 0] [0, 0, 24.6382] [1275.95, 626.829, 2237.59]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  kill_all_planes{
+    type:t="Sphere"
+    tm:m=[[30.1281, 0, 0] [0, 30.1281, 0] [0, 0, 30.1281] [1213.39, 627.557, 2239.64]]
+    objLayer:i=0
+
+    props{}
+  }
+}
+
+objLayers{
+  layer{
+    enabled:b=yes
+  }
+
+  layer{
+    enabled:b=yes
+  }
+
+  layer{
+    enabled:b=yes
+  }
+
+  layer{
+    enabled:b=yes
+  }
+}
+
+wayPoints{}

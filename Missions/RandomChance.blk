@@ -376,8 +376,12 @@ triggers{
         var:t="start_bombing"
       }
 
-      unitPutToSleep{
+      unitRestore{
+        target_marking:i=0
+        ressurectIfDead:b=no
+        fullRestore:b=no
         target:t="bombers"
+        ammoRestore:b=yes
       }
 
       varSetRandomInt{
@@ -465,6 +469,15 @@ triggers{
         triggerGroup:t="special"
         triggerGroup:t="rockets"
       }
+
+      unitSetProperties{
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        object:t="players"
+        isFieldRepairEnabled:b=yes
+      }
     }
 
     else_actions{}
@@ -483,6 +496,7 @@ triggers{
     events{
       periodicEvent{
         time:r=150
+        var:t="cur_mode_delay"
       }
     }
 
@@ -495,6 +509,12 @@ triggers{
     }
 
     actions{
+      varSetInt{
+        value:i=0
+        var:t="cur_mode_delay"
+        input_var:t="move_mode_delay"
+      }
+
       varSetBool{
         value:b=no
         var:t="bombing_mode"
@@ -508,6 +528,12 @@ triggers{
     }
 
     else_actions{
+      varSetInt{
+        value:i=0
+        var:t="cur_mode_delay"
+        input_var:t="bombing_mode_delay"
+      }
+
       varSetBool{
         value:b=no
         var:t="move_mode"
@@ -556,6 +582,10 @@ triggers{
       varSetBool{
         value:b=no
         var:t="toggle_safe_zone"
+      }
+
+      unitPutToSleep{
+        target:t="bombers"
       }
 
       missionSetBombingArea{
@@ -620,6 +650,9 @@ variables{
   toggle_safe_zone:b=yes
   bombing_mode:b=no
   move_mode:b=yes
+  cur_mode_delay:i=150
+  bombing_mode_delay:i=90
+  move_mode_delay:i=150
 }
 
 dialogs{}

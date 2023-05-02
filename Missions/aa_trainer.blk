@@ -109,9 +109,12 @@ triggers{
       unitAttackTarget{
         playerAttracted:b=no
         object:t="@cur_plane"
-        attack_type:t="kill_player"
+        attack_type:t="kill_target"
+        target:t="@attack_target_str"
         weaponType:t="all"
         fireMode:t="single"
+        attackMissionId:i=1
+        forceTarget:b=yes
       }
     }
 
@@ -136,6 +139,24 @@ triggers{
     actions{
       unitPutToSleep{
         target:t="bot_air"
+      }
+
+      unitSetProperties{
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        object:t="ai_targets"
+        targetableByAi:b=yes
+        isImmortal:b=yes
+        attack_type:t="dont_aim"
+        targetAir:b=no
+        targetGnd:b=no
+        cannotShoot:b=yes
+        ignoresEnemy:b=yes
+        movable:b=no
+        cannotMove:b=yes
+        registerCollisions:b=no
       }
 
       missionMarkAsCaptureZone{
@@ -201,6 +222,23 @@ triggers{
         captureNoPenalty:b=yes
         markUnitPreset:t="tank_decal"
         markUnits:t="cycle_type_circle"
+        showBorderOnMap:b=yes
+
+        zoneDefenders{}
+      }
+
+      missionMarkAsCaptureZone{
+        army:i=1
+        timeMultiplier:r=1
+        disableZone:b=no
+        name_for_respawn_base:t=""
+        target:t="cycle_target_type"
+        iconIndexVar:t="cycle_target_icon_index"
+        canCaptureOnGround:b=yes
+        zoneType:t="capture"
+        captureNoPenalty:b=yes
+        markUnitPreset:t="tank_decal"
+        markUnits:t="cycle_target_circle"
         showBorderOnMap:b=yes
 
         zoneDefenders{}
@@ -294,7 +332,14 @@ triggers{
       }
 
       moAddMissionObjective{
-        target:t="E - Destroy all Bots"
+        target:t="E - Cycle Target Type"
+        object_marking:i=0
+        object_var_comp_op:t="equal"
+        object_var_name:t=""
+      }
+
+      moAddMissionObjective{
+        target:t="F - Destroy all Bots"
         object_marking:i=0
         object_var_comp_op:t="equal"
         object_var_name:t=""
@@ -722,9 +767,28 @@ triggers{
         out_var_string:t="cur_plane_friendly_name"
       }
 
+      varSetString{
+        value:t=""
+        var:t="hint_text"
+        input_var:t="cur_plane_friendly_name"
+      }
+
+      varAddString{
+        value:t=" - targeting: "
+        digits:i=0
+        var:t="hint_text"
+      }
+
+      varAddString{
+        value:t=""
+        digits:i=0
+        var:t="hint_text"
+        input_var:t="target_str_friendly_name"
+      }
+
       playHint{
         hintType:t="custom"
-        name:t="@cur_plane_friendly_name"
+        name:t="@hint_text"
         action:t="show"
         shouldFadeOut:b=no
         isOverFade:b=no
@@ -771,9 +835,28 @@ triggers{
         out_var_string:t="cur_plane_friendly_name"
       }
 
+      varSetString{
+        value:t=""
+        var:t="hint_text"
+        input_var:t="cur_plane_friendly_name"
+      }
+
+      varAddString{
+        value:t=" - targeting: "
+        digits:i=0
+        var:t="hint_text"
+      }
+
+      varAddString{
+        value:t=""
+        digits:i=0
+        var:t="hint_text"
+        input_var:t="target_str_friendly_name"
+      }
+
       playHint{
         hintType:t="custom"
-        name:t="@cur_plane_friendly_name"
+        name:t="@hint_text"
         action:t="show"
         shouldFadeOut:b=no
         isOverFade:b=no
@@ -846,6 +929,171 @@ triggers{
 
     else_actions{}
   }
+
+  cycle_target{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=5
+      }
+    }
+
+    conditions{
+      unitWhenInArea{
+        math:t="2D"
+        object_type:t="isAlive"
+        object_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        check_objects:t="any"
+        object:t="players"
+        target:t="cycle_target_type"
+      }
+    }
+
+    actions{
+      varModify{
+        operator:t="add"
+        value:r=1
+        var:t="target_player"
+      }
+
+      varModify{
+        operator:t="modAB"
+        value:r=2
+        var:t="target_player"
+      }
+    }
+
+    else_actions{}
+  }
+
+  set_target{
+    is_enabled:b=yes
+    comments:t=""
+
+    props{
+      actionsType:t="PERFORM_ONE_BY_ONE"
+      conditionsType:t="ALL"
+      enableAfterComplete:b=yes
+    }
+
+    events{
+      periodicEvent{
+        time:r=1
+      }
+    }
+
+    conditions{
+      varCompareInt{
+        var_value:t="target_player"
+        value:i=1
+        comparasion_func:t="less"
+      }
+    }
+
+    actions{
+      varSetString{
+        value:t="ai_targets"
+        var:t="attack_target_str"
+      }
+
+      varSetString{
+        value:t="AI Targets"
+        var:t="target_str_friendly_name"
+      }
+
+      varSetString{
+        value:t=""
+        var:t="hint_text"
+        input_var:t="cur_plane_friendly_name"
+      }
+
+      varAddString{
+        value:t=" - targeting: "
+        digits:i=0
+        var:t="hint_text"
+      }
+
+      varAddString{
+        value:t=""
+        digits:i=0
+        var:t="hint_text"
+        input_var:t="target_str_friendly_name"
+      }
+
+      playHint{
+        hintType:t="custom"
+        name:t="@hint_text"
+        action:t="show"
+        shouldFadeOut:b=no
+        isOverFade:b=no
+        time:r=-1
+        priority:i=0
+        target_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        useForTriggerFiltered:b=yes
+        team:t="A"
+      }
+    }
+
+    else_actions{
+      varSetString{
+        value:t="players"
+        var:t="attack_target_str"
+      }
+
+      varSetString{
+        value:t="Players"
+        var:t="target_str_friendly_name"
+      }
+
+      varSetString{
+        value:t=""
+        var:t="hint_text"
+        input_var:t="cur_plane_friendly_name"
+      }
+
+      varAddString{
+        value:t=" - targeting: "
+        digits:i=0
+        var:t="hint_text"
+      }
+
+      varAddString{
+        value:t=""
+        digits:i=0
+        var:t="hint_text"
+        input_var:t="target_str_friendly_name"
+      }
+
+      playHint{
+        hintType:t="custom"
+        name:t="@hint_text"
+        action:t="show"
+        shouldFadeOut:b=no
+        isOverFade:b=no
+        time:r=-1
+        priority:i=0
+        target_marking:i=0
+        object_var_name:t=""
+        object_var_comp_op:t="equal"
+        object_var_value:i=0
+        useForTriggerFiltered:b=yes
+        team:t="A"
+      }
+    }
+  }
 }
 
 mission_objectives{
@@ -912,7 +1160,21 @@ mission_objectives{
     onFailed{}
   }
 
-  "E - Destroy all Bots"{
+  "E - Cycle Target Type"{
+    is_enabled:b=yes
+    comments:t=""
+    type:t="abstractMissionObjective"
+
+    props{
+      isPrimary:b=yes
+      timeLimit:i=1800
+    }
+
+    onSuccess{}
+    onFailed{}
+  }
+
+  "F - Destroy all Bots"{
     is_enabled:b=yes
     comments:t=""
     type:t="abstractMissionObjective"
@@ -933,7 +1195,12 @@ variables{
   cur_plane_index:i=1
   cur_num_to_spawn:i=1
   cur_plane_friendly_name:t=""
-  kill_all_icon_index:i=4
+  cycle_target_icon_index:i=4
+  kill_all_icon_index:i=5
+  target_player:i=0
+  attack_target_str:t="ai_targets"
+  hint_text:t=""
+  target_str_friendly_name:t="AI Targets"
 }
 
 dialogs{}
@@ -2315,6 +2582,128 @@ units{
       active:b=yes
     }
   }
+
+  tankModels{
+    name:t="ai_target_01"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1092.12, 628.97, 2305.5]]
+    unit_class:t="germ_le_kpz_m41"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      targetableByAi:b=yes
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="ai_target_02"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1086.94, 634.493, 2209.38]]
+    unit_class:t="germ_le_kpz_m41"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      targetableByAi:b=yes
+    }
+
+    way{}
+  }
+
+  tankModels{
+    name:t="ai_target_03"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1086.94, 631.791, 2087.95]]
+    unit_class:t="germ_le_kpz_m41"
+    objLayer:i=1
+    closed_waypoints:b=no
+    isShipSpline:b=no
+    shipTurnRadius:r=100
+    weapons:t=""
+    bullets0:t=""
+    bullets1:t=""
+    bullets2:t=""
+    bullets3:t=""
+    bulletsCount0:i=0
+    bulletsCount1:i=0
+    bulletsCount2:i=0
+    bulletsCount3:i=0
+    crewSkillK:r=0
+    applyAllMods:b=no
+
+    props{
+      army:i=1
+      count:i=1
+      formation_type:t="rows"
+      formation_div:i=3
+      formation_step:p2=2.5, 2
+      formation_noise:p2=0.1, 0.1
+      targetableByAi:b=yes
+    }
+
+    way{}
+  }
+
+  squad{
+    name:t="ai_targets"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1088.66, 631.751, 2200.94]]
+
+    props{
+      squad_members:t="ai_target_01"
+      squad_members:t="ai_target_02"
+      squad_members:t="ai_target_03"
+    }
+  }
+
+  objectGroups{
+    name:t="cycle_target_circle"
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1255.97, 626.832, 2245.04]]
+    unit_class:t="capture_zone_circle"
+    objLayer:i=2
+
+    props{
+      army:i=0
+      active:b=yes
+    }
+  }
 }
 
 areas{
@@ -2457,6 +2846,14 @@ areas{
   kill_all_planes{
     type:t="Sphere"
     tm:m=[[30.1281, 0, 0] [0, 30.1281, 0] [0, 0, 30.1281] [1213.39, 627.557, 2239.64]]
+    objLayer:i=0
+
+    props{}
+  }
+
+  cycle_target_type{
+    type:t="Sphere"
+    tm:m=[[24.6382, 0, 0] [0, 24.6382, 0] [0, 0, 24.6382] [1248.9, 626.829, 2237.59]]
     objLayer:i=0
 
     props{}

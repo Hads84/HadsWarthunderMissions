@@ -184,7 +184,7 @@ triggers{
         army:i=1
         timeMultiplier:r=4
         disableZone:b=no
-        name_for_respawn_base:t=""
+        name_for_respawn_base:t="Airfield"
         target:t="af_01_cz"
         iconIndex:i=0
         canCaptureOnGround:b=yes
@@ -207,7 +207,7 @@ triggers{
         army:i=2
         timeMultiplier:r=4
         disableZone:b=no
-        name_for_respawn_base:t=""
+        name_for_respawn_base:t="Airfield"
         target:t="af_02_cz"
         iconIndex:i=1
         canCaptureOnGround:b=yes

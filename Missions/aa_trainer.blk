@@ -1627,7 +1627,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="Bf-110G-2_BK37_rockets"
+    weapons:t="Bf-110G-2_BK37"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""

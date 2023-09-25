@@ -667,7 +667,7 @@ triggers{
       unitSetVar{
         object_var_name:t="friendly_name"
         object:t="air_05"
-        object_var_string:t="P-47D-28"
+        object_var_string:t="F8F"
       }
 
       unitSetVar{
@@ -1381,7 +1381,7 @@ units{
 
   tankModels{
     name:t="player_05"
-    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1291.35, 631.258, 2536.61]]
+    tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [1291.47, 631.258, 2536.61]]
     unit_class:t="aaa_dummy"
     objLayer:i=1
     closed_waypoints:b=no
@@ -1718,12 +1718,12 @@ units{
   armada{
     name:t="air_05"
     tm:m=[[1, 0, 0] [0, 1, 0] [0, 0, 1] [466.219, 1032, 3336.84]]
-    unit_class:t="p-47d-28"
+    unit_class:t="f8f1"
     objLayer:i=1
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="p-47d_rockets_3x_500"
+    weapons:t="f8f1-4_hvar"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -1819,7 +1819,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="tu-2_postwar_3x_fab1000"
+    weapons:t=""
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
@@ -1915,7 +1915,7 @@ units{
     closed_waypoints:b=no
     isShipSpline:b=no
     shipTurnRadius:r=100
-    weapons:t="a2d_2x2000lbs_rockets"
+    weapons:t="a2d_rockets"
     bullets0:t=""
     bullets1:t=""
     bullets2:t=""
